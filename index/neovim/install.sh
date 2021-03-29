@@ -2,7 +2,7 @@
 
 sudo apt-get install -y wget curl git xclip exuberant-ctags ncurses-term python3-pip python3-autopep8
 
-# DEPENDS ON NODEJS (install it as well)
+# TODO DEPENDS ON NODEJS (install it as well)
 
 VER=$(git ls-remote --refs --tags https://github.com/neovim/neovim |
   cut --delimiter='/' --fields=3 |
