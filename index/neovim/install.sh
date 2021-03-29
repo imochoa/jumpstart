@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo apt-get install -y wget curl git xclip exuberant-ctags ncurses-term python3-pip python3-autopep8
+sudo apt install -y wget curl git xclip exuberant-ctags ncurses-term python3-pip python3-autopep8
 
 # TODO DEPENDS ON NODEJS (install it as well)
 
@@ -44,7 +44,7 @@ sudo npm install -g npm
 sudo npm install -g neovim
 sudo npm install -g eslint
 
-# sudo apt-get install llvm and sudo apt-get install clang
+# sudo apt install llvm and sudo apt-get install clang
 
 # something like that...
 # https://clangd.llvm.org/installation.html

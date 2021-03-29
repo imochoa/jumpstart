@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo apt-get install -y software-properties-common \
+sudo apt install -y software-properties-common \
 && sudo add-apt-repository -y ppa:andreasbutti/xournalpp-master \
-&& sudo apt-get update -y \
-&& sudo apt-get install -y xournalpp
+&& sudo apt update -y \
+&& sudo apt install -y xournalpp

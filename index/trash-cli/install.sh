@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-sudo apt-get install -y trash-cli
+sudo apt install -y trash-cli

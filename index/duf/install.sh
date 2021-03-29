@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo apt-get install -y wget git
+sudo apt install -y wget git
 
 VER=$(git ls-remote --refs --tags https://github.com/muesli/duf \
     | cut --delimiter='/' --fields=3     \

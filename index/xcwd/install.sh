@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-sudo apt-get install -y git \
+sudo apt install -y git \
 && sudo mkdir -p /opt/ \
 && cd /opt/ \
 && sudo git clone https://github.com/schischi/xcwd.git xcwd \

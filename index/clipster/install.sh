@@ -8,7 +8,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 # TODO MOVE TO OPT
 mkdir -p ~/Applications \
 && cd ~/Applications \
-&& sudo apt-get install -y python-gi gir1.2-gtk-3.0 git \
+&& sudo apt install -y python-gi gir1.2-gtk-3.0 git \
 && git clone https://github.com/mrichar1/clipster.git clipster-repo \
 && cp clipster-repo/clipster clipster \
 && rm -rf clipster-repo \

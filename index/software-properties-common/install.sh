@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-sudo apt-get install -y software-properties-common
+sudo apt install -y software-properties-common

@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-sudo apt-get install -y rsync
+sudo apt install -y rsync

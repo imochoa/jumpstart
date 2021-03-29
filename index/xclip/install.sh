@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-sudo apt-get install -y xclip
+sudo apt install -y xclip

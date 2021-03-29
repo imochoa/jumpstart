@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-sudo apt-get install -y sxiv
+sudo apt install -y sxiv

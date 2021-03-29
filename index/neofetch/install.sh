@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-sudo apt-get install -y neofetch
+sudo apt install -y neofetch

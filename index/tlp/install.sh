@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-sudo apt-get install -y tlp
+sudo apt install -y tlp

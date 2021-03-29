@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-sudo apt-get install -y arandr
+sudo apt install -y arandr

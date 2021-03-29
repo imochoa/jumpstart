@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-sudo apt-get install -y mutt
+sudo apt install -y mutt

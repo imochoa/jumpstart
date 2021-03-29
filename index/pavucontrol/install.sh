@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-sudo apt-get install -y pavucontrol
+sudo apt install -y pavucontrol
