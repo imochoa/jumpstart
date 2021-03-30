@@ -1,2 +1,5 @@
 #!/usr/bin/env bash
-sudo apt remove -y exa
+# After Ubuntu 20.10
+#sudo apt remove -y exa
+# Before...
+rm ~/.local/bin/exa
