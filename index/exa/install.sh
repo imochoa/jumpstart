@@ -10,7 +10,7 @@ VER=$(git ls-remote --refs --tags https://github.com/ogham/exa \
     | tr -d 'v'
     );
 # e.g. VER=v1.2.0
-rm -r /tmp/exa \
+rm -rf /tmp/exa \
 && mkdir -p /tmp/exa/ \
 && mkdir -p ~/.local/bin \
 && wget https://github.com/ogham/exa/releases/download/v${VER}/exa-linux-x86_64-${VER}.zip -O /tmp/exa/exa.zip \
