@@ -4,6 +4,8 @@ sudo apt install -y wget curl git xclip exuberant-ctags ncurses-term python3-pip
 
 # TODO DEPENDS ON NODEJS (install it as well)
 
+# TODO for the fonts to look nice you need to install nerdfonts
+
 VER=$(git ls-remote --refs --tags https://github.com/neovim/neovim |
   cut --delimiter='/' --fields=3 |
   tr '-' '~' |
