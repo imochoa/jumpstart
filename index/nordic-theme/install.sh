@@ -5,4 +5,4 @@ P=${HOME}/.themes/
 # All users
 # P=/usr/share/themes/
 
-git clone git clone https://github.com/EliverLara/Nordic.git ${P}/Nordic
+git clone https://github.com/EliverLara/Nordic.git ${P}/Nordic
