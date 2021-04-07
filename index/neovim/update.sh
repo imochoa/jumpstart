@@ -11,3 +11,10 @@ sudo rm -f /usr/local/bin/nvim \
 && sudo wget https://github.com/neovim/neovim/releases/download/${VER}/nvim.appimage --output-document=/usr/local/bin/nvim \
 && sudo chown ${USER}:${USER} /usr/local/bin/nvim \
 && sudo chmod +x /usr/local/bin/nvim
+
+# update Minpac
+cd ~/.config/nvim/pack/minpac/opt/minpac && git pull
+
+# update plugins
+neovim +PackUpdate +qall
+neovim +CocInstall +qall
