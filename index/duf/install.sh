@@ -7,8 +7,9 @@ VER=$(git ls-remote --refs --tags https://github.com/muesli/duf \
     | tr '-' '~'                         \
     | sort --version-sort                \
     | tail --lines=1);
-# e.g. VER=v0.3.1
 
 TMP_DEB=/tmp/duf.deb
-wget https://github.com/muesli/duf/releases/download/${VER}/duf_${VER:1}_linux_amd64.deb --continue --output-document=${TMP_DEB}
-sudo apt install ${TMP_DEB}
+wget https://github.com/muesli/duf/releases/download/${VER}/duf_${VER:1}_linux_amd64.deb \
+  --continue \
+  --output-document=${TMP_DEB} \
+&& sudo apt install ${TMP_DEB}
