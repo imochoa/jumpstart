@@ -26,4 +26,18 @@ else
     exit 1
 fi
 
-$JAVA -jar /usr/share/plantuml/plantuml.jar ${@}
+# Find JAR
+LOCAL_JAR="${HOME}/.local/share/plantuml/plantuml.jar"
+GLOBAL_JAR="/usr/share/plantuml/plantuml.jar"
+
+if [ -f "${LOCAL_JAR}" ] ; then
+    JAR="${LOCAL_JAR}"
+elif [ -f "${GLOBAL_JAR}" ] ; then
+    JAR="${GLOBAL_JAR}"
+else
+    echo Cannot find PlantUML.jar
+    exit 1
+fi
+
+$JAVA -jar "${JAR}" ${@}
+
