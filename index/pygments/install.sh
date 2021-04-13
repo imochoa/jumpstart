@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-sudo apt install -y python-pygments
+sudo apt install -y python3-pygments
