@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-sudo apt install -y redshift
+# redshift-gtk is the GUI version!
+sudo apt install -y redshift redshift-gtk
