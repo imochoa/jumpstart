@@ -6,11 +6,11 @@
 missing=0;
 
 
-if $(apt list --installed 'yad' | grep -q "\[installed\]")
+if $(apt list --installed 'dos2unix' | grep -q "\[installed\]")
 then
-   echo "[yad] -> [installed!]";
+   echo "[dos2unix] -> [installed!]";
 else
-   echo "[yad] -> [NOT installed!]";
+   echo "[dos2unix] -> [NOT installed!]";
    missing=1;
 fi
 

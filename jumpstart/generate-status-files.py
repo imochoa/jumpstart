@@ -146,6 +146,7 @@ def check_app(d: pathlib.Path) -> Votes:
             "wget",
             "git",
             "curl",
+            "networking",
         }:
             v = Votes(
                 apt=v.apt,
