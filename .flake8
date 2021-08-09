@@ -1,0 +1,22 @@
+# vim: ft=dosini
+[flake8]
+# max-complexity = 10
+# max-line-length = 99 # -> covered by black
+exclude =
+    # No need to traverse our git directory
+    .git,
+    # There's no value in checking cache directories
+    __pycache__,
+    # don't check the python libraries
+    venv
+extend-ignore =
+    # Unused import
+    F401,
+    # f-string is missing placeholders
+    F541,
+    # whitespace before ‘:’
+    E203,
+    # line too long -> Covered by black!
+    E501,
+    # line break before binary operator
+    W503

@@ -1,0 +1,52 @@
+# Apply to all files without commiting:
+#   pre-commit run --all-files
+# Update this file:
+#   pre-commit autoupdate
+# Update the 'rev's:
+#   pre-commit autoupdate --freeze
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: 38b88246ccc552bffaaf54259d064beeee434539  # frozen: v4.0.1
+    hooks:
+      - id: fix-byte-order-marker
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: check-yaml
+      - id: debug-statements
+      - id: detect-aws-credentials
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: mixed-line-ending
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: 44afb68a9695d04030edc5cdc5a4fc4f17e4f9e2  # frozen: v0.910
+    hooks:
+      - id: mypy
+        args: [ --ignore-missing-imports ]
+  - repo: https://github.com/pre-commit/mirrors-isort
+    rev: 4b1c2d20398c9208c406eccd9251ec572a196080  # frozen: v5.9.3
+    hooks:
+      - id: isort
+  - repo: https://github.com/psf/black
+    rev: e3000ace2fd1fcb1c181bb7a8285f1f976bcbdc7  # frozen: 21.7b0
+    hooks:
+      - id: black
+  - repo: https://github.com/asottile/blacken-docs
+    rev: 11c213590abfc28ab52587efc9c81a7076dd17c9  # frozen: v1.10.0
+    hooks:
+      - id: blacken-docs
+        additional_dependencies: [ black==20.8b1 ]
+  - repo: https://gitlab.com/pycqa/flake8.git
+    rev: dcd740bc0ebaf2b3d43e59a0060d157c97de13f3  # frozen: 3.9.2
+    hooks:
+      - id: flake8
+        additional_dependencies:
+          - flake8-black>=0.1.1
+        language_version: python3
+  - repo: https://github.com/asottile/pyupgrade
+    rev: a638b1c3410109247dd0398356789670f1bc3c82  # frozen: v2.23.2
+    hooks:
+      - id: pyupgrade
+        args: [ --py36-plus ]
