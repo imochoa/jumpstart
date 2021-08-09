@@ -23,4 +23,3 @@ rm -rf ${installpath} \
 && tar xvf "${INSTALL_TEMPDIR}/lf.tar.gz" --directory="${INSTALL_TEMPDIR}" \
 && chmod +x "${INSTALL_TEMPDIR}/lf" \
 && mv "${INSTALL_TEMPDIR}/lf" "${installpath}"
-

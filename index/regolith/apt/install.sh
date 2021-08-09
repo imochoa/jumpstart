@@ -76,4 +76,3 @@ sudo apt remove -y \
 # i3xrocks-wifi - Indicator to display the current Wi-Fi network name.
 # regolith-i3xrocks-config - Regolith configuration for i3xrocks launcher
 # regolith-todo - A to-do blocklet for i3xrocks OUTDATED -> i3xrocks-todo?
-

@@ -7,4 +7,3 @@ sudo snap install arduino
 # https://downloads.arduino.cc/arduino-1.8.13-linuxaarch64.tar.xz
 # Get latest release
 # https://github.com/arduino/Arduino/releases
-

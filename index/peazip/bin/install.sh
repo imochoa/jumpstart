@@ -15,4 +15,3 @@ wget "${URL}"                  \
   --continue                   \
   --output-document=${TMP_DEB} \
 && sudo apt install ${TMP_DEB}
-

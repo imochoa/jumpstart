@@ -30,4 +30,3 @@ else
     echo "Already running!";
     echo "Check: ${url}";
 fi
-

@@ -40,4 +40,3 @@ else
 fi
 
 $JAVA -jar "${JAR}" ${@}
-
