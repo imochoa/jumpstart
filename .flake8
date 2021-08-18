@@ -2,6 +2,7 @@
 [flake8]
 # max-complexity = 10
 # max-line-length = 99 # -> covered by black
+min_python_version = 3.8
 exclude =
     # No need to traverse our git directory
     .git,

@@ -15,7 +15,6 @@ repos:
       - id: check-json
       - id: check-yaml
       - id: debug-statements
-      - id: detect-aws-credentials
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: trailing-whitespace
@@ -25,10 +24,18 @@ repos:
     hooks:
       - id: mypy
         args: [ --ignore-missing-imports ]
-  - repo: https://github.com/pre-commit/mirrors-isort
-    rev: 4b1c2d20398c9208c406eccd9251ec572a196080  # frozen: v5.9.3
+  - repo: https://github.com/pycqa/isort
+    rev: fd5ba70665a37ec301a1f714ed09336048b3be63  # frozen: 5.9.3
     hooks:
       - id: isort
+        name: isort (python)
+        args: [ "--profile", "black", "--filter-files" ]
+      - id: isort
+        name: isort (cython)
+        types: [cython]
+      - id: isort
+        name: isort (pyi)
+        types: [pyi]
   - repo: https://github.com/psf/black
     rev: e3000ace2fd1fcb1c181bb7a8285f1f976bcbdc7  # frozen: 21.7b0
     hooks:
@@ -37,16 +44,17 @@ repos:
     rev: 11c213590abfc28ab52587efc9c81a7076dd17c9  # frozen: v1.10.0
     hooks:
       - id: blacken-docs
-        additional_dependencies: [ black==20.8b1 ]
+        additional_dependencies: [ black>=20.8b1 ]
   - repo: https://gitlab.com/pycqa/flake8.git
     rev: dcd740bc0ebaf2b3d43e59a0060d157c97de13f3  # frozen: 3.9.2
     hooks:
       - id: flake8
         additional_dependencies:
           - flake8-black>=0.1.1
+          - flake8-typing-imports==1.10.1
         language_version: python3
   - repo: https://github.com/asottile/pyupgrade
-    rev: a638b1c3410109247dd0398356789670f1bc3c82  # frozen: v2.23.2
+    rev: 53c94718aae4074edde7099996c81ab7cc081ce3  # frozen: v2.23.3
     hooks:
       - id: pyupgrade
         args: [ --py36-plus ]
