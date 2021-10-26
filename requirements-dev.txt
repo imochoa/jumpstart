@@ -5,3 +5,4 @@ pytest-icdiff==0.5
 pytest-print==0.2.1
 pytest-sugar==0.9.4
 pytest-xdist==2.2.1
+tox==3.24.1
