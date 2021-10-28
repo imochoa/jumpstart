@@ -43,3 +43,8 @@ warn_unused_ignores = true
 show_error_codes = true
 disallow_any_unimported = true
 # https://blog.wolt.com/engineering/2021/09/30/professional-grade-mypy-configuration/
+
+[tool.pytest.ini_options]
+python_files = ["test_*.py", "*_test.py"]
+addopts = "--failed-first --showlocals -ra"
+# Run in parallel ->  --numprocesses auto
