@@ -1,0 +1,15 @@
+apt is better... snap is poop outside of home
+
+
+Also, ctrl+p -> change memory and number of threads!
+# For optimized SVG outputs for the web!
+ sudo apt-get install python3-scour
+
+ Would work... but inskcape is still on py2.7...
+
+ make sure you have py2 pip:
+ curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+sudo python2 ./get-pip.py
+
+# install it
+python2 -m pip install scour
