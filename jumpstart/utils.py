@@ -19,8 +19,8 @@ def similarity(a: str, b: str) -> float:
     return SequenceMatcher(None, a.lower(), b.lower()).ratio()
 
 
-def safe_open(p: pathlib.Path) -> codecs.StreamReaderWriter:
-    return codecs.open(str(p), "r", encoding="utf-8", errors="ignore")
+def safe_open(p: pathlib.Path, mode: T.Union[T.Literal["r", "w"]] = "r") -> codecs.StreamReaderWriter:
+    return codecs.open(str(p), mode=mode, encoding="utf-8", errors="ignore")
 
 
 def load_script(p: pathlib.Path) -> T.List[str]:
@@ -285,7 +285,6 @@ if __name__ == "__main__":
     #     + [f.name for f in unknown_install_types]
     # )
     # print(unknown_report)
-
 
 if __name__ == "__main__":
     pass

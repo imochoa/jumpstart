@@ -6,8 +6,11 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 import codecs
 from collections import abc
+import dataclasses
 from dataclasses import dataclass
 import enum
+import html
+import inspect
 import json
 import logging
 import os
@@ -20,13 +23,6 @@ from jumpstart.constants import Architecture, OperatingSystem
 from jumpstart.utils import safe_open
 
 logger = logging.getLogger(__name__)
-
-METADATA_JSON = dict(
-    name=str,
-    url=str,
-    tags=T.List[str],
-    preference=T.List[str],
-)
 
 
 @dataclass
@@ -43,7 +39,8 @@ class Installable:
     def metadata_json(self) -> pathlib.Path:
         path = self.path / "metadata.json"
         if not path.is_file():
-            raise FileNotFoundError(f"{path} was missing!")
+            logger.error(f"{path} was missing!")
+            # raise FileNotFoundError(f"{path} was missing!")
         return path
 
     # def refresh(self):
@@ -82,7 +79,7 @@ class Installable:
         try:
             with safe_open(json_path) as fp:
                 metadata = json.load(fp)
-        except FileNotFoundError:
+        except (FileNotFoundError, json.JSONDecodeError):
             logging.error(f"No {json_path} found...")
             metadata = dict()
 
@@ -107,6 +104,46 @@ class Installable:
             operating_system=operating_system,
         )
 
+
+@dataclass
+class Metadata:
+    name: str = dataclasses.field(default="")
+    url: str = dataclasses.field(default="")
+    tags: T.List[str] = dataclasses.field(default_factory=list)
+    preference: T.List[str] = dataclasses.field(default_factory=list)
+
+    @classmethod
+    def init_kwargs(cls) -> T.List[str]:
+        return inspect.getfullargspec(cls.__init__).args[1:]
+
+    @classmethod
+    def from_json(cls, p: pathlib.Path) -> Metadata:
+        if not p.stat().st_size:
+            return cls()
+
+        with safe_open(p) as fp:
+            d = json.load(fp)
+            return cls(**{k: v for k, v in d.items() if k in cls.init_kwargs()})
+
+    def fill_with_defaults(self, p: pathlib.Path) -> None:
+        if p.is_file():
+            p = p.parent
+        self.name = self.name or p.name
+        self.url = self.url or f"https://www.google.com/search?q={html.escape(self.name)}"
+        self.tags = self.tags or []
+        self.preference = self.preference or []
+
+    def to_json(self, p: pathlib.Path) -> None:
+        with safe_open(p, "w") as fp:
+            json.dump(obj={k: getattr(self, k) for k in self.init_kwargs()}, fp=fp, indent=4)
+
+
+# METADATA_JSON = dict(
+#     name=str,
+#     url=str,
+#     tags=T.List[str],
+#     preference=T.List[str],
+# )
 
 # def load_metadata_json(json_path: pathlib.Path) -> T.Dict[str, str]:
 #     print("do!")

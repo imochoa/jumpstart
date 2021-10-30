@@ -23,8 +23,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "report = jumpstart.cli_fcns:report",
-            "refresh = jumpstart.cli_fcns:refresh",
+            "jumpstart = jumpstart.cli_fcns:jumpstart",
         ],
     },
     license="MIT",
