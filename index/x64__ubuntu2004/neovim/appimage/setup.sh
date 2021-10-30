@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+# TODO
+# deps
+#python3
+#nodejs
+#networking
+#xclip
+#git
+
+
 
 # INSTALL NEOVIM
 VER=$(git ls-remote --refs --tags https://github.com/neovim/neovim |

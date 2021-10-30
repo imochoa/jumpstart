@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# >>>> PKGS: stretchly
+sudo snap install stretchly
 
 # VER=$(git ls-remote --refs --tags https://github.com/hovancik/stretchly \
 #     | cut --delimiter='/' --fields=3     \

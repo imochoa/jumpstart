@@ -1,3 +1,0 @@
-git
-checkinstall
-software-properties-common

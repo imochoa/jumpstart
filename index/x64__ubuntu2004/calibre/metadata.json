@@ -1,6 +1,6 @@
 {
     "name": "calibre",
     "url": "https://www.google.com/search?q=calibre",
-    "tags": [],
+    "tags": ["ebooks"],
     "preference": []
 }
