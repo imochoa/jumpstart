@@ -14,15 +14,15 @@ URL=$(curl --silent "https://api.github.com/repos/sharkdp/bat/releases/latest" \
 
 TEMPDIR=$(mktemp -d -t bat-XXXXXXXXXX)
 
-echo "Downloading..." \
-&& wget ${URL}                                                \
-  --continue                                               \
-  --output-document="${TEMPDIR}/data.tar.gz"     \
-&& echo "extracting..." \
+echo "Downloading..."                                                               \
+&& wget ${URL}                                                                      \
+  --continue                                                                        \
+  --output-document="${TEMPDIR}/data.tar.gz"                                        \
+&& echo "extracting..."                                                             \
 && tar -xzvf "${TEMPDIR}/data.tar.gz" --directory="${TEMPDIR}" --strip-components=1 \
-&& echo "Installing..." \
-&& sudo chmod +x "${TEMPDIR}/bat" \
-&& sudo cp "${TEMPDIR}/bat" "${INSTALLDIR}" \
-&& echo "Copying autocomplete files..." \
-&& sudo cp "${TEMPDIR}/autocomplete/"*.bash "${BASHCOMP}" \
+&& echo "Installing..."                                                             \
+&& sudo chmod +x "${TEMPDIR}/bat"                                                   \
+&& sudo cp "${TEMPDIR}/bat" "${INSTALLDIR}"                                         \
+&& echo "Copying autocomplete files..."                                             \
+&& sudo cp "${TEMPDIR}/autocomplete/"*.bash "${BASHCOMP}"                           \
 && sudo cp "${TEMPDIR}/autocomplete/"*.zsh "${ZSHCOMP}"
