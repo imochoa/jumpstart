@@ -3,6 +3,8 @@
 INSTALL_DIR=/usr/local/share/fonts/nerdfonts
 FONT_TEMPDIR=$(mktemp -d -t fonts-XXXXXXXXXX)
 
+
+sudo apt-get install -y wget git
 VER=$(git ls-remote --refs --tags https://github.com/ryanoasis/nerd-fonts \
     | cut --delimiter='/' --fields=3     \
     | tr '-' '~'                         \

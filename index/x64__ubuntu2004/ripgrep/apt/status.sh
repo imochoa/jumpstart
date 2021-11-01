@@ -3,10 +3,10 @@
 
 missing=0;
 
-if $(apt list --installed 'rsync' | grep -q "\[installed\]")
+if $(apt list --installed 'ripgrep' | grep -q "\[installed\]")
 then
-   echo "[rsync] -> [installed!]";
+   echo "[ripgrep] -> [installed!]";
 else
-   echo "[rsync] -> [NOT installed!]";
+   echo "[ripgrep] -> [NOT installed!]";
    missing=1;
 fi
