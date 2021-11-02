@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 
 Ubuntu tar install:
 https://ubuntu.com/tutorials/install-the-arduino-ide#2-installing-via-a-tarball

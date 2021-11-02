@@ -2,4 +2,4 @@
 
 
 # curl and run it!
-"https://raw.githubusercontent.com/junegunn/fzf/master/install"
+curl -sL "https://raw.githubusercontent.com/junegunn/fzf/master/install" | sudo -E bash -

@@ -26,7 +26,10 @@ sudo rm -f /usr/local/bin/nvim \
 # nvr expects "nvim" NOT "neovim"!
 
 # SETUP
-sudo apt install -y wget curl git xclip exuberant-ctags ncurses-term python3-pip python3-autopep8
+sudo apt-get install -y wget curl git xclip exuberant-ctags ncurses-term python3-pip python3-autopep8
+
+sudo apt-get install -y python3-venv
+
 
 # EXTRA DEPENDENCIES
 # TODO DEPENDS ON NODEJS (install it as well)
@@ -36,9 +39,34 @@ sudo apt install -y wget curl git xclip exuberant-ctags ncurses-term python3-pip
 # git clone --depth 1 https://github.com/junegunn/fzf.git ~/.config/nvim/pack/minpac/start/fzf
 # ~/.config/nvim/pack/minpac/start/fzf/install
 
+VENVDIR="/opt/pyvenv"
+sudo mkdir -p "${VENVDIR}"
+sudo python3 -m venv "${VENVDIR}"
+sudo chown ${USER}:${USER} "${VENVDIR}"
+
 # PYTHON
+${VENVDIR}/bin/python -m pip install --upgrade pip
+
+
+sudo -H ${VENVDIR}/bin/python -m pip install --upgrade wheel setuptools
+
+
+sudo -H ${VENVDIR}/bin/python -m pip install --upgrade wheel setuptools
+
+sudo -H ${VENVDIR}/bin/python -m pip install --upgrade pip
+
+
+sudo -H ${VENVDIR}/bin/python -m pip install --upgrade neovim pynvim flake8 jedi autopep8 neovim-remote
+
+
+
+# How to use a venv instead???
 sudo -H pip3 install --upgrade pip
 sudo -H pip3 install --upgrade neovim pynvim flake8 jedi autopep8 neovim-remote
+
+
+sudo ln -s /opt/pyvenv/bin/nvr /usr/local/bin/nvr
+
 
 # NPM
 # Update npm
@@ -48,8 +76,6 @@ sudo npm install -g neovim
 sudo npm install -g eslint
 
 # BASIC NEOVIM SETUP
-mkdir -p ~/.config/nvim \
-&& touch ~/.config/nvim/init.vim \
 mkdir -p ~/.config/nvim/pack/minpac/opt/minpac \
 && git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
 

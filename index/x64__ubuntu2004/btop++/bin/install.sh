@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+https://github.com/aristocratos/btop/releases/download/v1.0.20/btop-1.0.20-x86_64-linux-musl.tbz
+
+./install.sh
 
 VER=$(git ls-remote --refs --tags https://github.com/aristocratos/btop |
   cut --delimiter='/' --fields=3 |

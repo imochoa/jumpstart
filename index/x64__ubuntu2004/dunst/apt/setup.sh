@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 
-sudo apt install -y dunst
+systemctl restart --user dunst.service
