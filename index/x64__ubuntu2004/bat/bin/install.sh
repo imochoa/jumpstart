@@ -24,5 +24,7 @@ echo "Downloading..."                                                           
 && sudo chmod +x "${TEMPDIR}/bat"                                                   \
 && sudo cp "${TEMPDIR}/bat" "${INSTALLDIR}"                                         \
 && echo "Copying autocomplete files..."                                             \
+&& sudo mkdir -p "${BASHCOMP}" \
+&& sudo mkdir -p "${ZSHCOMP}" \
 && sudo cp "${TEMPDIR}/autocomplete/"*.bash "${BASHCOMP}"                           \
 && sudo cp "${TEMPDIR}/autocomplete/"*.zsh "${ZSHCOMP}"
