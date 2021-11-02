@@ -1,10 +1,28 @@
 #!/usr/bin/env sh
 
-#
-https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep-13.0.0-x86_64-unknown-linux-musl.tar.gz
+INSTALLDIR=/usr/local/bin
+BASHCOMP=${BASHCOMP:-${HOME}/.config/bash/bash_completion}
+ZSHCOMP=${ZSHCOMP:-${HOME}/.config/zsh/completions}
 
-# TODO has autocomplete!
+sudo apt-get install -y curl wget jq
 
-l]$ sudo cp rg /usr/local/bin/rg
-[sudo] password for imochoa:
-[imochoa@imochoa-XPS-13-9370:~/Downloads/ripgrep-13.0.0-x86_64-unknown-linux-musl]$ sudo chmod +x /usr/local/bin/rg
+URL=$(curl --silent "https://api.github.com/repos/BurntSushi/ripgrep/releases/latest" \
+  | jq '..|.browser_download_url?' | grep 'x86_64' | grep 'linux' \
+  | tr -d '"' )
+
+TEMPDIR=$(mktemp -d -t ripgrep-XXXXXXXXXX)
+
+echo "Downloading..."                                                               \
+&& wget ${URL}                                                                      \
+  --continue                                                                        \
+  --output-document="${TEMPDIR}/data.tar.gz"                                        \
+&& echo "extracting..."                                                             \
+&& tar -xzvf "${TEMPDIR}/data.tar.gz" --directory="${TEMPDIR}" --strip-components=1 \
+&& echo "Installing..."                                                             \
+&& sudo chmod +x "${TEMPDIR}/rg"                                                   \
+&& sudo cp "${TEMPDIR}/rg" "${INSTALLDIR}"                                         \
+&& echo "Copying autocomplete files..."                                             \
+&& sudo mkdir -p "${BASHCOMP}" \
+&& sudo mkdir -p "${ZSHCOMP}" \
+&& sudo cp "${TEMPDIR}/complete/"*.bash "${BASHCOMP}"                           \
+&& sudo cp "${TEMPDIR}/complete/_"* "${ZSHCOMP}"
