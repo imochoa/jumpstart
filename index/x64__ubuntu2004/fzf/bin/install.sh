@@ -1,25 +1,39 @@
 #!/usr/bin/env bash
 
-sudo apt install -y wget git
+INSTALLDIR=/usr/local/bin
+BASHCOMP=${BASHCOMP:-${HOME}/.config/bash/bash_completion}
+ZSHCOMP=${ZSHCOMP:-${HOME}/.config/zsh/completions}
 
 
-VER=$(git ls-remote --refs --tags https://github.com/junegunn/fzf.git \
-    | cut --delimiter='/' --fields=3     \
-    | tr '-' '~'                         \
-    | sort --version-sort                \
-    | tail --lines=1);
+sudo apt-get install -y curl wget jq
 
-URL="https://github.com/junegunn/fzf/releases/download/${VER}/fzf-${VER}-linux_amd64.tar.gz"
-FZF_DIR=$(mktemp -d -t fzf-XXXXXXXXXX)
+URL=$(curl --silent "https://api.github.com/repos/junegunn/fzf/releases/latest" \
+  | jq '..|.browser_download_url?' | grep 'amd64' | grep 'linux' \
+  | tr -d '"' )
 
-INSTALLPATH="/usr/bin/fzf"
+AUTOURL=https://raw.githubusercontent.com/junegunn/fzf/master/shell/
 
-wget ${URL}                                          \
-  --continue                                         \
-  --output-document="${FZF_DIR}/fzf.tar.gz"          \
-&& tar -xzvf "${FZF_DIR}/fzf.tar.gz" -C "${FZF_DIR}" \
-&& sudo rm -f "${INSTALLPATH}"                       \
-&& sudo mv "${FZF_DIR}/fzf" "${INSTALLPATH}"         \
-&& sudo chmod 0755 "${INSTALLPATH}"
+TEMPDIR=$(mktemp -d -t fzf-XXXXXXXXXX)
 
- # overriding mode 0755 (rwxr-xr-x)?
+echo "Downloading..."                                                               \
+&& wget ${URL}                                                                      \
+  --continue                                                                        \
+  --output-document="${TEMPDIR}/data.tar.gz"                                        \
+&& echo "extracting..."                                                             \
+&& tar -xzvf "${TEMPDIR}/data.tar.gz" --directory="${TEMPDIR}"  \
+&& echo "Installing..."                                                             \
+&& sudo chmod +x "${TEMPDIR}/fzf"                                                   \
+&& sudo cp "${TEMPDIR}/fzf" "${INSTALLDIR}"                                         \
+&& echo "Copying autocomplete files..."                                             \
+&& sudo mkdir -p "${BASHCOMP}" \
+&& sudo mkdir -p "${ZSHCOMP}" \
+&& sudo cp "${TEMPDIR}/complete/"*.bash "${BASHCOMP}"                           \
+&& sudo cp "${TEMPDIR}/complete/_"* "${ZSHCOMP}"
+
+
+# AUTOCOMPLETION SCRIPTS!
+wget --output-document="${BASHCOMP}/fzf.bash" "${AUTOURL}/completion.bash"
+wget --output-document="${BASHCOMP}/fzf-key-bindings.bash" "${AUTOURL}/key-bindings.bash"
+
+wget --output-document="${ZSHCOMP}/_fzf.zsh" "${AUTOURL}/completion.zsh"
+wget --output-document="${ZSHCOMP}/_fzf-key-bindings.bash" "${AUTOURL}/key-bindings.zsh"
