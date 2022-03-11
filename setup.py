@@ -2,18 +2,17 @@
 
 # stdlib imports
 from distutils.core import setup
-import os
+import pathlib
 
-# REPO_DIR = os.path.dirname(__file__)
-# with open(os.path.join(REPO_DIR, "requirements.txt")) as f:
-#     requirements = f.read().splitlines()
-#
+REPO_DIR = pathlib.Path(__file__).absolute()
+with open(str(REPO_DIR / "requirements.txt")) as f:
+    requirements = [line.strip() for line in f.read().splitlines()]
+    requirements = [line for line in requirements if not line.startswith("#")]
+
 # scripts = [os.path.join("bin", s) for s in os.listdir(os.path.join(REPO_DIR, "bin"))]
-#
-# with open(os.path.join(REPO_DIR, "README.md")) as f:
-#     long_description = f.read().splitlines()
 
-# scripts = scripts,
+with open(REPO_DIR / "README.md") as f:
+    long_description = f.read().splitlines()
 
 setup(
     name="jumpstart",

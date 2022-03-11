@@ -1,0 +1,5 @@
+Jinja2
+rich-cli
+typer
+marshmallow
+marshmallow-dataclass

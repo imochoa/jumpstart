@@ -2,7 +2,7 @@
 
 
 [build-system]
-requires = [ "setuptools >= 35.0.2", "wheel >= 0.29.0"]
+requires = ["setuptools >= 35.0.2", "wheel >= 0.29.0"]
 build-backend = "setuptools.build_meta"
 
 [tool.tox]
@@ -31,18 +31,20 @@ force_sort_within_sections = true
 [tool.black]
 line-length = 121
 
-[tool.mypy]
 # https://mypy.readthedocs.io/en/latest/config_file.html#config-precedence
-python_version = "3.8"
-warn_unused_configs = true
-disallow_untyped_defs = true
-no_implicit_optional = true
-check_untyped_defs = true
-warn_return_any =  true
-warn_unused_ignores = true
-show_error_codes = true
-disallow_any_unimported = true
 # https://blog.wolt.com/engineering/2021/09/30/professional-grade-mypy-configuration/
+[tool.mypy]
+exclude = [
+    'venv',
+    'tests',
+    'bin',
+]
+plugins = [
+    'marshmallow_dataclass.mypy',
+]
+python_version = "3.8"
+show_error_codes = true
+strict = true
 
 [tool.pytest.ini_options]
 python_files = ["test_*.py", "*_test.py"]
