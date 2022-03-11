@@ -4,5 +4,5 @@
 {{ macros.autotoken() }}
 
 {% for p in pkgs -%}
-sudo apt-get remove -y {{p}}
+sudo snap remove {{p}}
 {% endfor -%}

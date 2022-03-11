@@ -1,115 +1,54 @@
 #!/usr/bin/env python3
 
 # stdlib imports
-from enum import Enum
-import logging
+import functools
 import pathlib
-import platform
-import subprocess
+from types import SimpleNamespace
 import typing as T
 
-# This sets the root logger to write to stdout (your console).
-# Your script/app needs to call this somewhere at least once.
-logging.basicConfig()
-
-# By default the root logger is set to WARNING and all loggers you define
-# inherit that value. Here we set the root logger to NOTSET. This logging
-# level is automatically inherited by all existing and new sub-loggers
-# that do not set a less verbose level.
-logging.root.setLevel(logging.NOTSET)
-
-# The following line sets the root logger level as well.
-# It's equivalent to both previous statements combined:
-logging.basicConfig(level=logging.NOTSET)
+# 3rd party imports
+import jinja2
 
 
-# You can either share the `logger` object between all your files or the
-# name handle (here `my-app`) and call `logging.getLogger` with it.
-# The result is the same.
-# handle = "my-app"
-# logger1 = logging.getLogger(handle)
-# logger2 = logging.getLogger(handle)
-# logger1 and logger2 point to the same object:
-# (logger1 is logger2) == True
-
-logger = logging.getLogger(__name__)
-# logger = logging.getLogger("my-app")
-# # Convenient methods in order of verbosity from highest to lowest
-# logger.debug("this will get printed")
-# logger.info("this will get printed")
-# logger.warning("this will get printed")
-# logger.error("this will get printed")
-# logger.critical("this will get printed")
+class Paths(SimpleNamespace):
+    PKG_DIR: T.Final[pathlib.Path] = pathlib.Path(__file__).parent
+    REPO_DIR: T.Final[pathlib.Path] = (PKG_DIR / "..").resolve()
+    INDEX_DIR: T.Final[pathlib.Path] = REPO_DIR / "index"
+    TEST_DIR: T.Final[pathlib.Path] = REPO_DIR / "test"
+    TEMPLATE_DIR: T.Final[pathlib.Path] = PKG_DIR / "templates"
 
 
-# In large applications where you would like more control over the logging,
-# create sub-loggers from your main application logger.
-component_logger = logger.getChild("component-a")
-component_logger.info("this will get printed with the prefix `my-app.component-a`")
-
-# If you wish to control the logging levels, you can set the level anywhere
-# in the hierarchy:
-#
-# - root
-#   - my-app
-#     - component-a
-#
-
-# Example for development:
-logger.setLevel(logging.DEBUG)
-
-# If that prints too much, enable debug printing only for your component:
-component_logger.setLevel(logging.DEBUG)
+Filename = T.NewType("Filename", str)
 
 
-# # For production you rather want:
-# logger.setLevel(logging.WARNING)
+class Filenames(SimpleNamespace):
+    """
+    Accepted filenames for each installable. The extensions are usually ".sh"
+    """
+
+    install = Filename("install")
+    setup = Filename("setup")
+    update = Filename("update")
+    remove = Filename("remove")
+    status = Filename("status")
+    version = Filename("version")
+    metadata = Filename("metadata")
+
+    @classmethod
+    @functools.lru_cache()
+    def as_set(cls) -> T.Set["Filename"]:
+        return {Filename(s) for s in cls.__dict__.keys() if not s.startswith("__")}
 
 
-# Paths
-PKG_DIR = pathlib.Path(__file__).parent
-REPO_DIR = (PKG_DIR / "..").resolve()
-INDEX_DIR = REPO_DIR / "index"
+template_loader: T.Final[T.Any] = jinja2.FileSystemLoader(searchpath=Paths.TEMPLATE_DIR)
+template_env = jinja2.Environment(loader=template_loader)
 
-LINUX = "Linux"
-SUPPORTED_SYSTEMS = {
-    "Linux",
-}
-
-
-class Architecture(Enum):
-    unknown = "unknown"
-    x64 = "x64"
-    arm = "arm"
-
-
-# Architecture?
-DETECTED_ARCH: Architecture = Architecture.unknown
-if platform.machine().endswith("64"):
-    DETECTED_ARCH = Architecture.x64
-elif platform.machine().endswith("arm"):
-    # TODO?
-    DETECTED_ARCH = Architecture.arm
-logger.info(f"Auto-detected architecture: {DETECTED_ARCH}")
-
-
-class System(Enum):
-    unknown = "unknown"
-    linux = "Linux"
-
-
-DETECTED_SYSTEM = System(platform.system())
-logger.info(f"Auto-detected system: {DETECTED_ARCH}")
-
-
-class OperatingSystem(Enum):
-    unknown = "unknown"
-    ubuntu2004 = "ubuntu2004"
-
-
-DETECTED_OS = "NONE"
-if DETECTED_SYSTEM == System.linux:
-    p_stdout = subprocess.check_output(["lsb_release", "-a"])
-    if p_stdout:
-        DETECTED_OS = p_stdout.decode("utf8").split("\n")[1].split(":")[1].strip()
-logger.info(f"Auto-detected OS: {DETECTED_OS}")
+KNOWN_TEMPLATES: T.Dict["Filename", T.Dict["Filename", jinja2.Template]] = dict()
+aux_d: T.Dict["Filename", jinja2.Template]
+for d in (d for d in Paths.TEMPLATE_DIR.iterdir() if d.is_dir()):
+    key = Filename(d.name.lower().strip())
+    aux_d = dict()
+    for f in (f for f in d.iterdir() if f.is_file() and f.suffix.lower() == ".j2"):
+        aux_d[Filename(f.stem)] = template_env.get_template(str(f.relative_to(Paths.TEMPLATE_DIR)))
+    KNOWN_TEMPLATES[key] = aux_d
+del aux_d
