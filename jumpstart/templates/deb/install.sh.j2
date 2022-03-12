@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+{% import 'macros.j2' as macros %}
+{{ macros.autotoken() }}
+
+URL={{src.url}}
+TEMPDIR=$(mktemp -d)
+
+sudo apt install -y curl \
+&& cd "${TEMPDIR}" \
+&& curl "${URL}" -o download.deb \
+&& sudo apt install download.deb
