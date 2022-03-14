@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=nmap",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "nmap"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "nmap"
+}

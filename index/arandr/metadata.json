@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=arandr",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "arandr"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "arandr"
+}

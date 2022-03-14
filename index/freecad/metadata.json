@@ -1,0 +1,21 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=freecad",
+  "template_params": {
+    "apt": {
+      "ppas": [
+        "freecad-maintainers/freecad-stable"
+      ],
+      "pkgs": [
+        "freecad",
+        "freecad-common",
+        "freecad-python3",
+        "git"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "freecad"
+}

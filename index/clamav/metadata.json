@@ -1,0 +1,17 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=clamav",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "clamav",
+        "clamav-daemon"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "clamav"
+}

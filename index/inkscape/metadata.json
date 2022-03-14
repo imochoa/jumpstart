@@ -1,0 +1,14 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=inkscape",
+  "template_params": {
+    "apt": null,
+    "deb": null,
+    "snap": {
+      "policy": "",
+      "pkg": "inkscape"
+    }
+  },
+  "name": "inkscape"
+}

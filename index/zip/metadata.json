@@ -1,0 +1,17 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=zip",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "unzip",
+        "zip"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "zip"
+}

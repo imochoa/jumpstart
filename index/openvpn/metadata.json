@@ -1,0 +1,18 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=openvpn",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "easy-rsa",
+        "network-manager-openvpn",
+        "openvpn"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "openvpn"
+}

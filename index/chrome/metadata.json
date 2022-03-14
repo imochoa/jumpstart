@@ -1,0 +1,17 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=chrome",
+  "template_params": {
+    "apt": null,
+    "deb": {
+      "src": {
+        "github": null,
+        "url_post_resolution": "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb",
+        "static_url": "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+      }
+    },
+    "snap": null
+  },
+  "name": "chrome"
+}

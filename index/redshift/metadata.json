@@ -1,0 +1,17 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=redshift",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "redshift",
+        "redshift-gtk"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "redshift"
+}

@@ -1,0 +1,20 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=materia-theme",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "gnome-themes-standard",
+        "gtk2-engines-murrine",
+        "libglib2.0-dev",
+        "libxml2-utils",
+        "materia-gtk-theme"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "materia-theme"
+}

@@ -1,0 +1,18 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=ssh",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "openssh-server",
+        "xauth",
+        "xcl"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "ssh"
+}

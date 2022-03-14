@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=gromit-mpx",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "gromit-mpx"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "gromit-mpx"
+}

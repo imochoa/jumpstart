@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=pygments",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "python3-pygments"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "pygments"
+}

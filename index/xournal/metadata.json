@@ -1,0 +1,18 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=xournal",
+  "template_params": {
+    "apt": {
+      "ppas": [
+        "andreasbutti/xournalpp-master"
+      ],
+      "pkgs": [
+        "xournalpp"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "xournal"
+}

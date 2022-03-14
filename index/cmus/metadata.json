@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=cmus",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "cmus"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "cmus"
+}

@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=tree",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "tree"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "tree"
+}

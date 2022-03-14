@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=ppa-purge",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "ppa-purge"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "ppa-purge"
+}

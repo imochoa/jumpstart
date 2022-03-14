@@ -1,0 +1,18 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=shutter",
+  "template_params": {
+    "apt": {
+      "ppas": [
+        "shutter/ppa"
+      ],
+      "pkgs": [
+        "shutter"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "shutter"
+}

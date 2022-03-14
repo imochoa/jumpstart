@@ -1,0 +1,31 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=i3-gaps",
+  "template_params": {
+    "apt": {
+      "ppas": [
+        "kgilmer/speed-ricer"
+      ],
+      "pkgs": [
+        "arandr",
+        "compton",
+        "feh",
+        "fonts-source-code-pro-ttf",
+        "htop",
+        "i3-gaps",
+        "i3-gaps-wm",
+        "i3-snapshot",
+        "i3blocks",
+        "lxappearance",
+        "moka-icon-theme",
+        "nordic",
+        "rofi",
+        "xbacklight"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "i3-gaps"
+}

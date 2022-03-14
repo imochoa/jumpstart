@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=pavucontrol",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "pavucontrol"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "pavucontrol"
+}

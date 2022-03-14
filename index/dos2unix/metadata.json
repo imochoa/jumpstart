@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=dos2unix",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "dos2unix"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "dos2unix"
+}

@@ -1,0 +1,18 @@
+{
+  "preference": [],
+  "tags": [
+    "fonts"
+  ],
+  "url": "https://www.google.com/search?q=fonts-powerline",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "fonts-powerline"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "fonts-powerline"
+}

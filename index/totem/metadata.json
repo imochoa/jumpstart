@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=totem",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "gstreamer1.0-libav"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "totem"
+}

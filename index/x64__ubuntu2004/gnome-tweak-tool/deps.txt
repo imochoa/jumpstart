@@ -1,2 +1,0 @@
-gnome-tweak-tool
-gnome-tweaks

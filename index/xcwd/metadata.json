@@ -1,0 +1,18 @@
+{
+  "preference": [],
+  "tags": [
+    "cwd"
+  ],
+  "url": "https://github.com/schischi/xcwd",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "xcwd"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "xcwd"
+}

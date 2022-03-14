@@ -1,0 +1,18 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=bashtop",
+  "template_params": {
+    "apt": {
+      "ppas": [
+        "bashtop-monitor/bashtop"
+      ],
+      "pkgs": [
+        "bashtop"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "bashtop"
+}

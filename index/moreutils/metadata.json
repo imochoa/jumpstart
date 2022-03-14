@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=parallel",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "moreutils"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "parallel"
+}

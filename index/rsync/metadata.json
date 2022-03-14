@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=rsync",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "rsync"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "rsync"
+}

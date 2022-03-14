@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=jq",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "jq"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "jq"
+}

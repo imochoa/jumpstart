@@ -1,0 +1,17 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=7zip",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "p7zip-full",
+        "p7zip-rar"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "7zip"
+}

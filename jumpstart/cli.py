@@ -20,7 +20,7 @@ def scan(
     dir: pathlib.Path = Paths.INDEX_DIR,
 ) -> None:
 
-    for component_dir in sorted(dir.rglob("x64__ubuntu2004/*")):
+    for component_dir in sorted(dir.iterdir()):
 
         if not component_dir.is_dir():
             continue

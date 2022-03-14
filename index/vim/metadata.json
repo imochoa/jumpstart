@@ -1,0 +1,18 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=vim",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "vim",
+        "vim-gtk",
+        "vim-tiny"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "vim"
+}

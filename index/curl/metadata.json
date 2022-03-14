@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=curl",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "curl"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "curl"
+}

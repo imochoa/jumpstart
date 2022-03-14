@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=blender",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "blender"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "blender"
+}

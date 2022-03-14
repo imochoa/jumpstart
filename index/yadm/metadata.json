@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=yadm",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "yadm"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "yadm"
+}

@@ -1,0 +1,18 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=networking",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "curl",
+        "iputils-ping",
+        "wget"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "networking"
+}

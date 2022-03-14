@@ -1,0 +1,26 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=i3",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "arandr",
+        "compton",
+        "feh",
+        "htop",
+        "i3",
+        "i3blocks",
+        "i3lock-fancy",
+        "lxappearance",
+        "rofi",
+        "suckless-tools",
+        "xbacklight"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "i3"
+}

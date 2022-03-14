@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=flameshot",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "flameshot"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "flameshot"
+}

@@ -1,5 +1,0 @@
-trash-cli
-xclip
-parallel
-bat
-fd-find

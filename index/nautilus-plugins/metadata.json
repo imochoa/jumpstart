@@ -1,0 +1,17 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=nautilus-plugins",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "filemanager-actions",
+        "nautilus-extension-gnome-terminal"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "nautilus-plugins"
+}

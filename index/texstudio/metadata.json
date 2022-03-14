@@ -1,0 +1,20 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=texstudio",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "texlive-fonts-extra",
+        "texlive-full",
+        "texlive-latex-extra",
+        "texlive-xetex",
+        "texstudio"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "texstudio"
+}

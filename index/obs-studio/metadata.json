@@ -1,0 +1,14 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=obs-studio",
+  "template_params": {
+    "apt": null,
+    "deb": null,
+    "snap": {
+      "policy": "",
+      "pkg": "obs-studio"
+    }
+  },
+  "name": "obs-studio"
+}

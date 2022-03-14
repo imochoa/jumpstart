@@ -1,0 +1,17 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=gitkraken",
+  "template_params": {
+    "apt": null,
+    "deb": {
+      "src": {
+        "github": null,
+        "url_post_resolution": "https://release.gitkraken.com/linux/gitkraken-amd64.deb",
+        "static_url": "https://release.gitkraken.com/linux/gitkraken-amd64.deb"
+      }
+    },
+    "snap": null
+  },
+  "name": "gitkraken"
+}

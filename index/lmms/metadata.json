@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=lmms",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "lmms"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "lmms"
+}

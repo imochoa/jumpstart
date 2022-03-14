@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=fd-find",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "fd-find"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "fd-find"
+}

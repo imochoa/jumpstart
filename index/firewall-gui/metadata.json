@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=firewall-gui",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "gufw"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "firewall-gui"
+}

@@ -1,0 +1,14 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=spotify",
+  "template_params": {
+    "apt": null,
+    "deb": null,
+    "snap": {
+      "policy": "--classic",
+      "pkg": "spotify"
+    }
+  },
+  "name": "spotify"
+}

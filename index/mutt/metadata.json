@@ -1,0 +1,16 @@
+{
+  "preference": [],
+  "tags": [],
+  "url": "https://www.google.com/search?q=mutt",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "mutt"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "mutt"
+}

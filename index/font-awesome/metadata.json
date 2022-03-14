@@ -1,0 +1,19 @@
+{
+  "preference": [],
+  "tags": [
+    "fonts"
+  ],
+  "url": "https://www.google.com/search?q=font-awesome",
+  "template_params": {
+    "apt": {
+      "ppas": [],
+      "pkgs": [
+        "fonts-font-awesome",
+        "fonts-noto-color-emoji"
+      ]
+    },
+    "deb": null,
+    "snap": null
+  },
+  "name": "font-awesome"
+}

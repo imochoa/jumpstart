@@ -1,3 +1,0 @@
-texstudio
-texlive-latex-extra
-texlive-xetex
