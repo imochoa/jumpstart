@@ -8,5 +8,5 @@ TEMPDIR=$(mktemp -d)
 
 sudo apt install -y curl \
 && cd "${TEMPDIR}" \
-&& curl "${URL}" -o download.deb \
-&& sudo apt install download.deb
+&& curl -L "${URL}" -o download.deb \
+&& sudo apt install ./download.deb
