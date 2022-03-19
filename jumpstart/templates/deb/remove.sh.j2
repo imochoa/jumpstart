@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+{% import 'macros.j2' as macros %}
+{{ macros.autotoken() }}
+
+sudo apt remove -y {{name}}
