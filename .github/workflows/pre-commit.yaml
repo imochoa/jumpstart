@@ -11,8 +11,8 @@ jobs:
     name: Run pre-commit
     runs-on: ubuntu-latest
     env:
-      CODE_DIR: ${{ github.workspace }}/jumpstart
-      VENV_DIR: ${{ github.workspace }}/jumpstart/venv
+      CODE_DIR: ${{ github.workspace }}
+      VENV_DIR: ${{ github.workspace }}/venv
 
     steps:
       - name: Blank slate
