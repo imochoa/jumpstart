@@ -21,8 +21,7 @@ jobs:
           mkdir -p "${{ github.workspace }}"
           rm -rf "${{ github.workspace }}"/*
 
-      - name: Give Access to the repo
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - name: Set up python venv
         shell: bash
