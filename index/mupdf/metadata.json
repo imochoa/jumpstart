@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "mupdf",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "mupdf"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=mupdf",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "mupdf"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "mupdf"
+  "tags": [],
+  "preference": []
 }

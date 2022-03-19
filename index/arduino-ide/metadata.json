@@ -1,14 +1,17 @@
 {
-  "preference": [],
-  "tags": [],
-  "url": "https://www.google.com/search?q=arduino-ide",
-  "template_params": {
-    "apt": null,
-    "deb": null,
-    "snap": {
-      "policy": "",
-      "pkg": "arduino"
+  "name": "arduino-ide",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "snap": {
+        "pkg": "arduino",
+        "policy": ""
+      }
     }
-  },
-  "name": "arduino-ide"
+  ],
+  "url": "https://www.google.com/search?q=arduino-ide",
+  "tags": [],
+  "preference": []
 }

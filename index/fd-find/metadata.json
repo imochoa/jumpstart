@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "fd-find",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "fd-find"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=fd-find",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "fd-find"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "fd-find"
+  "tags": [],
+  "preference": []
 }

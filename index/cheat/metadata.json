@@ -1,10 +1,1 @@
-{
-  "preference": [],
-  "name": "cheat",
-  "url": "https://www.google.com/search?q=cheat",
-  "template_params": {
-    "snap": null,
-    "apt": null
-  },
-  "tags": []
-}
+{"preference": [], "name": "cheat", "url": "https://www.google.com/search?q=cheat", "tags": [], "alternatives": [{"snap": null, "apt": null}]}

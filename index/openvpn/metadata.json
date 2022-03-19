@@ -1,18 +1,21 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "openvpn",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "easy-rsa",
+          "network-manager-openvpn",
+          "openvpn"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=openvpn",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "easy-rsa",
-        "network-manager-openvpn",
-        "openvpn"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "openvpn"
+  "tags": [],
+  "preference": []
 }

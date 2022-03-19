@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "software-properties-common",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "software-properties-common"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=software-properties-common",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "software-properties-common"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "software-properties-common"
+  "tags": [],
+  "preference": []
 }

@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "wget",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "wget"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=wget",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "wget"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "wget"
+  "tags": [],
+  "preference": []
 }

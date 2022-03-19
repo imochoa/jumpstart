@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "trash-cli",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "trash-cli"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=trash-cli",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "trash-cli"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "trash-cli"
+  "tags": [],
+  "preference": []
 }

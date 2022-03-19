@@ -1,17 +1,20 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "7zip",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "p7zip-full",
+          "p7zip-rar"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=7zip",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "p7zip-full",
-        "p7zip-rar"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "7zip"
+  "tags": [],
+  "preference": []
 }

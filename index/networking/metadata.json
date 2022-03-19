@@ -1,18 +1,21 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "networking",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "curl",
+          "iputils-ping",
+          "wget"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=networking",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "curl",
-        "iputils-ping",
-        "wget"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "networking"
+  "tags": [],
+  "preference": []
 }

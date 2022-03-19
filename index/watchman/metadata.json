@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "watchman",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "watchman"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=watchman",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "watchman"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "watchman"
+  "tags": [],
+  "preference": []
 }

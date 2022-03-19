@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "grsync",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "grsync"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=grsync",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "grsync"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "grsync"
+  "tags": [],
+  "preference": []
 }

@@ -1,20 +1,23 @@
 {
-  "preference": [],
+  "name": "imagemagick",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "imagemagick",
+          "ghostscript"
+        ],
+        "ppas": []
+      }
+    }
+  ],
+  "url": "https://www.google.com/search?q=imagemagick",
   "tags": [
     "Images",
     "Documents"
   ],
-  "url": "https://www.google.com/search?q=imagemagick",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "imagemagick",
-        "ghostscript"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "imagemagick"
+  "preference": []
 }

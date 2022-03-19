@@ -1,17 +1,20 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "exfat",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "exfat-fuse",
+          "exfat-utils"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=exfat",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "exfat-fuse",
-        "exfat-utils"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "exfat"
+  "tags": [],
+  "preference": []
 }

@@ -1,19 +1,22 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "virtualbox",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "virtualbox",
+          "virtualbox-dkms",
+          "virtualbox-ext-pack",
+          "virtualbox-guest-dkms"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=virtualbox",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "virtualbox",
-        "virtualbox-dkms",
-        "virtualbox-ext-pack",
-        "virtualbox-guest-dkms"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "virtualbox"
+  "tags": [],
+  "preference": []
 }

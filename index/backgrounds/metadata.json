@@ -1,7 +1,1 @@
-{
-    "name": "backgrounds",
-    "url": "https://www.google.com/search?q=backgrounds",
-    "tags": ["UI"],
-    "preference": [],
-    "template_params": {}
-}
+{"name": "backgrounds", "url": "https://www.google.com/search?q=backgrounds", "tags": ["UI"], "preference": [], "alternatives": [{}]}

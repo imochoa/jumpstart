@@ -1,20 +1,23 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "materia-theme",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "gnome-themes-standard",
+          "gtk2-engines-murrine",
+          "libglib2.0-dev",
+          "libxml2-utils",
+          "materia-gtk-theme"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=materia-theme",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "gnome-themes-standard",
-        "gtk2-engines-murrine",
-        "libglib2.0-dev",
-        "libxml2-utils",
-        "materia-gtk-theme"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "materia-theme"
+  "tags": [],
+  "preference": []
 }

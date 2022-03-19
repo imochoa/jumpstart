@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "java",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "default-jre"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=java",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "default-jre"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "java"
+  "tags": [],
+  "preference": []
 }

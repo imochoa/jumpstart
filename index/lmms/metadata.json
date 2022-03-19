@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "lmms",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "lmms"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=lmms",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "lmms"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "lmms"
+  "tags": [],
+  "preference": []
 }

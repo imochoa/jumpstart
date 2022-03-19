@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "firewall-gui",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "gufw"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=firewall-gui",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "gufw"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "firewall-gui"
+  "tags": [],
+  "preference": []
 }

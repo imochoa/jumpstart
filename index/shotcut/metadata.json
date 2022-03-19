@@ -1,14 +1,17 @@
 {
-  "preference": [],
-  "tags": [],
-  "url": "https://www.google.com/search?q=shotcut",
-  "template_params": {
-    "apt": null,
-    "deb": null,
-    "snap": {
-      "policy": "--classic",
-      "pkg": "shotcut"
+  "name": "shotcut",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "snap": {
+        "pkg": "shotcut",
+        "policy": "--classic"
+      }
     }
-  },
-  "name": "shotcut"
+  ],
+  "url": "https://www.google.com/search?q=shotcut",
+  "tags": [],
+  "preference": []
 }

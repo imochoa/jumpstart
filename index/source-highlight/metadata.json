@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "source-highlight",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "source-highlight"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=source-highlight",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "source-highlight"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "source-highlight"
+  "tags": [],
+  "preference": []
 }

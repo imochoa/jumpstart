@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "nvtop",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "nvtop"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=nvtop",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "nvtop"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "nvtop"
+  "tags": [],
+  "preference": []
 }

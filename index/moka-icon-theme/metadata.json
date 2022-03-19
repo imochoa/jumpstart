@@ -1,21 +1,24 @@
 {
-  "preference": [],
+  "name": "moka-icon-theme",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "moka-icon-theme"
+        ],
+        "ppas": [
+          "snwh/ppa"
+        ]
+      }
+    }
+  ],
+  "url": "https://www.google.com/search?q=moka-icon-theme",
   "tags": [
     "UI",
     "Theme"
   ],
-  "url": "https://www.google.com/search?q=moka-icon-theme",
-  "template_params": {
-    "apt": {
-      "ppas": [
-        "snwh/ppa"
-      ],
-      "pkgs": [
-        "moka-icon-theme"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "moka-icon-theme"
+  "preference": []
 }

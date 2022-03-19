@@ -1,14 +1,17 @@
 {
-  "preference": [],
-  "tags": [],
-  "url": "https://www.google.com/search?q=bpytop",
-  "template_params": {
-    "apt": null,
-    "deb": null,
-    "snap": {
-      "policy": "",
-      "pkg": "bpytop"
+  "name": "bpytop",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "snap": {
+        "pkg": "bpytop",
+        "policy": ""
+      }
     }
-  },
-  "name": "bpytop"
+  ],
+  "url": "https://www.google.com/search?q=bpytop",
+  "tags": [],
+  "preference": []
 }

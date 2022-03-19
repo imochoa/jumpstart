@@ -1,14 +1,17 @@
 {
-  "preference": [],
-  "tags": [],
-  "url": "https://www.google.com/search?q=inkscape",
-  "template_params": {
-    "apt": null,
-    "deb": null,
-    "snap": {
-      "policy": "",
-      "pkg": "inkscape"
+  "name": "inkscape",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "snap": {
+        "pkg": "inkscape",
+        "policy": ""
+      }
     }
-  },
-  "name": "inkscape"
+  ],
+  "url": "https://www.google.com/search?q=inkscape",
+  "tags": [],
+  "preference": []
 }

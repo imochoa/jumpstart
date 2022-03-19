@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "yadm",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "yadm"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=yadm",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "yadm"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "yadm"
+  "tags": [],
+  "preference": []
 }

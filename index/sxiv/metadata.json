@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "sxiv",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "sxiv"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=sxiv",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "sxiv"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "sxiv"
+  "tags": [],
+  "preference": []
 }

@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "disk-space",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "baobab"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=disk-space",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "baobab"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "disk-space"
+  "tags": [],
+  "preference": []
 }

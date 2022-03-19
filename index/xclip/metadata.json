@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "xclip",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "xclip"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=xclip",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "xclip"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "xclip"
+  "tags": [],
+  "preference": []
 }

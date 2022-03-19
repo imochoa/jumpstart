@@ -1,18 +1,21 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "peek",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "peek"
+        ],
+        "ppas": [
+          "peek-developers/stable"
+        ]
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=peek",
-  "template_params": {
-    "apt": {
-      "ppas": [
-        "peek-developers/stable"
-      ],
-      "pkgs": [
-        "peek"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "peek"
+  "tags": [],
+  "preference": []
 }

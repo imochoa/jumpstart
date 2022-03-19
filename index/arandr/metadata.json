@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "arandr",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "arandr"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=arandr",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "arandr"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "arandr"
+  "tags": [],
+  "preference": []
 }

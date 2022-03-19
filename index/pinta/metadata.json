@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "pinta",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "pinta"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=pinta",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "pinta"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "pinta"
+  "tags": [],
+  "preference": []
 }

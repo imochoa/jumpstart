@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "dmenu",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "suckless-tools"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=dmenu",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "suckless-tools"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "dmenu"
+  "tags": [],
+  "preference": []
 }

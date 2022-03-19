@@ -1,17 +1,21 @@
 {
-  "preference": [],
-  "tags": [],
-  "url": "https://www.google.com/search?q=gitkraken",
-  "template_params": {
-    "apt": null,
-    "deb": {
-      "src": {
-        "github": null,
-        "url_post_resolution": "https://release.gitkraken.com/linux/gitkraken-amd64.deb",
-        "static_url": "https://release.gitkraken.com/linux/gitkraken-amd64.deb"
+  "name": "gitkraken",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "deb": {
+        "src": {
+          "static_url": "https://release.gitkraken.com/linux/gitkraken-amd64.deb",
+          "github": null,
+          "url_post_resolution": "https://release.gitkraken.com/linux/gitkraken-amd64.deb"
+        },
+        "name": "gitkraken"
       }
-    },
-    "snap": null
-  },
-  "name": "gitkraken"
+    }
+  ],
+  "url": "https://www.google.com/search?q=gitkraken",
+  "tags": [],
+  "preference": []
 }

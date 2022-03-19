@@ -1,18 +1,21 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "bashtop",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "bashtop"
+        ],
+        "ppas": [
+          "bashtop-monitor/bashtop"
+        ]
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=bashtop",
-  "template_params": {
-    "apt": {
-      "ppas": [
-        "bashtop-monitor/bashtop"
-      ],
-      "pkgs": [
-        "bashtop"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "bashtop"
+  "tags": [],
+  "preference": []
 }

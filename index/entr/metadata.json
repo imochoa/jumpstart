@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "entr",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "entr"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=entr",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "entr"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "entr"
+  "tags": [],
+  "preference": []
 }

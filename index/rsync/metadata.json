@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "rsync",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "rsync"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=rsync",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "rsync"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "rsync"
+  "tags": [],
+  "preference": []
 }

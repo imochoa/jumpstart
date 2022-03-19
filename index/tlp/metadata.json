@@ -1,20 +1,23 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "tlp",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "tlp",
+          "tlp-rdw",
+          "tlpui"
+        ],
+        "ppas": [
+          "linuxuprising/apps"
+        ]
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=tlp",
-  "template_params": {
-    "apt": {
-      "ppas": [
-        "linuxuprising/apps"
-      ],
-      "pkgs": [
-        "tlp",
-        "tlp-rdw",
-        "tlpui"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "tlp"
+  "tags": [],
+  "preference": []
 }

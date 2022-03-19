@@ -1,14 +1,17 @@
 {
-  "preference": [],
-  "tags": [],
-  "url": "https://www.google.com/search?q=pycharm-professional",
-  "template_params": {
-    "apt": null,
-    "deb": null,
-    "snap": {
-      "policy": "--classic",
-      "pkg": "pycharm-professional"
+  "name": "pycharm-professional",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "snap": {
+        "pkg": "pycharm-professional",
+        "policy": "--classic"
+      }
     }
-  },
-  "name": "pycharm-professional"
+  ],
+  "url": "https://www.google.com/search?q=pycharm-professional",
+  "tags": [],
+  "preference": []
 }

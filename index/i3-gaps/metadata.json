@@ -1,31 +1,34 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "i3-gaps",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "arandr",
+          "compton",
+          "feh",
+          "fonts-source-code-pro-ttf",
+          "htop",
+          "i3-gaps",
+          "i3-gaps-wm",
+          "i3-snapshot",
+          "i3blocks",
+          "lxappearance",
+          "moka-icon-theme",
+          "nordic",
+          "rofi",
+          "xbacklight"
+        ],
+        "ppas": [
+          "kgilmer/speed-ricer"
+        ]
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=i3-gaps",
-  "template_params": {
-    "apt": {
-      "ppas": [
-        "kgilmer/speed-ricer"
-      ],
-      "pkgs": [
-        "arandr",
-        "compton",
-        "feh",
-        "fonts-source-code-pro-ttf",
-        "htop",
-        "i3-gaps",
-        "i3-gaps-wm",
-        "i3-snapshot",
-        "i3blocks",
-        "lxappearance",
-        "moka-icon-theme",
-        "nordic",
-        "rofi",
-        "xbacklight"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "i3-gaps"
+  "tags": [],
+  "preference": []
 }

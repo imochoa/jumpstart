@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "gparted",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "gparted"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=gparted",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "gparted"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "gparted"
+  "tags": [],
+  "preference": []
 }

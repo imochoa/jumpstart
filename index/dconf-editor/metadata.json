@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "dconf-editor",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "dconf-editor"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=dconf-editor",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "dconf-editor"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "dconf-editor"
+  "tags": [],
+  "preference": []
 }

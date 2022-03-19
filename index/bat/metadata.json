@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "bat",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "bat"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=bat",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "bat"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "bat"
+  "tags": [],
+  "preference": []
 }

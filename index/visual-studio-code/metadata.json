@@ -1,14 +1,17 @@
 {
-  "preference": [],
-  "tags": [],
-  "url": "https://www.google.com/search?q=visual-studio-code",
-  "template_params": {
-    "apt": null,
-    "deb": null,
-    "snap": {
-      "policy": "--classic",
-      "pkg": "code"
+  "name": "visual-studio-code",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "snap": {
+        "pkg": "code",
+        "policy": "--classic"
+      }
     }
-  },
-  "name": "visual-studio-code"
+  ],
+  "url": "https://www.google.com/search?q=visual-studio-code",
+  "tags": [],
+  "preference": []
 }

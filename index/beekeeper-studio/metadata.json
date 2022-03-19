@@ -1,14 +1,17 @@
 {
-  "preference": [],
-  "tags": [],
-  "url": "https://www.google.com/search?q=beekeeper-studio",
-  "template_params": {
-    "apt": null,
-    "deb": null,
-    "snap": {
-      "policy": "",
-      "pkg": "beekeeper-studio"
+  "name": "beekeeper-studio",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "snap": {
+        "pkg": "beekeeper-studio",
+        "policy": ""
+      }
     }
-  },
-  "name": "beekeeper-studio"
+  ],
+  "url": "https://www.google.com/search?q=beekeeper-studio",
+  "tags": [],
+  "preference": []
 }

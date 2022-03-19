@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "pavucontrol",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "pavucontrol"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=pavucontrol",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "pavucontrol"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "pavucontrol"
+  "tags": [],
+  "preference": []
 }

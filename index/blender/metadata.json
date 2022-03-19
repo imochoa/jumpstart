@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "blender",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "blender"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=blender",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "blender"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "blender"
+  "tags": [],
+  "preference": []
 }

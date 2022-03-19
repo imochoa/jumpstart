@@ -1,14 +1,17 @@
 {
-  "preference": [],
-  "tags": [],
-  "url": "https://www.google.com/search?q=TerminalImageViewer",
-  "template_params": {
-    "apt": null,
-    "deb": null,
-    "snap": {
-      "policy": "--edge",
-      "pkg": "tiv"
+  "name": "TerminalImageViewer",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "snap": {
+        "pkg": "tiv",
+        "policy": "--edge"
+      }
     }
-  },
-  "name": "TerminalImageViewer"
+  ],
+  "url": "https://www.google.com/search?q=TerminalImageViewer",
+  "tags": [],
+  "preference": []
 }

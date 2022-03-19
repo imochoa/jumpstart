@@ -1,14 +1,17 @@
 {
-  "preference": [],
-  "tags": [],
-  "url": "https://www.google.com/search?q=spotify",
-  "template_params": {
-    "apt": null,
-    "deb": null,
-    "snap": {
-      "policy": "--classic",
-      "pkg": "spotify"
+  "name": "spotify",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "snap": {
+        "pkg": "spotify",
+        "policy": "--classic"
+      }
     }
-  },
-  "name": "spotify"
+  ],
+  "url": "https://www.google.com/search?q=spotify",
+  "tags": [],
+  "preference": []
 }

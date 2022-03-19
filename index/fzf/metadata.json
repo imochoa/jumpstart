@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "fzf",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "fzf"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=fzf",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "fzf"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "fzf"
+  "tags": [],
+  "preference": []
 }

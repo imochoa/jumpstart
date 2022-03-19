@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "nmap",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "nmap"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=nmap",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "nmap"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "nmap"
+  "tags": [],
+  "preference": []
 }

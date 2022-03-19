@@ -1,18 +1,21 @@
 {
-  "preference": [],
+  "name": "vlc",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "vlc"
+        ],
+        "ppas": []
+      }
+    }
+  ],
+  "url": "https://www.google.com/search?q=vlc",
   "tags": [
     "Media"
   ],
-  "url": "https://www.google.com/search?q=vlc",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "vlc"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "vlc"
+  "preference": []
 }

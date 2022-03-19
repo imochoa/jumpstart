@@ -1,18 +1,21 @@
 {
-  "preference": [],
+  "name": "fonts-powerline",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "fonts-powerline"
+        ],
+        "ppas": []
+      }
+    }
+  ],
+  "url": "https://www.google.com/search?q=fonts-powerline",
   "tags": [
     "fonts"
   ],
-  "url": "https://www.google.com/search?q=fonts-powerline",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "fonts-powerline"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "fonts-powerline"
+  "preference": []
 }

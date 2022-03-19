@@ -1,7 +1,1 @@
-{
-    "name": "alacritty",
-    "url": "https://www.google.com/search?q=alacritty",
-    "tags": [],
-    "preference": [],
-    "template_params": {}
-}
+{"name": "alacritty", "url": "https://www.google.com/search?q=alacritty", "tags": [], "preference": [], "alternatives": [{}]}

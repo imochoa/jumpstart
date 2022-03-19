@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "tmux",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "tmux"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=tmux",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "tmux"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "tmux"
+  "tags": [],
+  "preference": []
 }

@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "totem",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "gstreamer1.0-libav"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=totem",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "gstreamer1.0-libav"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "totem"
+  "tags": [],
+  "preference": []
 }

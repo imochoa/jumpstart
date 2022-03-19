@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "dunst",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "dunst"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=dunst",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "dunst"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "dunst"
+  "tags": [],
+  "preference": []
 }

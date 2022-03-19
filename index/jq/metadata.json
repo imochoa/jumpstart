@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "jq",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "jq"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=jq",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "jq"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "jq"
+  "tags": [],
+  "preference": []
 }

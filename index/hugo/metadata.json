@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "hugo",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "hugo"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=hugo",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "hugo"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "hugo"
+  "tags": [],
+  "preference": []
 }

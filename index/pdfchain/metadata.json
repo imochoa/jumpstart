@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "pdfchain",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "pdfchain"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=pdfchain",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "pdfchain"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "pdfchain"
+  "tags": [],
+  "preference": []
 }

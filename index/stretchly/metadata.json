@@ -1,14 +1,17 @@
 {
-  "preference": [],
-  "tags": [],
-  "url": "https://www.google.com/search?q=stretchly",
-  "template_params": {
-    "apt": null,
-    "deb": null,
-    "snap": {
-      "policy": "",
-      "pkg": "stretchly"
+  "name": "stretchly",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "snap": {
+        "pkg": "stretchly",
+        "policy": ""
+      }
     }
-  },
-  "name": "stretchly"
+  ],
+  "url": "https://www.google.com/search?q=stretchly",
+  "tags": [],
+  "preference": []
 }

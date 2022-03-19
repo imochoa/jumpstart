@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "checkinstall",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "checkinstall"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=checkinstall",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "checkinstall"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "checkinstall"
+  "tags": [],
+  "preference": []
 }

@@ -1,14 +1,17 @@
 {
-  "preference": [],
-  "tags": [],
-  "url": "https://www.google.com/search?q=cpod",
-  "template_params": {
-    "apt": null,
-    "deb": null,
-    "snap": {
-      "policy": "",
-      "pkg": "cumulonimbus"
+  "name": "cpod",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "snap": {
+        "pkg": "cumulonimbus",
+        "policy": ""
+      }
     }
-  },
-  "name": "cpod"
+  ],
+  "url": "https://www.google.com/search?q=cpod",
+  "tags": [],
+  "preference": []
 }

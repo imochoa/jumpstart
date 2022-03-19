@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "nomacs",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "nomacs"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=nomacs",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "nomacs"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "nomacs"
+  "tags": [],
+  "preference": []
 }

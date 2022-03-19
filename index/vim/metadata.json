@@ -1,18 +1,21 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "vim",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "vim",
+          "vim-gtk",
+          "vim-tiny"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=vim",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "vim",
-        "vim-gtk",
-        "vim-tiny"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "vim"
+  "tags": [],
+  "preference": []
 }

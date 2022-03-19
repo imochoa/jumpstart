@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "mutt",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "mutt"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=mutt",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "mutt"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "mutt"
+  "tags": [],
+  "preference": []
 }

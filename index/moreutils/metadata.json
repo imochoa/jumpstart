@@ -1,16 +1,19 @@
 {
-  "preference": [],
-  "tags": [],
+  "name": "parallel",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      },
+      "apt": {
+        "pkgs": [
+          "moreutils"
+        ],
+        "ppas": []
+      }
+    }
+  ],
   "url": "https://www.google.com/search?q=parallel",
-  "template_params": {
-    "apt": {
-      "ppas": [],
-      "pkgs": [
-        "moreutils"
-      ]
-    },
-    "deb": null,
-    "snap": null
-  },
-  "name": "parallel"
+  "tags": [],
+  "preference": []
 }
