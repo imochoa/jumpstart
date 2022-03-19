@@ -21,6 +21,27 @@ DOCKER_CODE_DIR := /home/repo
 DOCKER_VENV_DIR  := /home/venv
 DOCKER_PYTHON := ${DOCKER_VENV_DIR}/bin/python
 
+# Docker args (DARGS)
+INTERACTIVE_DARG := $(shell [ ${INTERACTIVE} -eq 1 ] && echo "-it" || echo "")
+PROGRESS_DARG := $(shell [ ${INTERACTIVE} -eq 1 ] && echo "--progress=tty" || echo "--progress=plain")
+
+## Auto variables
+#LAST_IMG := $(shell docker images ${IMGNAME} --format "{{.Tag}}" | head -n1 | xargs -I{} echo "${IMGNAME}:{}")
+
+# Docker paths
+CODE_DIR := /src
+VENV_DIR  := /venv
+PYTHON := ${VENV_DIR}/bin/python
+
+.PHONY: build-ubuntu-20.04
+build-ubuntu-20.04:
+	docker build                                    \
+		-f ${PROVISION_DIR}/Dockerfile-ubuntu-20.04 \
+		-t jumpstart/ubuntu-2004:${COMMIT_HASH}     \
+		${PROGRESS_DARG}                            \
+		"${REPO_DIR}"
+
+
 # -------------------------------------------------------------------------------- #
 # BUILDING
 # -------------------------------------------------------------------------------- #

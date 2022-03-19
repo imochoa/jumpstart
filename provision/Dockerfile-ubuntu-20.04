@@ -1,0 +1,39 @@
+FROM ubuntu:20.04
+
+
+# Basic OS setup
+ARG TINI_VERSION='v0.19.0'
+ARG TINI_URL=https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini
+ENV DEBIAN_FRONTEND=noninteractive
+ARG VENV=/venv
+RUN  apt-get update               \
+    && apt-get upgrade            \
+    --no-install-recommends -y    \
+    && apt-get install -y         \
+        git                       \
+        python3                   \
+        python3.8-venv            \
+        curl                      \
+    && curl -L "${TINI_URL}" -o /usr/local/bin/tini \
+    && chmod +x /usr/local/bin/tini                 \
+    && mkdir -p "${VENV}"                           \
+    && python3 -m venv "${VENV}"                    \
+    && "${VENV}/bin/pip" install --upgrade pip setuptools wheel
+
+
+# Python setup
+ARG CODE_DIR=/src
+COPY . "${CODE_DIR}"
+
+# Set up 
+RUN "${VENV}/bin/pip" install -e "${CODE_DIR}" \
+    && "${VENV}/bin/pip" install -r "${CODE_DIR}"/requirements-dev.txt \
+    && cd "${CODE_DIR}" && "${VENV}/bin/pre-commit" install
+
+# RUN cd "${CODE_DIR}" && "${VENV}/bin/pre-commit" run -a
+
+# Run
+ENTRYPOINT ["tini", "--"]
+CMD ["/bin/bash"]
+
+# vim:set ft=dockerfile:
