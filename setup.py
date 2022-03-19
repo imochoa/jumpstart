@@ -4,7 +4,7 @@
 from distutils.core import setup
 import pathlib
 
-REPO_DIR = pathlib.Path(__file__).absolute()
+REPO_DIR = pathlib.Path(__file__).absolute().parent
 with open(str(REPO_DIR / "requirements.txt")) as f:
     requirements = [line.strip() for line in f.read().splitlines()]
     requirements = [line for line in requirements if not line.startswith("#")]
@@ -26,5 +26,5 @@ setup(
         ],
     },
     license="MIT",
-    # install_requires=requirements,
+    install_requires=requirements,
 )

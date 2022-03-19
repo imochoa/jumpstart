@@ -1,8 +1,6 @@
-boto3
 pre-commit
 pytest
 pytest-icdiff
 pytest-print
 pytest-sugar
 pytest-xdist
-tox
