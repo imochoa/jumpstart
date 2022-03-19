@@ -32,6 +32,6 @@ class AltParams:
         ordered = True
 
     @ma.post_dump
-    def remove_skip_values(self, data, **kwargs):
+    def remove_skip_values(self: "AltParams", data: T.Dict[str, T.Any], **kwargs: T.Any) -> T.Dict[str, T.Any]:
         """Ignore empty fields"""
         return {key: value for key, value in data.items() if value is not None}

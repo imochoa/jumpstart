@@ -12,10 +12,7 @@ import jinja2
 from loguru import logger
 
 # 1st party imports
-from jumpstart.constants import (
-    KNOWN_TEMPLATES,
-    Filename,
-)
+from jumpstart.constants import KNOWN_TEMPLATES, Filename
 from jumpstart.metadata_schema import Metadata
 from jumpstart.metadata_schema.sys_context import SystemContext
 
@@ -60,7 +57,6 @@ class Component:
     root_dir: pathlib.Path
     alternatives: T.List["Alternative"] = field(default_factory=list)
 
-
     @classmethod
     def from_path(cls: T.Type["Component"], p: pathlib.Path) -> "Component":
 
@@ -81,13 +77,12 @@ class Component:
 
                 # Any alternatives with these keys will receive them from "metadata.json" unless they overwrite it
                 DEFAULT_MAP = dict(name=metadata.name)
-                for k,v in DEFAULT_MAP.items():
+                for k, v in DEFAULT_MAP.items():
                     try:
-                        if not getattr(params,k):
-                            setattr(params,k,v)
+                        if not getattr(params, k):
+                            setattr(params, k, v)
                     except AttributeError:
                         continue
-
 
                 alternatives.append(
                     Alternative(

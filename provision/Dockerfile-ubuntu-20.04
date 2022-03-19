@@ -25,7 +25,7 @@ RUN  apt-get update               \
 ARG CODE_DIR=/src
 COPY . "${CODE_DIR}"
 
-# Set up 
+# Set up
 RUN "${VENV}/bin/pip" install -e "${CODE_DIR}" \
     && "${VENV}/bin/pip" install -r "${CODE_DIR}"/requirements-dev.txt \
     && cd "${CODE_DIR}" && "${VENV}/bin/pre-commit" install
