@@ -8,11 +8,11 @@ on:
 
 jobs:
   setup:
-    name: Set up Pre-commit
+    name: Run pre-commit
     runs-on: ubuntu-latest
     env:
-      CODE_DIR: ${{ github.workspace }}/${{ github.repository }}
-      VENV_DIR: ${{ github.workspace }}/${{ github.repository }}/venv
+      CODE_DIR: ${{ github.workspace }}/jumpstart
+      VENV_DIR: ${{ github.workspace }}/jumpstart/venv
 
     steps:
       - name: Blank slate
