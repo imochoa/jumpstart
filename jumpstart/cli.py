@@ -32,6 +32,14 @@ def scan(
         # if not component.metadata.template_params:
         #     logger.warning(component.metadata.name)
         #     continue
+        # import json
+        # with open(component_dir/'metadata.json') as fp:
+        #     obj = json.load(fp)
+        # if 'template_params' in obj:
+        #     # obj['install_opts'] = [{"system": {"platform": "linux"}, **obj['template_params']}]
+        #     obj['alternatives'] = [obj.pop('template_params')]
+        #     with open(component_dir/'metadata.json','w') as fp:
+        #         json.dump(obj,fp)
 
         if not component.alternatives:
             logger.warning(component.metadata.name)
