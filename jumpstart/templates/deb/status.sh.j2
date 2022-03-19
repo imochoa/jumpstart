@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+{% import 'macros.j2' as macros %}
+{{ macros.autotoken() }}
+
+missing=0;
+{#
+Previous approach
+if $(apt list --installed '{{name}}' | grep -q "\[installed\]")
+Now trying
+#}
+
+if [ ! -z $(apt-cache pkgnames | grep '{{name}}') ];
+then
+    echo "[{{ "{:>40}".format(name)  }}] -> [installed!]";
+else
+    echo "[{{ "{:>40}".format(name)  }}] -> [NOT installed!]";
+    missing=1;
+fi

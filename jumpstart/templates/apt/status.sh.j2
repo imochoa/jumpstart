@@ -7,7 +7,7 @@
 missing=0;
 
 {% for p in pkgs -%}
-    if $(apt list --installed '{{p}}' | grep -q "\[installed\]")
+    if [ ! -z $(apt-cache pkgnames | grep '{{p}}') ];
     then
         echo "[{{ "{:>40}".format(p)  }}] -> [installed!]";
     else
