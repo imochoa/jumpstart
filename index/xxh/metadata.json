@@ -1,6 +1,7 @@
 {
-    "name": "xxh",
-    "url": "https://www.google.com/search?q=xxh",
-    "tags": [],
-    "preference": []
+  "name": "xxh",
+  "alternatives": [],
+  "url": "https://www.google.com/search?q=xxh",
+  "tags": [],
+  "preference": []
 }

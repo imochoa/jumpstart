@@ -1,1 +1,15 @@
-{"name": "bash", "url": "", "tags": [""], "preference": [], "alternatives": [{}]}
+{
+  "name": "bash",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      }
+    }
+  ],
+  "url": "https://www.google.com/search?q=bash",
+  "tags": [
+    ""
+  ],
+  "preference": []
+}

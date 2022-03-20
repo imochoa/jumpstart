@@ -1,1 +1,13 @@
-{"name": "zsh", "url": "https://www.google.com/search?q=zsh", "tags": [], "preference": [], "alternatives": [{}]}
+{
+  "name": "zsh",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      }
+    }
+  ],
+  "url": "https://www.google.com/search?q=zsh",
+  "tags": [],
+  "preference": []
+}

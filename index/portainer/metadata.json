@@ -1,6 +1,7 @@
 {
-    "name": "portainer",
-    "url": "https://www.google.com/search?q=portainer",
-    "tags": [],
-    "preference": []
+  "name": "portainer",
+  "alternatives": [],
+  "url": "https://www.google.com/search?q=portainer",
+  "tags": [],
+  "preference": []
 }

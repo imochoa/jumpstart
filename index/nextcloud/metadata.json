@@ -1,6 +1,7 @@
 {
-    "name": "nextcloud",
-    "url": "https://www.google.com/search?q=nextcloud",
-    "tags": [],
-    "preference": []
+  "name": "nextcloud",
+  "alternatives": [],
+  "url": "https://www.google.com/search?q=nextcloud",
+  "tags": [],
+  "preference": []
 }

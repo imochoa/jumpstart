@@ -1,6 +1,9 @@
 {
-    "name": "GitHub Desktop",
-    "url": "https://desktop.github.com/",
-    "tags": ["VCS"],
-    "preference": []
+  "name": "GitHub Desktop",
+  "alternatives": [],
+  "url": "https://desktop.github.com/",
+  "tags": [
+    "VCS"
+  ],
+  "preference": []
 }

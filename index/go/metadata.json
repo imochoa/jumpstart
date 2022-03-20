@@ -1,6 +1,7 @@
 {
-    "name": "go",
-    "url": "https://www.google.com/search?q=go",
-    "tags": [],
-    "preference": []
+  "name": "go",
+  "alternatives": [],
+  "url": "https://www.google.com/search?q=go",
+  "tags": [],
+  "preference": []
 }

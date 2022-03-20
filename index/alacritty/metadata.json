@@ -1,1 +1,13 @@
-{"name": "alacritty", "url": "https://www.google.com/search?q=alacritty", "tags": [], "preference": [], "alternatives": [{}]}
+{
+  "name": "alacritty",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      }
+    }
+  ],
+  "url": "https://www.google.com/search?q=alacritty",
+  "tags": [],
+  "preference": []
+}

@@ -1,6 +1,7 @@
 {
-    "name": "neovim",
-    "url": "https://www.google.com/search?q=neovim",
-    "tags": [],
-    "preference": []
+  "name": "neovim",
+  "alternatives": [],
+  "url": "https://www.google.com/search?q=neovim",
+  "tags": [],
+  "preference": []
 }

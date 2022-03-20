@@ -1,6 +1,7 @@
 {
-    "name": "nodejs",
-    "url": "https://www.google.com/search?q=nodejs",
-    "tags": [],
-    "preference": []
+  "name": "nodejs",
+  "alternatives": [],
+  "url": "https://www.google.com/search?q=nodejs",
+  "tags": [],
+  "preference": []
 }

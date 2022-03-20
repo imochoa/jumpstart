@@ -1,6 +1,7 @@
 {
-    "name": "whoogle",
-    "url": "https://www.google.com/search?q=whoogle",
-    "tags": [],
-    "preference": []
+  "name": "whoogle",
+  "alternatives": [],
+  "url": "https://www.google.com/search?q=whoogle",
+  "tags": [],
+  "preference": []
 }

@@ -1,1 +1,15 @@
-{"name": "calibre", "url": "https://www.google.com/search?q=calibre", "tags": ["ebooks"], "preference": [], "alternatives": [{}]}
+{
+  "name": "calibre",
+  "alternatives": [
+    {
+      "system": {
+        "platform": "linux"
+      }
+    }
+  ],
+  "url": "https://www.google.com/search?q=calibre",
+  "tags": [
+    "ebooks"
+  ],
+  "preference": []
+}
