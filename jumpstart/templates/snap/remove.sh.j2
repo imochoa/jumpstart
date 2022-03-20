@@ -3,6 +3,4 @@
 {% import 'macros.j2' as macros %}
 {{ macros.autotoken() }}
 
-{% for p in pkgs -%}
-sudo snap remove {{p}}
-{% endfor -%}
+sudo snap remove {{pkg}}
