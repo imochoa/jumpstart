@@ -41,6 +41,10 @@ build-ubuntu-20.04:
 		${PROGRESS_DARG}                            \
 		"${REPO_DIR}"
 
+.PHONY: build
+build: build-ubuntu-20.04
+	printf "done!\n"
+
 
 # -------------------------------------------------------------------------------- #
 # BUILDING

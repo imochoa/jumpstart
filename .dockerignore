@@ -1,5 +1,7 @@
 .mypy_cache
 *.egg-info
 venv
+build
 provision
+Makefile
 !.git
