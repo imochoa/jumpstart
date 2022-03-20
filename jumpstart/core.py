@@ -58,7 +58,7 @@ class Component:
     alternatives: T.List["Alternative"] = field(default_factory=list)
 
     @classmethod
-    def from_path(cls: T.Type["Component"], p: pathlib.Path) -> "Component":
+    def from_component_dir(cls: T.Type["Component"], p: pathlib.Path) -> "Component":
 
         metadata = Metadata.from_path(p)
         root_dir = metadata.json_path.parent  # type: ignore [attr-defined]
@@ -98,6 +98,32 @@ class Component:
             root_dir=root_dir,
             alternatives=alternatives,
         )
+
+    @classmethod
+    def from_index_dir(
+        cls: T.Type["Component"],
+        p: pathlib.Path,
+        debug: bool = False,
+    ) -> T.List["Component"]:
+        out_list: T.List["Component"] = []
+
+        for component_dir in sorted(p.iterdir()):
+
+            if not component_dir.is_dir():
+                continue
+
+            component = Component.from_component_dir(component_dir)
+            out_list.append(component)
+
+            if debug:
+                if not component.alternatives:
+                    logger.warning(component.metadata.name)
+                    continue
+                logger.info(component.metadata.name)
+                logger.info([type(a).__name__ for a in component.alternatives])
+            # component.render_templates()
+            # component.metadata.to_path(component.metadata.json_path)  # type: ignore [arg-type]
+        return out_list
 
     def render_templates(self: T.Any) -> None:
         for alt in self.alternatives:

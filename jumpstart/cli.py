@@ -15,44 +15,40 @@ from jumpstart.core import Component
 app = typer.Typer()
 
 
-@app.command()  # type: ignore [misc]
+@app.command("scan")  # type: ignore [misc]
 def scan(
     dir: pathlib.Path = Paths.INDEX_DIR,
+    debug: bool = False,
 ) -> None:
 
-    for component_dir in sorted(dir.iterdir()):
+    all_components = Component.from_index_dir(
+        dir,
+        debug=debug,
+    )
 
-        if not component_dir.is_dir():
-            continue
-
-        logger.info(component_dir)
-
-        component = Component.from_path(component_dir)
-
-        # if not component.metadata.template_params:
-        #     logger.warning(component.metadata.name)
-        #     continue
-        # import json
-        # with open(component_dir/'metadata.json') as fp:
-        #     obj = json.load(fp)
-        # if 'template_params' in obj:
-        #     # obj['install_opts'] = [{"system": {"platform": "linux"}, **obj['template_params']}]
-        #     obj['alternatives'] = [obj.pop('template_params')]
-        #     with open(component_dir/'metadata.json','w') as fp:
-        #         json.dump(obj,fp)
-
-        if not component.alternatives:
-            logger.warning(component.metadata.name)
-            continue
-        logger.info(component.metadata.name)
-        logger.info([type(a).__name__ for a in component.alternatives])
+    for component in all_components:
         component.render_templates()
         component.metadata.to_path(component.metadata.json_path)  # type: ignore [arg-type]
 
-    # typer.echo(typer.style(message, fg=rich.color.RE_COLOR))
+
+@app.command("list")  # type: ignore [misc]
+def list(
+    dir: pathlib.Path = Paths.INDEX_DIR,
+    debug: bool = False,
+) -> None:
+    all_components = Component.from_index_dir(
+        dir,
+        debug=debug,
+    )
+
+    for component in all_components:
+        component.render_templates()
+        component.metadata.to_path(component.metadata.json_path)  # type: ignore [arg-type]
 
 
-# https://stribny.name/blog/2020/01/building-command-line-interfaces-in-python/
+def main() -> None:
+    app()
+
 
 if __name__ == "__main__":
-    app()
+    main()
