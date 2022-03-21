@@ -39,11 +39,11 @@ ENV RUNLEVEL=1
 
 # Python setup
 ARG CODE_DIR=/src
-COPY ./python-source "${CODE_DIR}"
+COPY . "${CODE_DIR}"
 
 # Set up
-RUN "${VENV}/bin/pip" install -e "${CODE_DIR}" \
-    && "${VENV}/bin/pip" install -r "${CODE_DIR}"/requirements-dev.txt \
+RUN "${VENV}/bin/pip" install -e "${CODE_DIR}/python-source" \
+    && "${VENV}/bin/pip" install -r "${CODE_DIR}/python-source/requirements-dev.txt" \
     && cd "${CODE_DIR}" && "${VENV}/bin/pre-commit" install
 
 # RUN cd "${CODE_DIR}" && "${VENV}/bin/pre-commit" run -a
