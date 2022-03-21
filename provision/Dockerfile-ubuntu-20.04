@@ -39,7 +39,7 @@ ENV RUNLEVEL=1
 
 # Python setup
 ARG CODE_DIR=/src
-COPY . "${CODE_DIR}"
+COPY ./python-source "${CODE_DIR}"
 
 # Set up
 RUN "${VENV}/bin/pip" install -e "${CODE_DIR}" \
