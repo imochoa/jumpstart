@@ -7,9 +7,9 @@
       },
       "deb": {
         "src": {
-          "static_url": "https://release.gitkraken.com/linux/gitkraken-amd64.deb",
+          "url_post_resolution": "https://release.gitkraken.com/linux/gitkraken-amd64.deb",
           "github": null,
-          "url_post_resolution": "https://release.gitkraken.com/linux/gitkraken-amd64.deb"
+          "static_url": "https://release.gitkraken.com/linux/gitkraken-amd64.deb"
         },
         "name": "gitkraken"
       }
