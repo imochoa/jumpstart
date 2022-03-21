@@ -21,12 +21,10 @@ def scan(
     debug: bool = False,
 ) -> None:
 
-    all_components = Component.from_index_dir(
+    for component in Component.from_index_dir(
         dir,
         debug=debug,
-    )
-
-    for component in all_components:
+    ):
         component.render_templates()
         component.metadata.to_path(component.metadata.json_path)  # type: ignore [arg-type]
 

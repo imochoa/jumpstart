@@ -103,8 +103,12 @@ class Component:
     def from_index_dir(
         cls: T.Type["Component"],
         p: pathlib.Path,
+        sys_context: T.Optional[SystemContext] = None,
         debug: bool = False,
     ) -> T.List["Component"]:
+        """
+        If *sys_context*, filter the alternatives compatible with it. What happens to empty lists?
+        """
         out_list: T.List["Component"] = []
 
         for component_dir in sorted(p.iterdir()):
