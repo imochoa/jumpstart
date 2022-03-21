@@ -12,7 +12,8 @@ import jinja2
 
 class Paths(SimpleNamespace):
     PKG_DIR: T.Final[pathlib.Path] = pathlib.Path(__file__).parent
-    REPO_DIR: T.Final[pathlib.Path] = (PKG_DIR / "..").resolve()
+    PY_SOURCE_DIR: T.Final[pathlib.Path] = (PKG_DIR / "..").resolve()
+    REPO_DIR: T.Final[pathlib.Path] = (PY_SOURCE_DIR / "..").resolve()
     INDEX_DIR: T.Final[pathlib.Path] = REPO_DIR / "index"
     TEST_DIR: T.Final[pathlib.Path] = REPO_DIR / "test"
     TEMPLATE_DIR: T.Final[pathlib.Path] = PKG_DIR / "templates"

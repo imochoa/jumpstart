@@ -10,12 +10,9 @@ from loguru import logger
 import marshmallow as ma
 from marshmallow_dataclass import add_schema
 
-# local imports
-from .sys_context import SystemContext
-
 
 @add_schema
-@dataclass(order=True)
+@dataclass
 class GithubRelease:
     """For downloading from a github release"""
 
@@ -26,7 +23,7 @@ class GithubRelease:
 
 
 @add_schema
-@dataclass(order=True)
+@dataclass
 class DownloadSource:
     """"""
 
@@ -34,8 +31,9 @@ class DownloadSource:
     github: T.Optional[GithubRelease] = None
     url: str = field(default="", metadata=dict(data_key="url_post_resolution"))
     Schema: T.ClassVar[T.Type[ma.Schema]] = ma.Schema
-    # class Meta:
-    #     exclude = ('url',)
+
+    class Meta:
+        ordered = True
 
     def __post_init__(self: "DownloadSource") -> None:
         """
