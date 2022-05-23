@@ -11,10 +11,18 @@
           "p7zip-rar"
         ],
         "ppas": []
+      },
+      "snap": {
+        "pkg": "p7zip-desktop",
+        "policy": ""
       }
     }
   ],
-  "url": "https://www.google.com/search?q=7zip",
-  "tags": [],
+  "url": "https://7-zip.org/",
+  "tags": [
+    "files",
+    "compression",
+    "zip"
+  ],
   "preference": []
 }

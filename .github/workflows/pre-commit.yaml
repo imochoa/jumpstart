@@ -11,7 +11,8 @@ jobs:
     name: Run pre-commit
     runs-on: ubuntu-latest
     env:
-      CODE_DIR: ${{ github.workspace }}
+      REPO_DIR: ${{ github.workspace }}
+      CODE_DIR: ${{ github.workspace }}/python-source
       VENV_DIR: ${{ github.workspace }}/venv
 
     steps:
@@ -36,5 +37,5 @@ jobs:
       - name: Run pre-commit
         shell: bash
         run: |
-          cd "${CODE_DIR}" \
+          cd "${REPO_DIR}" \
           && "${VENV_DIR}/bin/pre-commit" run -a

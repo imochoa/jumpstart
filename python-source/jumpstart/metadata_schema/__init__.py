@@ -22,14 +22,33 @@ from jumpstart.constants import Filenames
 from .templates import AltParams, SnapTemplateParams
 
 
-class PathField(Field):
-    """
-    (De)serialization support for pathlib.Path objects while using marshmallow
-            JSON-> str
-            PYT -> pathlib.Path
-    """
+# class PathField(Field):
+#     """
+#     (De)serialization support for pathlib.Path objects while using marshmallow
+#             JSON-> str
+#             PYT -> pathlib.Path
+#     """
 
-    def __init__(self: T.Any, *args: T.Any, **kwargs: T.Any) -> None:
+#     def __init__(self: T.Any, *args: T.Any, **kwargs: T.Any) -> None:
+#         super().__init__(*args, **kwargs)
+
+#     def _serialize(self, value: pathlib.Path, *args: T.Any, **kwargs: T.Any) -> T.Optional[str]:
+#         if value is None:
+#             return None
+#         return str(value)
+
+#     def _deserialize(self, value: str, *args: T.Any, **kwargs: T.Any) -> T.Optional[pathlib.Path]:
+#         if value is None:
+#             return None
+#         return pathlib.Path(value)
+
+
+# Path = NewType("Path", object, field=PathField)
+
+class PathField(Field):
+    """ """
+
+    def __init__(self, *args: T.Any, **kwargs: T.Any) -> None:
         super().__init__(*args, **kwargs)
 
     def _serialize(self, value: pathlib.Path, *args: T.Any, **kwargs: T.Any) -> T.Optional[str]:
@@ -43,13 +62,14 @@ class PathField(Field):
         return pathlib.Path(value)
 
 
-Path = NewType("Path", object, field=PathField)
+Path = NewType("Path", pathlib.Path, field=PathField)
+
 
 
 @add_schema
 @dataclass
 class Metadata:
-    """For each Metadta JSON file, what can we expect to find"""
+    """For each Metadata JSON file, what can we expect to find"""
 
     json_path: Path
     name: str

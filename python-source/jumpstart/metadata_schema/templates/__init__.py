@@ -17,6 +17,7 @@ from jumpstart.metadata_schema.sys_context import SystemContext
 from .apt import AptTemplateParams
 from .deb import DebTemplateParams
 from .snap import SnapTemplateParams
+from .appimage import AppImageParams
 
 
 @add_schema
@@ -26,12 +27,16 @@ class AltParams:
     apt: T.Optional[AptTemplateParams] = None
     snap: T.Optional[SnapTemplateParams] = None
     deb: T.Optional[DebTemplateParams] = None
+    appimage: T.Optional[AppImageParams] = None
     Schema: T.ClassVar[T.Type[ma.Schema]] = ma.Schema
 
     class Meta:
         ordered = True
 
     @ma.post_dump
-    def remove_skip_values(self: "AltParams", data: T.Dict[str, T.Any], **kwargs: T.Any) -> T.Dict[str, T.Any]:
+    def remove_skip_values(self: "AltParams",
+                           data: T.Dict[str, T.Any],
+                           **kwargs: T.Any,
+                           ) -> T.Dict[str, T.Any]:
         """Ignore empty fields"""
         return {key: value for key, value in data.items() if value is not None}

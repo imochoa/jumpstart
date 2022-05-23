@@ -29,7 +29,7 @@ class DebTemplateParams:
 
     """
 
-    src: DownloadSource
+    download_source:DownloadSource
     name: str = ""  #: name used to uninstall the .deb : 'sudo apt remove -y {{name}}'. If missing, it will be taken from the metadata
     Schema: T.ClassVar[T.Type[ma.Schema]] = ma.Schema
 

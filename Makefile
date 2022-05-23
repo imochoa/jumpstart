@@ -37,7 +37,7 @@ PYTHON := ${VENV_DIR}/bin/python
 build-ubuntu-20.04:
 	docker build                                    \
 		-f ${PROVISION_DIR}/Dockerfile-ubuntu-20.04 \
-		-t jumpstart/ubuntu-2004:${COMMIT_HASH}     \
+		-t jumpstart:ubuntu-2004                    \
 		${PROGRESS_DARG}                            \
 		"${REPO_DIR}"
 
