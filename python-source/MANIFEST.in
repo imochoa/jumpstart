@@ -1,2 +1,2 @@
 include jumpstart/templates
-include index
+include jumpstart/pkg-index
