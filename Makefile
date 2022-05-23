@@ -1,5 +1,4 @@
-
-IMGNAME := ubuntu:20.04
+IMGNAME := ubuntu:22.04
 
 # Auto variables
 DATE := $(shell date)
@@ -37,9 +36,13 @@ PYTHON := ${VENV_DIR}/bin/python
 build-ubuntu-20.04:
 	docker build                                    \
 		-f ${PROVISION_DIR}/Dockerfile-ubuntu-20.04 \
-		-t jumpstart/ubuntu-2004:${COMMIT_HASH}     \
+		-t jumpstart:ubuntu-2004                    \
 		${PROGRESS_DARG}                            \
 		"${REPO_DIR}"
+
+.PHONY: build
+build: build-ubuntu-20.04
+	printf "done!\n"
 
 
 # -------------------------------------------------------------------------------- #

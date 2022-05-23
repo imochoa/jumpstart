@@ -1,0 +1,21 @@
+{
+  "name": "7zip",
+  "url": "https://7-zip.org/",
+  "tags": [
+    "files",
+    "compression",
+    "zip"
+  ],
+  "systems": [
+    {
+      "apt": {
+        "pkgs": [
+          "p7zip-full",
+          "p7zip-rar"
+        ],
+        "priority": 0,
+        "ppas": []
+      }
+    }
+  ]
+}

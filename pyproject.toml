@@ -42,12 +42,14 @@ exclude = [
 plugins = [
     'marshmallow_dataclass.mypy',
 ]
-python_version = "3.8"
+python_version = "3.10"
+warn_unused_configs = true
+warn_unused_ignores = true
 show_error_codes = true
 strict = true
 implicit_reexport = true
 #warn_return_any = false
-#allow_untyped_defs = true
+allow_untyped_defs = false
 
 [tool.pytest.ini_options]
 python_files = ["test_*.py", "*_test.py"]

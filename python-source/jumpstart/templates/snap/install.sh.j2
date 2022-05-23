@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+{% import 'macros.j2' as macros %}
+{{ macros.autotoken() }}
+
+sudo apt-get install -y snapd
+sudo snap install -y  {{ policy }} {{pkg}}
