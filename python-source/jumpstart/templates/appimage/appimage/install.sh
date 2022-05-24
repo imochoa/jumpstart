@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 echo "START"
 echo ""
 echo ""
@@ -9,13 +11,13 @@ VER=$(curl --silent "https://api.github.com/repos/FreeCAD/FreeCAD/releases/lates
 echo $VER
 RES=$(curl --silent "https://api.github.com/repos/FreeCAD/FreeCAD/releases/latest")
 
-#TODO interactive Jq -> 
+#TODO interactive Jq ->
 https://medium.com/@toja/parsing-github-releases-with-jq-13829c9ee82c
 
 
 https://github.com/fiatjaf/jiq
 
-or 
+or
 https://github.com/fiatjaf/ijq
 
 

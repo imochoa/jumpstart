@@ -15,6 +15,10 @@
         ],
         "priority": 0,
         "ppas": []
+      },
+      "snap": {
+        "pkg": "p7zip-desktop",
+        "policy": ""
       }
     }
   ]

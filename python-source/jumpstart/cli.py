@@ -2,6 +2,7 @@
 
 # stdlib imports
 import pathlib
+import typing as T
 
 # 3rd party imports
 from loguru import logger
@@ -15,10 +16,13 @@ import typer
 # 1st party imports
 from jumpstart.constants import Paths
 from jumpstart.schemas import PackageMetadata
+
 # from jumpstart.core import Component
 
-def iter_packages():
-    return (PackageMetadata.load(p) for p in Paths.INDEX_DIR.rglob('metadata.json'))
+
+def iter_packages() -> T.Generator[PackageMetadata, None, None]:
+    return (PackageMetadata.load(p) for p in Paths.INDEX_DIR.rglob("metadata.json"))
+
 
 app = typer.Typer()
 #
@@ -113,13 +117,11 @@ app = typer.Typer()
 
 
 @app.command("autoupdate")  # type: ignore[misc]
-def autoupdate(
-) -> None:
-    
+def autoupdate() -> None:
+
     for pkg in iter_packages():
         pkg.autogenerate()
         print(pkg)
-
 
     # for component in Component.from_index_dir(
     #     dir,
@@ -127,6 +129,7 @@ def autoupdate(
     # ):
     #     component.render_templates()
     #     component.metadata.to_path(component.metadata.json_path)  # type: ignore[arg-type]
+
 
 #
 # @app.command("list")  # type: ignore[misc]

@@ -23,7 +23,7 @@ repos:
     rev: v2.3.0
     hooks:
       -   id: pip-audit
-          args: ["-r", "requirements.txt"]
+          args: ["-r", "python-source/requirements.txt"]
   -   repo: https://github.com/PyCQA/bandit
       rev: '1.7.4'
       hooks:
