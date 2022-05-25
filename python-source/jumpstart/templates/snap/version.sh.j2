@@ -3,8 +3,4 @@
 {% import 'macros.j2' as macros %}
 {{ macros.autotoken() }}
 
-{% for p in pkgs -%}
-VER=$(snap info "{{p}}" | grep latest/stable | cut -d: -f2)
-echo "{{"{:>40}".format(p) }} ->  [${VER}]"
-
-{% endfor -%}
+printf "[%s]\t%s\n" $(snap find "{{pkg}}" | tail -1 | tr -s ' ' | cut -d' ' -f2 | xargs) "{{pkg}}"

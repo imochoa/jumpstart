@@ -4,7 +4,5 @@
 {{ macros.autotoken() }}
 
 {% for p in pkgs -%}
-VER=$(apt-cache policy "{{p}}" | grep Candidate: | rev | cut -d: -f1 | rev | cut -d- -f1)
-echo "{{"{:>40}".format(p) }} ->  [${VER}]"
-
+printf "[%s]\t%s\n" $(apt-cache policy "{{p}}" | grep Candidate: | cut -d: -f2 | xargs) "{{p}}"
 {% endfor -%}

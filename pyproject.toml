@@ -51,6 +51,11 @@ implicit_reexport = true
 #warn_return_any = false
 allow_untyped_defs = false
 
+
+[tool.bandit]
+exclude_dirs = ["venv","tests"]
+
+
 [tool.pytest.ini_options]
 python_files = ["test_*.py", "*_test.py"]
 addopts = "--failed-first --showlocals -ra"

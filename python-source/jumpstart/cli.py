@@ -17,8 +17,6 @@ import typer
 from jumpstart.constants import Paths
 from jumpstart.schemas import PackageMetadata
 
-# from jumpstart.core import Component
-
 
 def iter_packages() -> T.Generator[PackageMetadata, None, None]:
     return (PackageMetadata.load(p) for p in Paths.INDEX_DIR.rglob("metadata.json"))
@@ -120,8 +118,8 @@ app = typer.Typer()
 def autoupdate() -> None:
 
     for pkg in iter_packages():
+        logger.info(f"Loop {pkg.metadata_path}")
         pkg.autogenerate()
-        print(pkg)
 
     # for component in Component.from_index_dir(
     #     dir,
@@ -154,4 +152,4 @@ def main() -> None:
 if __name__ == "__main__":
     # tree()
     autoupdate()
-    main()
+    # main()

@@ -22,26 +22,19 @@ class Paths(SimpleNamespace):
     DEV_NULL: T.Final[pathlib.Path] = pathlib.Path(os.devnull)
 
 
-Filename = T.NewType("Filename", str)
-
-
-class Filenames(SimpleNamespace):
+class Names(SimpleNamespace):
     """
     Accepted filenames for each installable. The extensions are usually ".sh"
     """
 
-    install = Filename("install")
-    setup = Filename("setup")
-    update = Filename("update")
-    remove = Filename("remove")
-    status = Filename("status")
-    version = Filename("version")
-    metadata = Filename("metadata")
-
-    @classmethod
-    @functools.lru_cache()
-    def as_set(cls) -> T.Set["Filename"]:
-        return {Filename(s) for s in cls.__dict__.keys() if not s.startswith("__")}
+    install: T.Final[str] = "install"
+    setup: T.Final[str] = "setup"
+    update: T.Final[str] = "update"
+    remove: T.Final[str] = "remove"
+    status: T.Final[str] = "status"
+    version: T.Final[str] = "version"
+    metadata: T.Final[str] = "metadata"
+    default_dir: T.Final[str] = "default"
 
 
 template_loader: T.Final[T.Any] = jinja2.FileSystemLoader(searchpath=Paths.TEMPLATE_DIR)

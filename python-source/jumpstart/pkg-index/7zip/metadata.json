@@ -13,13 +13,19 @@
           "p7zip-full",
           "p7zip-rar"
         ],
-        "priority": 0,
-        "ppas": []
+        "ppas": [],
+        "priority": 0
       },
       "snap": {
         "pkg": "p7zip-desktop",
-        "policy": ""
-      }
+        "policy": "",
+        "priority": 10
+      },
+      "deb": null,
+      "bin": null,
+      "appimage": null,
+      "pipx": null,
+      "src": null
     }
   ]
 }

@@ -12,7 +12,6 @@ import typing as T
 # 3rd party imports
 from loguru import logger
 import marshmallow as ma
-from marshmallow.fields import Field
 from marshmallow_dataclass import NewType, add_schema
 
 # 1st party imports
@@ -20,7 +19,7 @@ from jumpstart.constants import Paths
 
 # local imports
 from .fields import PathField
-from .sources import Apt, Snap
+from .sources import AppImage, Apt, Bin, Deb, PipX, Snap, Src, render
 
 
 @add_schema
@@ -28,8 +27,11 @@ from .sources import Apt, Snap
 class System:
     apt: T.Optional[Apt] = None
     snap: T.Optional[Snap] = None
-    # deb: T.Optional[DebTemplateParams] = None
-    # appimage: T.Optional[AppImageParams] = None
+    deb: T.Optional[Deb] = None
+    bin: T.Optional[Bin] = None
+    appimage: T.Optional[AppImage] = None
+    pipx: T.Optional[PipX] = None
+    src: T.Optional[Src] = None
     Schema: T.ClassVar[T.Type[ma.Schema]] = ma.Schema
 
     class Meta:
@@ -74,10 +76,38 @@ class PackageMetadata:
             )
 
     def autogenerate(self) -> None:
+        logger.info(self.name)
         for system in self.systems:
-            for src in (system.apt,):
-                if not src:
-                    continue
+            logger.info(system)
+
+            pkg_sources = [
+                src
+                for src in (
+                    system.apt,
+                    system.snap,
+                    system.deb,
+                    system.appimage,
+                    system.bin,
+                    system.src,
+                    system.pipx,
+                )
+                if src
+            ]
+
+            if not pkg_sources:
+                continue
+
+            for src in pkg_sources:
+                logger.info(src)
                 src.update()
-                src.render(basepath=self.metadata_path.parent)
+                render(src, basepath=self.metadata_path.parent)
+                logger.info("")
+
+            # Set default!
+            best_src = min(pkg_sources, key=lambda p: p.priority)
+            best_src_name = type(best_src).__name__
+            d_dir = self.metadata_path.parent / "default"
+            d_dir.unlink(missing_ok=True)
+            d_dir.symlink_to(best_src_name.lower())
+
         self.dump(self.metadata_path)
