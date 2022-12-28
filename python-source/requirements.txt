@@ -1,6 +1,0 @@
-Jinja2
-rich-cli
-typer
-loguru
-marshmallow
-marshmallow-dataclass
