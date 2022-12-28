@@ -1,0 +1,10 @@
+{
+  "name": "Rsync",
+  "urls": [
+    "https://github.com/WayneD/rsync"
+  ],
+  "tags": [
+    "copying"
+  ],
+  "description": "Smart copying"
+}

@@ -5,8 +5,9 @@
     "depends": []
   },
   "pkgs": [
-    "p7zip-full",
-    "p7zip-rar"
+    "shutter"
   ],
-  "ppas": []
+  "ppas": [
+    "universe"
+  ]
 }

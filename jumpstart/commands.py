@@ -62,4 +62,3 @@ if __name__ == "__main__":
             if reexport_jsons:
                 dump_json(params_json, obj=params)
             cog_params(dir=pp, params=params)
-            print("wtf")
