@@ -18,6 +18,10 @@ class ParamsHeader:
     """
     Should be one of....
     """
+    priority: int = 0
+    """
+    Lower is higher priority
+    """
     depends: list[str] = field(default_factory=list)
     # system: list[str] = field(default_factory=list)
     Schema: T.ClassVar[T.Type[ma.Schema]] = ma.Schema

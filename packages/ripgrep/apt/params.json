@@ -1,9 +1,9 @@
 {
-  "templates": "apt",
-  "priority": 0,
-  "depends": [],
-  "data": {
-    "pkgs": ["p7zip-full", "p7zip-rar"],
-    "ppas": []
-  }
+  "header": {
+    "template": "apt",
+    "priority": 0,
+    "depends": []
+  },
+  "pkgs": ["p7zip-full", "p7zip-rar"],
+  "ppas": []
 }

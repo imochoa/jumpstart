@@ -1,5 +1,6 @@
 {
   "name": "ripgrep",
   "urls": [],
-  "tags": ["searching"]
+  "tags": ["searching"],
+  "description": ""
 }

@@ -15,7 +15,8 @@ import typer
 
 # 1st party imports
 from jumpstart.constants import FILES, PATHS
-from jumpstart.schemas import PackageMetadata, load_json
+from jumpstart.schemas import PackageMetadata, dump_json, load_json
+from jumpstart.templates import cog_params, load_params
 
 # def find_metadata_files(root:pathlib.Path=Paths.INDEX_DIR) -> T.Generator[PackageMetadata, None, None]:
 #     return (p for p in root.rglob("metadata.json"))
@@ -41,10 +42,7 @@ def run() -> None:
 
 if __name__ == "__main__":
 
-    import cogapp
-
-    cogapp.
-
+    reexport_jsons = True
     metadata_sch = PackageMetadata.Schema()
     for p in PATHS.PACKAGES_DIR.iterdir():
         metadata_json = p / FILES.METADATA_JSON
@@ -52,10 +50,16 @@ if __name__ == "__main__":
             continue
 
         meta = load_json(metadata_json, schema=metadata_sch)
+        if reexport_jsons:
+            dump_json(metadata_json, obj=meta)
         logger.info(meta.name)
         for pp in p.iterdir():
             params_json = pp / FILES.PARAMS_JSON
             if not params_json.is_file():
                 continue
 
-            params = load_json(params_json, schema=metadata_sch)
+            params = load_params(params_json)
+            if reexport_jsons:
+                dump_json(params_json, obj=params)
+            cog_params(dir=pp, params=params)
+            print("wtf")

@@ -20,9 +20,9 @@ class PackageMetadata:
     """Holds the information from each metadata JSON file"""
 
     name: str
-    notes: str = ""
     urls: list[str] = field(default_factory=list)
     tags: list[str] = field(default_factory=list)
+    description: str = ""
     Schema: T.ClassVar[T.Type[ma.Schema]] = ma.Schema
 
     class Meta:

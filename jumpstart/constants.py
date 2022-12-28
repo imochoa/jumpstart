@@ -23,6 +23,10 @@ class SCRIPTS(SimpleNamespace):
     SETUP: T.Final[str] = "setup"
     UPDATE: T.Final[str] = "update"
 
+    @classmethod
+    def as_set(cls) -> set[str]:
+        return {v for k, v in cls.__dict__.items() if k.isupper()}
+
 
 class FILES(SimpleNamespace):
     """ """
@@ -33,6 +37,10 @@ class FILES(SimpleNamespace):
 
 
 class System(T.NamedTuple):
+    """
+    Relevant someday...
+    """
+
     plat: str
     """
     Platform (linux, max, windows)
