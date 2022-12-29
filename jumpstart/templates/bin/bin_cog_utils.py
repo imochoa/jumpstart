@@ -1,0 +1,54 @@
+#!/usr/bin/env python3
+
+"""
+Only meant to be imported within cog
+"""
+
+
+# sudo apt-get install -y curl wget jq
+#
+# URL=$(curl --silent "https://api.github.com/repos/sharkdp/bat/releases/latest" \
+#   | jq '..|.browser_download_url?' | grep 'x86_64' | grep 'linux' | grep 'gnu' \
+#   | tr -d '"' )
+
+# curl --silent https://api.github.com/repos/cheat/cheat/releases/latest | jq '..|.browser_download_url?' | grep linux | grep amd64
+# "https://github.com/cheat/cheat/releases/download/4.4.0/cheat-linux-amd64.gz"
+
+
+# Getting latest version!
+# curl -Ls -o /dev/null -w %{url_effective} https://github.com/cheat/cheat/releases/latest | rev | cut -d/ -f1 | rev
+def install_apt(pkgs: list[str], ppas: list[str]) -> str:
+    if not pkgs:
+        raise OSError("No inputs!")
+
+    cmd = ""
+    if ppas:
+        cmd += "sudo add-apt-repository -y " + " ".join(ppas) + "\n"
+        cmd += "sudo apt-get update -y\n"
+
+    return cmd + "sudo apt-get install -y " + " ".join(pkgs)
+
+
+def remove_apt(pkgs: list[str], ppas: list[str]) -> str:
+    """
+    Don't remove important PPAs!
+    """
+    if not pkgs:
+        raise OSError("No inputs!")
+    cmd = ""
+    ppas = [ppa for ppa in ppas or [] if ppa not in {"universe", "main"}]
+    if ppas:
+        cmd += "sudo add-apt-repository --remove " + " ".join(ppas) + "\n"
+    return cmd + "sudo apt-get --remove " + " ".join(pkgs)
+
+
+def ver_cmd(pkg: str, grep: str) -> str:
+    return rf'printf "{pkg} > %s\n" "$(apt-cache policy {pkg} | grep {grep} | cut -d: -f2 | tr -d /" /")"'
+
+
+def apt_upstream_ver_cmd(pkg: str) -> str:
+    return ver_cmd(pkg, grep="Candidate")
+
+
+def apt_local_ver_cmd(pkg: str) -> str:
+    return ver_cmd(pkg, grep="Installed")
