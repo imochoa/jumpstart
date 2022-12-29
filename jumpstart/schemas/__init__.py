@@ -6,16 +6,17 @@ import json
 from pathlib import Path
 import typing as T
 
+# 3rd party imports
+import marshmallow
+
 # local imports
 from .metadata import PackageMetadata
-
-RT = T.TypeVar("RT")  # return type
 
 
 def load_json(
     p: Path,
-    schema: RT,
-) -> RT:
+    schema: marshmallow.Schema,
+) -> marshmallow.Schema:
     with codecs.open(
         str(p.absolute()),
         "r",
@@ -23,12 +24,12 @@ def load_json(
         errors="ignore",
     ) as fp:
         obj = schema.load(json.load(fp))
-    return T.cast(RT, obj)
+    return obj
 
 
 def dump_json(
     p: Path,
-    obj: RT,
+    obj: marshmallow.Schema,
 ) -> None:
     with codecs.open(
         str(p.absolute()),

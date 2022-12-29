@@ -14,19 +14,15 @@ from jumpstart.schemas.params_header import ParamsHeader
 
 @add_schema
 @dataclass(repr=False)
-class AptParams:
+class PipxParams:
     """Holds the information from each metadata JSON file"""
 
     header: ParamsHeader
     """
     Should be one of....
     """
-    pkgs: list[str] = field(default_factory=list)
+    url: str
     """
-    """
-    ppas: list[str] = field(default_factory=list)
-    """
-    PPAS HAVE TO START WITH ppa: -> validate it!
     """
     Schema: T.ClassVar[T.Type[ma.Schema]] = ma.Schema
 
@@ -35,6 +31,7 @@ class AptParams:
 
     @property
     def cog_args(self) -> list[str]:
-        pkg_str = ",".join(self.pkgs) or '""'
-        ppa_str = ",".join(self.ppas) or '""'
-        return ["-D", f"PKGS={pkg_str}", "-D", f"PPAS={ppa_str}"]
+        # pkg_str = ",".join(self.pkgs) or '""'
+        # ppa_str = ",".join(self.ppas) or '""'
+        # return ["-D", f"PKGS={pkg_str}", "-D", f"PPAS={ppa_str}"]
+        return []

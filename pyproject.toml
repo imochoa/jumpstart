@@ -67,6 +67,7 @@ exclude = [
     '.venv',
     'tests',
     'bin',
+    'back',
 ]
 # marshmallow_dataclass.mypy -> Required so that mypy recognizes the custom marshmallow NewType's
 plugins = [
@@ -78,6 +79,14 @@ strict = true
 implicit_reexport = true
 warn_return_any = false
 allow_untyped_defs = true
+
+[[tool.mypy.overrides]]
+module = [
+    "back.*",
+]
+ignore_errors=true
+follow_imports = "skip"
+ignore_missing_imports=true
 
 [tool.pytest.ini_options]
 python_files = ["test_*.py", "*_test.py"]

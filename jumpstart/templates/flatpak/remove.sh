@@ -1,13 +1,12 @@
 # [[[cog
 # import cog
 # from cog_utils import str2list, HEADER, SH_SHEBANG
-# from apt_cog_utils import apt_upstream_ver_cmd
+# from flatpak_cog_utils import remove_flatpak
 # cog.outl(f"{SH_SHEBANG}\n\n# {HEADER}")
 # ]]]
 # [[[end]]]
 
 # [[[cog
-# for pkg in str2list(PKGS):
-#     cog.outl(apt_upstream_ver_cmd(pkg))
+# cog.outl(remove_flatpak(APPID,REMOTE))
 # ]]]
 # [[[end]]]

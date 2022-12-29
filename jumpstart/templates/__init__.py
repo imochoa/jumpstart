@@ -17,8 +17,17 @@ from jumpstart.constants import PATHS, SCRIPTS
 
 # local imports
 from .apt import AptParams
+from .flatpak import FlatpakParams
+from .pipx import PipxParams
 
-PARAM_SCHEMA_MAP: T.Final[dict[str, T.Any]] = {sch.__module__.split(".")[-1]: sch for sch in (AptParams,)}
+PARAM_SCHEMA_MAP: T.Final[dict[str, T.Any]] = {
+    sch.__module__.split(".")[-1]: sch
+    for sch in (
+        AptParams,
+        FlatpakParams,
+        PipxParams,
+    )
+}
 
 
 def load_params(p: pathlib.Path) -> T.Any:

@@ -16,6 +16,7 @@ repos:
       - id: debug-statements
       - id: detect-private-key
       - id: end-of-file-fixer
+        exclude: ^packages/
       - id: trailing-whitespace
       - id: mixed-line-ending
   #  - repo: https://github.com/python-poetry/poetry
@@ -23,7 +24,7 @@ repos:
   #    hooks:
   #      - id: poetry-check
   - repo: https://github.com/trailofbits/pip-audit
-    rev: 4b3fac369ebda7942a5e664f93c6850a200cc117 # frozen: v2.4.10
+    rev: 09eef2aacc202e3567e4b6b59947bd644ba9b823 # frozen: v2.4.11
     hooks:
       - id: pip-audit
         args:

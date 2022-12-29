@@ -2,7 +2,8 @@
   "header": {
     "template": "apt",
     "priority": 0,
-    "depends": []
+    "depends": [],
+    "urls": []
   },
   "pkgs": [
     "rsync"

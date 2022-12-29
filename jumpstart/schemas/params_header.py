@@ -23,7 +23,14 @@ class ParamsHeader:
     Lower is higher priority
     """
     depends: list[str] = field(default_factory=list)
+    """
+    """
+    urls: list[str] = field(default_factory=list)
+    """
+    """
     # system: list[str] = field(default_factory=list)
+    # """
+    # """
     Schema: T.ClassVar[T.Type[ma.Schema]] = ma.Schema
 
     class Meta:
