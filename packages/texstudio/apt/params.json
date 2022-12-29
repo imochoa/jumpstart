@@ -1,0 +1,16 @@
+{
+  "header": {
+    "template": "apt",
+    "priority": 0,
+    "depends": [],
+    "urls": []
+  },
+  "pkgs": [
+    "texlive-fonts-extra",
+    "texlive-full",
+    "texlive-latex-extra",
+    "texlive-xetex",
+    "texstudio"
+  ],
+  "ppas": []
+}
