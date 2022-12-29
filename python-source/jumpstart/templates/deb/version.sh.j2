@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-{% import 'macros.j2' as macros %}
-{{ macros.autotoken() }}
-
-VER=$(apt-cache policy "{{name}}" | grep Candidate: | rev | cut -d: -f1 | rev | cut -d- -f1)
-echo "{{"{:>40}".format(name) }} ->  [${VER}]"
