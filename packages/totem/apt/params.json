@@ -1,0 +1,12 @@
+{
+  "header": {
+    "template": "apt",
+    "priority": 0,
+    "depends": [],
+    "urls": []
+  },
+  "pkgs": [
+    "gstreamer1.0-libav"
+  ],
+  "ppas": []
+}
