@@ -14,16 +14,14 @@ Only meant to be imported within cog
 
 
 def install_flatpak(appid: str, remote: str) -> str:
+    # flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    # cmd=f"flatpak remote-add --if-not-exists remote "
     return f"flatpak install {remote} {appid}"
 
 
 def remove_flatpak(appid: str, remote: str, delete_data: bool = True) -> str:
     delete_cmd = " --delete-data" if delete_data else ""
-    return f"flatpak uninstall {appid} {delete_cmd}"
-
-
-def ver_cmd(pkg: str, grep: str) -> str:
-    return rf'printf "{pkg} > %s\n" "$(apt-cache policy {pkg} | grep {grep} | cut -d: -f2 | tr -d /" /")"'
+    return f"flatpak uninstall {appid} {delete_cmd}".strip()
 
 
 def flatpak_upstream_ver_cmd(appid: str, remote: str) -> str:

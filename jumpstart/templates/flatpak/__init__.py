@@ -23,6 +23,9 @@ class FlatpakParams:
     """
     remote: str = "flathub"
     """
+    TODO perhaps this should be a URL https://flathub.org/repo/flathub.flatpakrepo
+
+    # flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     """
     Schema: T.ClassVar[T.Type[ma.Schema]] = ma.Schema
 
