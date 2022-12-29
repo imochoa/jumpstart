@@ -1,0 +1,13 @@
+{
+  "header": {
+    "template": "apt",
+    "priority": 0,
+    "depends": [],
+    "urls": []
+  },
+  "pkgs": [
+    "zip",
+    "unzip"
+  ],
+  "ppas": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Flatpak",
+  "urls": [
+    "https://docs.flatpak.org/en/latest/index.html",
+    "https://flatpak.org/setup/"
+  ],
+  "tags": [
+    "packageManager"
+  ],
+  "description": "Package manager"
+}

@@ -6,8 +6,7 @@
     "urls": []
   },
   "pkgs": [
-    "p7zip-full",
-    "p7zip-rar"
+    "ripgrep"
   ],
   "ppas": []
 }

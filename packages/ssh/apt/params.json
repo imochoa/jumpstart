@@ -1,0 +1,15 @@
+{
+  "header": {
+    "template": "apt",
+    "priority": 0,
+    "depends": [],
+    "urls": []
+  },
+  "pkgs": [
+    "openssh-server",
+    "xauth",
+    "xclip",
+    "xcl"
+  ],
+  "ppas": []
+}
