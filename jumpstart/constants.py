@@ -48,12 +48,12 @@ class SCRIPTS(SimpleNamespace):
     UPSTREAM_VER: T.Final[str] = "upstream-ver"
     """
     """
-    SETUP: T.Final[str] = "setup"
-    """
-    """
     UPDATE: T.Final[str] = "update"
     """
     """
+    # SETUP: T.Final[str] = "setup"
+    # """
+    # """
 
     @classmethod
     def as_set(cls) -> set[str]:
@@ -75,7 +75,9 @@ class FILES(SimpleNamespace):
 
 
 class ENVVARS(SimpleNamespace):
-    """ """
+    """
+    INSTALLDIR=/usr/local/bin
+    """
 
     INSTALL_P: T.Final[str] = "INSTALL_DST"
     """
@@ -88,6 +90,14 @@ class ENVVARS(SimpleNamespace):
     """
     WALLPAPER_P: T.Final[str] = "FONT_DST"
     """
+    """
+    BASHCOMP_P: T.Final[str] = "BASHCOMP_P"
+    """
+    =${BASHCOMP:-${HOME}/.config/bash/bash_completion}
+    """
+    ZSHCOMP_D: T.Final[str] = "ZSHCOMP_D"
+    """
+    =${ZSHCOMP:-${HOME}/.config/zsh/completions}
     """
 
 
