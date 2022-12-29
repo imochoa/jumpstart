@@ -1,8 +1,0 @@
-#!/usr/bin/env sh
-
-{% import 'macros.j2' as macros %}
-{{ macros.autotoken() }}
-
-{% for p in pkgs -%}
-printf "[%s]\t%s\n" $(apt-cache policy "{{p}}" | grep Candidate: | cut -d: -f2 | xargs) "{{p}}"
-{% endfor -%}

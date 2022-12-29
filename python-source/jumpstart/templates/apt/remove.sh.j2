@@ -1,8 +1,0 @@
-#!/usr/bin/env sh
-
-{% import 'macros.j2' as macros %}
-{{ macros.autotoken() }}
-
-{% for p in pkgs -%}
-sudo apt-get remove -y {{p}}
-{% endfor -%}
