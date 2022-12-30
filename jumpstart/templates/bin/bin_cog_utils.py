@@ -4,6 +4,12 @@
 Only meant to be imported within cog
 """
 
+# 1st party imports
+from jumpstart.templates.cog_utils import require_cmds, tempdir_w_var
+from jumpstart.templates.cog_utils.github_release import (
+    find_latest_bin,
+    find_latest_ver,
+)
 
 # sudo apt-get install -y curl wget jq
 #
@@ -17,16 +23,22 @@ Only meant to be imported within cog
 
 # Getting latest version!
 # curl -Ls -o /dev/null -w %{url_effective} https://github.com/cheat/cheat/releases/latest | rev | cut -d/ -f1 | rev
-def install_apt(pkgs: list[str], ppas: list[str]) -> str:
-    if not pkgs:
-        raise OSError("No inputs!")
+
+
+def install_bin(orgrepo: str, filters: list[str]) -> str:
+    if not orgrepo:
+        return ""
 
     cmd = ""
-    if ppas:
-        cmd += "sudo add-apt-repository -y " + " ".join(ppas) + "\n"
-        cmd += "sudo apt-get update -y\n"
+    cmd += require_cmds(["curl", "jq"])
 
-    return cmd + "sudo apt-get install -y " + " ".join(pkgs)
+    # Get URL
+    url = find_latest_bin(orgrepo=orgrepo, filters=filters)
+    cmd += f"URL=$({url})\n"
+
+    # Download to dest
+
+    return cmd
 
 
 def remove_apt(pkgs: list[str], ppas: list[str]) -> str:
@@ -52,3 +64,7 @@ def apt_upstream_ver_cmd(pkg: str) -> str:
 
 def apt_local_ver_cmd(pkg: str) -> str:
     return ver_cmd(pkg, grep="Installed")
+
+
+if __name__ == "__main__":
+    install_bin(orgrepo="cheat/cheat", filters=["linux", "amd64"])

@@ -26,6 +26,7 @@ class BinParams:
     For installing from a github release
     Should be in the shape of organization/repository
     """
+    filters: list[str] = field(default_factory=list)
     # src:str = ""
     # """
     # """
@@ -38,4 +39,5 @@ class BinParams:
     def cog_args(self) -> dict[str, str]:
         return dict(
             ORGREPO=self.orgrepo,
+            FILTERS=",".join(self.filters) or '""',
         )

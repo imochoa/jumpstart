@@ -5,5 +5,9 @@
     "depends": [],
     "urls": []
   },
-  "orgrepo": "cheat/cheat"
+  "orgrepo": "cheat/cheat",
+  "filters": [
+    "linux",
+    "amd64"
+  ]
 }

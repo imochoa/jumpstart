@@ -101,7 +101,7 @@ if __name__ == "__main__":
     ):
         logger.info(metadata)
         for param in params:
-            # if not isinstance(param, BinParams):
-            #     continue
+            if not isinstance(param, BinParams):
+                continue
             logger.debug(param)
             cog_param(param)

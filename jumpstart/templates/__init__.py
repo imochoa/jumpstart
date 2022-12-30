@@ -56,6 +56,10 @@ def cog_subprocess(
     cog_args: dict[str, str] | None = None,
 ) -> subprocess.CompletedProcess[bytes]:
     """
+
+    if *out_path* is None, use STDOUT
+
+
     -c          Checksum the output to protect it against accidental change.
 
     -d          Delete the generator code from the output file.
@@ -117,7 +121,10 @@ def cog_param(param: PARAMS_TYPE) -> None:
         post_templates = [f for f in post_dir.iterdir() if f.stem in SCRIPTS.as_set()]
         post_template_map = {t: dst_dir / t.name for t in post_templates}
         for src, dst in post_template_map.items():
-            post_p = cog_subprocess(src)
+            post_p = cog_subprocess(
+                in_path=src,
+                cog_args=param.cog_args,
+            )
             with open(dst, "a") as fp:
                 fp.write("\n" + post_p.stdout.decode("utf-8"))
 

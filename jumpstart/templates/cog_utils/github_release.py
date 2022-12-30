@@ -25,11 +25,11 @@ def find_latest_ver(orgrepo: str) -> str:
 def find_latest_bin(orgrepo: str, filters: list[str]) -> str:
     """
     *orgrepo* should be organization/repository (eg. cheat/cheat)
+    requires:
+    - curl
+    - jq
     """
 
-    # TODO assert jq installed...
-    # require_cmds(["curl"])
-
-    cmd = f"curl --silent https://api.github.com/repos/{orgrepo}/releases/latest | jq '..|.browser_download_url?'"
+    cmd = f"curl --silent 'https://api.github.com/repos/{orgrepo}/releases/latest' | jq '..|.browser_download_url?'"
     cmd += "".join(f" | grep '{f}'" for f in filters)
     return cmd
