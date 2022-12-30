@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-
 # stdlib imports
+import os
 from pathlib import Path
 import tempfile
 from types import SimpleNamespace
@@ -13,6 +13,9 @@ class PATHS(SimpleNamespace):
     TMP: T.Final[Path] = Path(tempfile.gettempdir())
     """
     OS Temporary directory
+    """
+    DEVNULL: T.Final[Path] = Path(os.devnull)
+    """
     """
     PYPKG_DIR: T.Final[Path] = Path(__file__).parent.resolve()
     """
@@ -38,6 +41,10 @@ class SCRIPTS(SimpleNamespace):
 
     INSTALL: T.Final[str] = "install"
     """
+    """
+    POST_INSTALL: T.Final[str] = "post_install"
+    """
+    Within data dir, runs in the 2nd phase
     """
     REMOVE: T.Final[str] = "remove"
     """
@@ -70,6 +77,9 @@ class FILES(SimpleNamespace):
     """
     """
     CONFIG_JSON: T.Final[str] = "config.json"
+    """
+    """
+    DATA_DIR: T.Final[str] = "data"
     """
     """
 

@@ -2,11 +2,15 @@
 
 # stdlib imports
 from dataclasses import dataclass, field
+from pathlib import Path
 import typing as T
 
 # 3rd party imports
 import marshmallow as ma
 from marshmallow_dataclass import add_schema
+
+# 1st party imports
+from jumpstart.constants import PATHS
 
 
 @add_schema
@@ -16,7 +20,7 @@ class ParamsHeader:
 
     template: str
     """
-    Should be one of....
+    Should be one of PARAMS_TYPE
     """
     priority: int = 0
     """
@@ -28,6 +32,10 @@ class ParamsHeader:
     urls: list[str] = field(default_factory=list)
     """
     """
+    json_path: Path = PATHS.DEVNULL
+    """
+    Used internally to track the path to the JSON params file
+    """
     # system: list[str] = field(default_factory=list)
     # """
     # """
@@ -35,3 +43,4 @@ class ParamsHeader:
 
     class Meta:
         ordered = True
+        exclude = ("json_path",)

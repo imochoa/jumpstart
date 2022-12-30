@@ -4,7 +4,7 @@
 import codecs
 import inspect
 import json
-import pathlib
+from pathlib import Path
 import shutil
 import subprocess
 import typing as T
@@ -33,7 +33,10 @@ PARAM_SCHEMA_MAP: T.Final[dict[str, T.Any]] = {
 }
 
 
-def load_params(p: pathlib.Path) -> T.Any:
+def get_param_schema(p: Path) -> PARAMS_TYPE:
+    """
+    Given a param JSON file, read the header.template key to find what schema schould be used
+    """
     with codecs.open(
         str(p.absolute()),
         "r",
@@ -43,23 +46,60 @@ def load_params(p: pathlib.Path) -> T.Any:
         obj = json.load(fp)
     schema_key = obj["header"]["template"]
     schema = PARAM_SCHEMA_MAP[schema_key]
-    return schema.Schema().load(obj)
+    return schema
 
 
-def cog_params(dir: pathlib.Path, params: PARAMS_TYPE) -> None:
+def cog_subprocess(
+    in_path: Path,
+    out_path: Path,
+    include_paths: list[Path] | None,
+    cog_args: dict[str, str] | None = None,
+) -> subprocess.CompletedProcess[bytes]:
     """
-    Run cog
+    -c          Checksum the output to protect it against accidental change.
 
+    -d          Delete the generator code from the output file.
+
+    -e          Warn if a file has no cog code in it.
+
+    -P          Use print() instead of cog.outl() for code output.
+
+    -U          Write the output with Unix newlines (only LF line-endings).
+
+    --verbosity=VERBOSITY
+                Control the amount of output. 2 (the default) lists all files,
+                1 lists only changed files, 0 lists no files.
     """
-    template_root = pathlib.Path(inspect.getfile(type(params))).parent
+    basic_cog = ["cog", "-e", "-U", "-d", "-c"]
+    include_cmd: list[str] = []
+    if include_paths:
+        include_cmd = sum((["-I", str(p)] for p in include_paths), [])
+    args_cmd: list[str] = []
+    if cog_args:
+        args_cmd = sum([["-D", f"{k.upper()}={v}"] for k, v in cog_args.items()], [])
+
+    cog_cmd = basic_cog + args_cmd + include_cmd + ["-o", str(out_path)] + [str(in_path)]
+    logger.debug(f"Running: {' '.join(cog_cmd)}")
+    return subprocess.run(cog_cmd, capture_output=True)
+
+
+def cog_param(param: PARAMS_TYPE) -> None:
+    """
+    Run cog:
+    1. Replace dst with src templates
+    2. Use data/ subfolder (post_install ...)
+    """
+    dst_dir = Path(param.header.json_path).parent
+
+    template_root = Path(inspect.getfile(type(param))).parent
     templates = [f for f in template_root.iterdir() if f.stem in SCRIPTS.as_set()]
-    template_map = {t: dir / t.name for t in templates}
+    template_map = {t: dst_dir / t.name for t in templates}
 
     basic_cog = ["cog", "-e", "-U", "-d", "-c"]
     include_paths = ["-I", str(PATHS.TEMPLATES_DIR)]
 
     for src, dst in template_map.items():
-        cog_cmd = basic_cog + params.cog_args + include_paths + ["-o", str(dst)] + [str(src)]
+        cog_cmd = basic_cog + param.cog_args + include_paths + ["-o", str(dst)] + [str(src)]
         p = subprocess.run(cog_cmd, capture_output=True)
         if p.returncode != 0:
             raise OSError(f"Error running {dst}:\n{p.stderr.decode('utf-8')}")

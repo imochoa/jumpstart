@@ -15,21 +15,20 @@ from .metadata import PackageMetadata
 
 def load_json(
     p: Path,
-    schema: marshmallow.Schema,
-) -> marshmallow.Schema:
+) -> dict[str, T.Any]:
     with codecs.open(
         str(p.absolute()),
         "r",
         encoding="utf-8",
         errors="ignore",
     ) as fp:
-        obj = schema.load(json.load(fp))
+        obj = json.load(fp)
     return obj
 
 
 def dump_json(
     p: Path,
-    obj: marshmallow.Schema,
+    obj: dict[str, T.Any],
 ) -> None:
     with codecs.open(
         str(p.absolute()),
@@ -38,7 +37,7 @@ def dump_json(
         errors="ignore",
     ) as fp:
         json.dump(
-            obj=obj.Schema().dump(obj),
+            obj=obj,
             fp=fp,
             indent=2,
         )
