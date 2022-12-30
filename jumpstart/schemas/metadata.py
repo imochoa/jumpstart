@@ -41,3 +41,9 @@ class PackageMetadata:
     class Meta:
         ordered = True
         exclude = ("json_path",)
+
+    @ma.pre_dump  # type: ignore[misc]
+    def set_defaults(self, in_data: "PackageMetadata", **kwargs: T.Any) -> "PackageMetadata":
+        if not in_data.name and in_data.json_path.is_file():
+            in_data.name = in_data.json_path.parent.name
+        return in_data
