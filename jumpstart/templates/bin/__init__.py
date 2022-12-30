@@ -35,8 +35,7 @@ class BinParams:
         ordered = True
 
     @property
-    def cog_args(self) -> list[str]:
-        return [
-            "-D",
-            f"ORGREPO={self.orgrepo}",
-        ]
+    def cog_args(self) -> dict[str, str]:
+        return dict(
+            ORGREPO=self.orgrepo,
+        )

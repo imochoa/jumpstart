@@ -33,5 +33,9 @@ class FlatpakParams:
         ordered = True
 
     @property
-    def cog_args(self) -> list[str]:
-        return ["-D", f"REMOTE={self.remote}", "-D", f"APPID={self.app_id}"]
+    def cog_args(self) -> dict[str, str]:
+        # return ["-D", f"REMOTE={self.remote}", "-D", f"APPID={self.app_id}"]
+        return dict(
+            REMOTE=self.remote,
+            APPID=self.app_id,
+        )

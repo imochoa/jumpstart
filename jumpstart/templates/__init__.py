@@ -95,12 +95,13 @@ def cog_param(param: PARAMS_TYPE) -> None:
     templates = [f for f in template_root.iterdir() if f.stem in SCRIPTS.as_set()]
     template_map = {t: dst_dir / t.name for t in templates}
 
-    basic_cog = ["cog", "-e", "-U", "-d", "-c"]
-    include_paths = ["-I", str(PATHS.TEMPLATES_DIR)]
-
     for src, dst in template_map.items():
-        cog_cmd = basic_cog + param.cog_args + include_paths + ["-o", str(dst)] + [str(src)]
-        p = subprocess.run(cog_cmd, capture_output=True)
+        p = cog_subprocess(
+            in_path=src,
+            out_path=dst,
+            include_paths=[PATHS.TEMPLATES_DIR],
+            cog_args=param.cog_args,
+        )
         if p.returncode != 0:
             raise OSError(f"Error running {dst}:\n{p.stderr.decode('utf-8')}")
         logger.debug(f"\t\tcog {dst}")

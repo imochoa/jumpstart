@@ -92,6 +92,7 @@ if __name__ == "__main__":
     validate_schemas()
 
     for metadata, params in loop_over_pkgs():
-        logger.info(metadata.json_path.name)
+        logger.info(metadata)
         for param in params:
+            logger.debug(param)
             cog_param(param)

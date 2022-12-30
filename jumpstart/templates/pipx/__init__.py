@@ -30,8 +30,8 @@ class PipxParams:
         ordered = True
 
     @property
-    def cog_args(self) -> list[str]:
+    def cog_args(self) -> dict[str, str]:
         # pkg_str = ",".join(self.pkgs) or '""'
         # ppa_str = ",".join(self.ppas) or '""'
         # return ["-D", f"PKGS={pkg_str}", "-D", f"PPAS={ppa_str}"]
-        return []
+        return dict()
