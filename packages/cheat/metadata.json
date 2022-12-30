@@ -1,0 +1,10 @@
+{
+  "name": "Cheat",
+  "urls": [
+    "https://github.com/cheat/cheat"
+  ],
+  "tags": [
+    "cheatsheets"
+  ],
+  "description": "CLI Cheatsheets"
+}

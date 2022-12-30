@@ -16,7 +16,7 @@ import typer
 # 1st party imports
 from jumpstart.constants import FILES, PATHS
 from jumpstart.schemas import PackageMetadata, dump_json, load_json
-from jumpstart.templates import PARAMS_TYPE, cog_param, get_param_schema
+from jumpstart.templates import PARAMS_TYPE, BinParams, cog_param, get_param_schema
 
 app = typer.Typer()
 
@@ -95,9 +95,13 @@ def run() -> None:
 if __name__ == "__main__":
     packages_dir = PATHS.PACKAGES_DIR
     validate_schemas(packages_dir, reexport=True)
-    #
-    # for metadata, params in loop_over_pkgs(packages_dir,):
-    #     logger.info(metadata)
-    #     for param in params:
-    #         logger.debug(param)
-    #         cog_param(param)
+
+    for metadata, params in loop_over_pkgs(
+        packages_dir,
+    ):
+        logger.info(metadata)
+        for param in params:
+            # if not isinstance(param, BinParams):
+            #     continue
+            logger.debug(param)
+            cog_param(param)

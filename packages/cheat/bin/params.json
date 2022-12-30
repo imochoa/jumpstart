@@ -1,0 +1,9 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [],
+    "urls": []
+  },
+  "orgrepo": "cheat/cheat"
+}

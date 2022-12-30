@@ -13,7 +13,7 @@ import typing as T
 from loguru import logger
 
 # 1st party imports
-from jumpstart.constants import PATHS, SCRIPTS
+from jumpstart.constants import FILES, PATHS, SCRIPTS
 
 # local imports
 from .apt import AptParams
@@ -51,8 +51,8 @@ def get_param_schema(p: Path) -> PARAMS_TYPE:
 
 def cog_subprocess(
     in_path: Path,
-    out_path: Path,
-    include_paths: list[Path] | None,
+    out_path: Path | None = None,
+    include_paths: list[Path] | None = None,
     cog_args: dict[str, str] | None = None,
 ) -> subprocess.CompletedProcess[bytes]:
     """
@@ -71,6 +71,7 @@ def cog_subprocess(
                 1 lists only changed files, 0 lists no files.
     """
     basic_cog = ["cog", "-e", "-U", "-d", "-c"]
+
     include_cmd: list[str] = []
     if include_paths:
         include_cmd = sum((["-I", str(p)] for p in include_paths), [])
@@ -78,7 +79,11 @@ def cog_subprocess(
     if cog_args:
         args_cmd = sum([["-D", f"{k.upper()}={v}"] for k, v in cog_args.items()], [])
 
-    cog_cmd = basic_cog + args_cmd + include_cmd + ["-o", str(out_path)] + [str(in_path)]
+    out_cmd: list[str] = []
+    if out_path is not None:
+        out_cmd = ["-o", str(out_path)]
+
+    cog_cmd = basic_cog + args_cmd + include_cmd + out_cmd + [str(in_path)]
     logger.debug(f"Running: {' '.join(cog_cmd)}")
     return subprocess.run(cog_cmd, capture_output=True)
 
@@ -105,5 +110,15 @@ def cog_param(param: PARAMS_TYPE) -> None:
         if p.returncode != 0:
             raise OSError(f"Error running {dst}:\n{p.stderr.decode('utf-8')}")
         logger.debug(f"\t\tcog {dst}")
+
+    # Post templates
+    post_dir = dst_dir / FILES.POST_DIR
+    if post_dir.is_dir():
+        post_templates = [f for f in post_dir.iterdir() if f.stem in SCRIPTS.as_set()]
+        post_template_map = {t: dst_dir / t.name for t in post_templates}
+        for src, dst in post_template_map.items():
+            post_p = cog_subprocess(src)
+            with open(dst, "a") as fp:
+                fp.write("\n" + post_p.stdout.decode("utf-8"))
 
     return None

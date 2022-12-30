@@ -42,10 +42,6 @@ class SCRIPTS(SimpleNamespace):
     INSTALL: T.Final[str] = "install"
     """
     """
-    POST_INSTALL: T.Final[str] = "post_install"
-    """
-    Within data dir, runs in the 2nd phase
-    """
     REMOVE: T.Final[str] = "remove"
     """
     """
@@ -80,6 +76,9 @@ class FILES(SimpleNamespace):
     """
     """
     DATA_DIR: T.Final[str] = "data"
+    """
+    """
+    POST_DIR: T.Final[str] = ".post"
     """
     """
 
