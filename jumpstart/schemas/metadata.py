@@ -2,7 +2,6 @@
 
 # stdlib imports
 from dataclasses import dataclass, field
-from pathlib import Path
 import typing as T
 
 # 3rd party imports
@@ -11,6 +10,9 @@ from marshmallow_dataclass import add_schema
 
 # 1st party imports
 from jumpstart.constants import PATHS
+
+# local imports
+from .fields import Path
 
 
 @add_schema

@@ -89,7 +89,7 @@ def cog_param(param: PARAMS_TYPE) -> None:
     1. Replace dst with src templates
     2. Use data/ subfolder (post_install ...)
     """
-    dst_dir = Path(param.header.json_path).parent
+    dst_dir = param.header.json_path.parent
 
     template_root = Path(inspect.getfile(type(param))).parent
     templates = [f for f in template_root.iterdir() if f.stem in SCRIPTS.as_set()]

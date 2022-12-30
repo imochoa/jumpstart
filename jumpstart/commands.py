@@ -55,7 +55,7 @@ def loop_over_pkgs(
         for p in param_jsons:
             p_sch = get_param_schema(p).Schema()
             obj = p_sch.load(load_json(p))
-            obj.json_path = p
+            obj.header.json_path = p
             params.append(obj)
         if params:
             yield (meta, tuple(params))
