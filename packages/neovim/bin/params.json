@@ -1,0 +1,13 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [],
+    "urls": []
+  },
+  "orgrepo": "neovim/neovim",
+  "filters": [
+    "linux",
+    "amd64"
+  ]
+}
