@@ -5,5 +5,6 @@ Only meant to be imported within cog
 """
 
 # local imports
-from .constants import HEADER, PRINTF_FMT, SH_SHEBANG
-from .utils import require_cmds, safedelete, str2list, tempdir_w_var
+from .cmds import chain_cmds, printf, require_cmds, tempdir_cmd
+from .constants import HEADER, POST_HEADER, PRINTF_FMT, SCRIPT_DEFAULTS, SH_SHEBANG
+from .utils import safedelete, str2list

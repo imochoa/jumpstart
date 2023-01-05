@@ -103,12 +103,13 @@ def cog_param(param: PARAMS_TYPE) -> None:
     template_root = Path(inspect.getfile(type(param))).parent
     templates = [f for f in template_root.iterdir() if f.stem in SCRIPTS.as_set()]
     template_map = {t: dst_dir / t.name for t in templates}
+    include_paths = [template_root, PATHS.TEMPLATES_DIR]
 
     for src, dst in template_map.items():
         p = cog_subprocess(
             in_path=src,
             out_path=dst,
-            include_paths=[PATHS.TEMPLATES_DIR],
+            include_paths=include_paths,
             cog_args=param.cog_args,
         )
         if p.returncode != 0:
@@ -123,8 +124,12 @@ def cog_param(param: PARAMS_TYPE) -> None:
         for src, dst in post_template_map.items():
             post_p = cog_subprocess(
                 in_path=src,
+                out_path=None,  # Write to stdout!
+                include_paths=include_paths,
                 cog_args=param.cog_args,
             )
+            if post_p.returncode != 0:
+                raise OSError(f"Error running {dst}:\n{post_p.stderr.decode('utf-8')}")
             with open(dst, "a") as fp:
                 fp.write("\n" + post_p.stdout.decode("utf-8"))
 

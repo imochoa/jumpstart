@@ -8,7 +8,7 @@ Only meant to be imported within cog
 import typing as T
 
 # local imports
-from .utils import require_cmds
+from .cmds import require_cmds
 
 
 def find_latest_ver(orgrepo: str) -> str:

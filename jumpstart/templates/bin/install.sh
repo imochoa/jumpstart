@@ -1,10 +1,12 @@
 # [[[cog
 # import cog
-# from cog_utils import str2list, HEADER, SH_SHEBANG, require_cmds, tempdir_w_var
+# from cog_utils import str2list, HEADER, POST_HEADER, SH_SHEBANG, require_cmds, tempdir_cmd, SCRIPT_DEFAULTS
 # from bin_cog_utils import install_bin
 #
-# cog.outl(f"{SH_SHEBANG}\n\n# {HEADER}\n")
+# cog.outl(f"{SH_SHEBANG}\n")
+# cog.outl(f"# {HEADER}\n")
+# cog.outl(f"{SCRIPT_DEFAULTS}\n")
+# cog.outl(f"# {POST_HEADER}\n")
 #
-# cog.outl(install_bin(orgrepo=ORGREPO,filters=str2list(FILTERS)))
 # ]]]
 # [[[end]]]
