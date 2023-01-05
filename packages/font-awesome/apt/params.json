@@ -1,0 +1,13 @@
+{
+  "header": {
+    "template": "apt",
+    "priority": 0,
+    "depends": [],
+    "urls": []
+  },
+  "pkgs": [
+    "fonts-font-awesome",
+    "fonts-noto-color-emoji"
+  ],
+  "ppas": []
+}
