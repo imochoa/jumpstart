@@ -1,0 +1,14 @@
+{
+  "header": {
+    "template": "apt",
+    "priority": 0,
+    "depends": [],
+    "urls": []
+  },
+  "pkgs": [
+    "vim",
+    "vim-gtk",
+    "vim-tiny"
+  ],
+  "ppas": []
+}

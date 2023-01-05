@@ -1,0 +1,10 @@
+{
+  "header": {
+    "template": "flatpak",
+    "priority": 0,
+    "depends": [],
+    "urls": []
+  },
+  "app_id": "com.github.xournalpp.xournalpp",
+  "remote": "flathub"
+}
