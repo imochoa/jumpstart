@@ -1,0 +1,15 @@
+{
+  "header": {
+    "template": "apt",
+    "priority": 0,
+    "depends": [],
+    "urls": []
+  },
+  "pkgs": [
+    "virtualbox",
+    "virtualbox-dkms",
+    "virtualbox-ext-pack",
+    "virtualbox-guest-dkms"
+  ],
+  "ppas": []
+}
