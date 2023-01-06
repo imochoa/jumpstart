@@ -32,16 +32,21 @@ CODE_DIR := /src
 VENV_DIR  := /venv
 PYTHON := ${VENV_DIR}/bin/python
 
-.PHONY: build-ubuntu-20.04
-build-ubuntu-20.04:
-	docker build                                    \
-		-f ${PROVISION_DIR}/Dockerfile-ubuntu-20.04 \
-		-t jumpstart:ubuntu-2004                    \
-		${PROGRESS_DARG}                            \
+.PHONY: build-ubuntu-22.04
+build-ubuntu-22.04:
+	docker build \
+		-f ${PROVISION_DIR}/Dockerfile-ubuntu-22.04 \
+		-t jumpstart:ubuntu-2204 \
+		${PROGRESS_DARG} \
 		"${REPO_DIR}"
 
+.PHONY: precommit
+precommit: build-ubuntu-22.04
+
+	printf "done!\n"
+
 .PHONY: build
-build: build-ubuntu-20.04
+build: build-ubuntu-22.04
 	printf "done!\n"
 
 
@@ -54,12 +59,12 @@ build: build-ubuntu-20.04
 
 .PHONY: test-everything
 test-everything:
-	docker run --rm -it                          \
-		-v ${INDEX_DIR}/x64__ubuntu2004:/index   \
+	docker run --rm -it \
+		-v ${INDEX_DIR}/x64__ubuntu2004:/index \
 		-v ${PROVISION_DIR}/docker-ubuntu-setup.sh:/docker-setup.sh \
 		-v ${PROVISION_DIR}/type-test.sh:/test.sh \
 		--workdir /index \
-		ubuntu:20.04          \
+		ubuntu:20.04 \
 		bash -c '\
 		. /docker-setup.sh \
 		&& . /test.sh apt \
@@ -75,12 +80,12 @@ reset-tests:
 
 .PHONY: debug-ubuntu
 debug-ubuntu:
-	docker run --rm -it                          \
-		-v ${INDEX_DIR}/x64__ubuntu2004:/index   \
+	docker run --rm -it \
+		-v ${INDEX_DIR}/x64__ubuntu2004:/index \
 		-v ${PROVISION_DIR}/docker-ubuntu-setup.sh:/docker-setup.sh \
 		-v ${PROVISION_DIR}/apt-install-test.sh:/install-test.sh \
 		--workdir /index \
-		ubuntu:20.04          \
+		ubuntu:20.04 \
 		bash -c '\
  		. /docker-setup.sh \
   		&& cd "/index/materia-theme/apt" \
