@@ -104,4 +104,4 @@ if __name__ == "__main__":
             if not isinstance(param, BinParams):
                 continue
             logger.debug(param)
-            cog_param(param)
+            cog_param(param=param, metadata=metadata)
