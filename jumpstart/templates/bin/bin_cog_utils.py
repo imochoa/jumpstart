@@ -6,9 +6,9 @@ Only meant to be imported within cog
 
 # 1st party imports
 from jumpstart.templates.cog_utils import require_cmds, tempdir_cmd
-from jumpstart.templates.cog_utils.github_release import (
-    find_latest_bin,
-    find_latest_ver,
+from jumpstart.templates.cog_utils.github import (
+    find_github_release,
+    find_github_version,
 )
 
 # sudo apt-get install -y curl wget jq
@@ -33,8 +33,8 @@ def install_bin(orgrepo: str, filters: list[str]) -> str:
     cmd = ""
 
     # Get URL
-    url = find_latest_bin(orgrepo=orgrepo, filters=filters)
-    cmd += f"URL=$({url})\n"
+    # url = find_github_release(orgrepo=orgrepo, filters=filters)
+    # cmd += f"URL=$({url})\n"
 
     # Download to dest
 

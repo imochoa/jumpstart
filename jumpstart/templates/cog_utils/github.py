@@ -11,7 +11,7 @@ import typing as T
 from .cmds import require_cmds
 
 
-def find_latest_ver(orgrepo: str) -> str:
+def find_github_version(orgrepo: str) -> str:
     """
     *orgrepo* should be organization/repository (eg. cheat/cheat)
     """
@@ -22,7 +22,7 @@ def find_latest_ver(orgrepo: str) -> str:
     return f"curl -Ls -o /dev/null -w %{{url_effective}} https://github.com/{orgrepo}/releases/latest | rev | cut -d/ -f1 | rev"
 
 
-def find_latest_bin(orgrepo: str, filters: list[str]) -> str:
+def find_github_release(orgrepo: str, filters: list[str]) -> str:
     """
     *orgrepo* should be organization/repository (eg. cheat/cheat)
     requires:
