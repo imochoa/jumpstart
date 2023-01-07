@@ -5,6 +5,7 @@
     "depends": [],
     "urls": []
   },
+  "cmdname": "cheat",
   "orgrepo": "cheat/cheat",
   "filters": [
     "linux",

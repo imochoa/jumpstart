@@ -12,7 +12,7 @@ from .constants import PRINTF_FMT
 
 
 def chain_cmds(cmds: T.Sequence[str]) -> str:
-    return " && \\\n    ".join(cmds)
+    return " \\\n    && ".join(cmds)
 
 
 def require_cmds(cmds: list[str]) -> str:

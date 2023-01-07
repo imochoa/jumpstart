@@ -5,6 +5,7 @@
     "depends": [],
     "urls": []
   },
+  "cmdname": "nvim",
   "orgrepo": "neovim/neovim",
   "filters": [
     "linux",

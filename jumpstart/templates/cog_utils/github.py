@@ -32,4 +32,5 @@ def find_github_release(orgrepo: str, filters: list[str]) -> str:
 
     cmd = f"curl --silent 'https://api.github.com/repos/{orgrepo}/releases/latest' | jq '..|.browser_download_url?'"
     cmd += "".join(f" | grep '{f}'" for f in filters)
+    cmd += " | tr -d '\"'"
     return cmd

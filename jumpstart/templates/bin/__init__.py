@@ -21,12 +21,19 @@ class BinParams:
     """
     Should be one of....
     """
+    cmdname: str = ""
+    """
+    What to call the executable
+    """
     orgrepo: str = ""
     """
     For installing from a github release
     Should be in the shape of organization/repository
     """
     filters: list[str] = field(default_factory=list)
+    """
+    How to grep the release JSON to get the version you want
+    """
     # src:str = ""
     # """
     # """
@@ -38,6 +45,7 @@ class BinParams:
     @property
     def cog_args(self) -> dict[str, str]:
         return dict(
+            CMDNAME=self.cmdname,
             ORGREPO=self.orgrepo,
             FILTERS=",".join(self.filters) or '""',
         )
