@@ -19,10 +19,26 @@ class PipxParams:
 
     header: ParamsHeader
     """
-    Should be one of....
     """
-    url: str
+    package: str
     """
+    From PYPI
+    cmake
+
+    From source
+    pipx install git+https://github.com/psf/black.git
+    pipx install git+https://github.com/psf/black.git@branch  # branch of your choice
+    pipx install git+https://github.com/psf/black.git@ce14fa8b497bae2b50ec48b3bd7022573a59cdb1  # git hash
+    pipx install https://github.com/psf/black/archive/18.9b0.zip  # install a release
+
+    """
+    app: str = ""
+    """
+    python package to run/install (in case there are several)
+    """
+    ver: str = ""
+    """
+    1.0.0
     """
     Schema: T.ClassVar[T.Type[ma.Schema]] = ma.Schema
 
@@ -31,7 +47,8 @@ class PipxParams:
 
     @property
     def cog_args(self) -> dict[str, str]:
-        # pkg_str = ",".join(self.pkgs) or '""'
-        # ppa_str = ",".join(self.ppas) or '""'
-        # return ["-D", f"PKGS={pkg_str}", "-D", f"PPAS={ppa_str}"]
-        return dict()
+        return dict(
+            PACKAGE=self.package,
+            APP=self.app,
+            VER=self.ver,
+        )
