@@ -1,0 +1,11 @@
+{
+  "header": {
+    "template": "pipx",
+    "priority": 0,
+    "depends": [],
+    "urls": []
+  },
+  "package": "cmake",
+  "app": "",
+  "ver": ""
+}

@@ -15,10 +15,14 @@ def remove_pipx_cmd(package: str, app: str = "", ver: str = "") -> str:
 
 
 def pipx_upstream_ver_cmd(package: str, app: str = "", ver: str = "") -> str:
+    """
+    If it's a URL -> Get from github
+    If it's a PYPI package -> get with pip
+    """
+    # IF it's a URL, get from
     # return rf'printf "{appid} > %s\n" "$(flatpak search {appid} | head -n1 | cut -f4 | tr -d /" /")"'
     return "# TODO!"
 
 
 def pipx_local_ver_cmd(package: str, app: str = "", ver: str = "") -> str:
-    # return rf'printf "{appid} > %s\n" "$(flatpak info {appid} | grep Version | cut -d: -f2 | tr -d /" /")"'
-    return "# TODO!"
+    return f"pipx list | grep installed | grep {package} | ts -s ' ' | cut -d' ' -f8"
