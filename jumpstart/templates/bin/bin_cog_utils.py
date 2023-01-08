@@ -87,7 +87,7 @@ def install_orgrepo(
         """
         """
 
-    URLExts = {
+    URLExts: dict[str, list[str]] = {
         ".tar.gz": [],
         ".gz": [
             f'gzip --decompress "${{{VARNAMES.DLFILE}}}"',
@@ -120,12 +120,12 @@ def install_orgrepo(
             # f'{VARNAMES.DLPATH}="${{{VARNAMES.TMPDIR}}}/${{{VARNAMES.DLFILE}}}"',
             f"{VARNAMES.URL}=$({release_url_cmd})",
             f'curl -jLO "${VARNAMES.URL}"',
-            fr'{VARNAMES.DLFILE}="$(\ls . )"',
+            rf'{VARNAMES.DLFILE}="$(\ls . )"',
             # f'{VARNAMES.DLPATH}="${{{VARNAMES.TMPDIR}}}/${{{VARNAMES.DLFILE}}}"',
         ]
         + extraction_cmds
         + [
-            fr'{VARNAMES.SRCFILE}="$(\ls . )"',
+            rf'{VARNAMES.SRCFILE}="$(\ls . )"',
             f'sudo mv "${{{VARNAMES.SRCFILE}}}" ${{INSTALLDIR}}/{{CMDNAME}}',
         ]
     )

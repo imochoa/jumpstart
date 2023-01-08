@@ -16,7 +16,13 @@ import typer
 # 1st party imports
 from jumpstart.constants import FILES, PATHS
 from jumpstart.schemas import PackageMetadata, dump_json, load_json
-from jumpstart.templates import PARAMS_TYPE, BinParams, cog_param, get_param_schema
+from jumpstart.templates import (
+    PARAMS_TYPE,
+    BinParams,
+    PipxParams,
+    cog_param,
+    get_param_schema,
+)
 
 app = typer.Typer()
 
