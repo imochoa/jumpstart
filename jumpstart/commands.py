@@ -19,6 +19,7 @@ from jumpstart.schemas import PackageMetadata, dump_json, load_json
 from jumpstart.templates import (
     PARAMS_TYPE,
     BinParams,
+    NoParams,
     PipxParams,
     cog_param,
     get_param_schema,

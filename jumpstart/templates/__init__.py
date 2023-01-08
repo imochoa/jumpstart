@@ -20,6 +20,7 @@ from jumpstart.schemas.metadata import PackageMetadata
 from .apt import AptParams
 from .bin import BinParams
 from .flatpak import FlatpakParams
+from .manual import NoParams
 from .pipx import PipxParams
 
 PARAMS_TYPE = T.Union[AptParams | FlatpakParams | PipxParams | BinParams]
@@ -30,6 +31,7 @@ PARAM_SCHEMA_MAP: T.Final[dict[str, T.Any]] = {
         FlatpakParams,
         PipxParams,
         BinParams,
+        NoParams,
     )
 }
 
@@ -122,6 +124,10 @@ def cog_param(
     1. Replace dst with src templates
     2. Use data/ subfolder (post_install ...)
     """
+    if isinstance(param, NoParams):
+        print("skipping")
+        # Manual scripts!
+        return None
 
     default_cog_kwargs: dict[str, str] = dict(
         TEMPLATE=param.header.template,
