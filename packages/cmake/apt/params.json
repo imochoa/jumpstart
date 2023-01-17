@@ -6,7 +6,9 @@
     "urls": []
   },
   "pkgs": [
-    "nomacs"
+    "cmake",
+    "cmake-curses-gui",
+    "cmake-qt-gui"
   ],
   "ppas": []
 }

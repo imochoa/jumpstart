@@ -4,4 +4,4 @@
 #		 > nomacs
 #		 > apt
 
-sudo apt-get --remove gromit-mpx
+sudo apt-get --remove nomacs

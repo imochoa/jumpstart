@@ -6,7 +6,7 @@
     "urls": []
   },
   "pkgs": [
-    "python3-pygments"
+    "imagemagick"
   ],
   "ppas": []
 }

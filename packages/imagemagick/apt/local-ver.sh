@@ -4,4 +4,4 @@
 #		 > imagemagick
 #		 > apt
 
-printf "python3-pygments > %s\n" "$(apt-cache policy python3-pygments | grep Installed | cut -d: -f2 | tr -d /" /")"
+printf "imagemagick > %s\n" "$(apt-cache policy imagemagick | grep Installed | cut -d: -f2 | tr -d /" /")"

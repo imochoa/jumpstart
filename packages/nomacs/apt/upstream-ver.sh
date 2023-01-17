@@ -4,4 +4,4 @@
 #		 > nomacs
 #		 > apt
 
-printf "gromit-mpx > %s\n" "$(apt-cache policy gromit-mpx | grep Candidate | cut -d: -f2 | tr -d /" /")"
+printf "nomacs > %s\n" "$(apt-cache policy nomacs | grep Candidate | cut -d: -f2 | tr -d /" /")"

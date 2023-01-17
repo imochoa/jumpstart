@@ -4,4 +4,4 @@
 #		 > imagemagick
 #		 > apt
 
-sudo apt-get install -y python3-pygments
+sudo apt-get install -y imagemagick

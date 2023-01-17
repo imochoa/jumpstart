@@ -1,12 +1,12 @@
 {
   "header": {
     "template": "apt",
-    "priority": 0,
+    "priority": 10,
     "depends": [],
     "urls": []
   },
   "pkgs": [
-    "nomacs"
+    "gromit-mpx"
   ],
   "ppas": []
 }
