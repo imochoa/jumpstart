@@ -66,31 +66,28 @@ def download_and_extract(
     archive_ext: str,
 ) -> list[str]:
     """ """
-    exts_tuple = getattr(ARCHIVE_EXTS, archive_ext, ("",))
-    ext: str = exts_tuple[0]
-    file = sh_quote(f"download{ext}")
+    exts_tuple: tuple[str, ...] = getattr(ARCHIVE_EXTS, archive_ext, tuple())
 
-    download_cmds = [
+    cmds = [
         tempdir_cmd(VARNAMES.TMPDIR),
         f'cd "${{{VARNAMES.TMPDIR}}}"',
         printf(f"Downloading to $(realpath .)"),
         f"{VARNAMES.URL}=$({url_cmd})",
-        f'{VARNAMES.DLFILE}="{file}"',
-        f'curl -jL "${{{VARNAMES.URL}}}" --output "${{{VARNAMES.DLFILE}}}"',
-        # rf'{VARNAMES.DLFILE}="$(\ls . )"',
-        # f'{VARNAMES.DLPATH}="${{{VARNAMES.TMPDIR}}}/${{{VARNAMES.DLFILE}}}"',
+        f'curl -jLO "${{{VARNAMES.URL}}}"',
+        f"{VARNAMES.DLFILE}=$(ls . | head -n1)",
     ]
 
-    extract_cmds: list[str] = []
-    if ext:
-        extract_cmds = (
-            [printf(f"Extracting ${{{VARNAMES.DLFILE}}}")]
+    if exts_tuple:
+        # TODO move extraction logs to the extraction fcns...
+        cmds += (
+            [
+                printf(f"Extracting ${{{VARNAMES.DLFILE}}}"),
+            ]
             + EXTRACTION_FCNS[exts_tuple](f"${{{VARNAMES.DLFILE}}}")
             + ['echo "$(ls .)"']
         )
 
-    cmd = download_cmds + extract_cmds
-    return cmd
+    return cmds
 
 
 if __name__ == "__main__":
