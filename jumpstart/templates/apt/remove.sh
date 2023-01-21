@@ -4,6 +4,6 @@
 # from cog_utils import str2list
 # from apt_cog_utils import remove_apt
 #
-# cog.outl(remove_apt(str2list(PKGS),str2list(PPAS)))
+# cog.outl(remove_apt(pkgs=str2list(PKGS),ppas=str2list(PPAS)))
 # ]]]
 # [[[end]]]
