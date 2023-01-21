@@ -87,3 +87,4 @@ repos:
     rev: "0b037c2b59aa62dc3be3287d175295f1a5547eb9" # frozen: v0.991
     hooks:
       - id: mypy
+        additional_dependencies: [marshmallow_dataclass]

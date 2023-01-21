@@ -229,6 +229,17 @@ tests = ["pytest (>=5.4)", "pytest-mypy-plugins (>=1.2.0)", "typing-extensions (
 union = ["typeguard"]
 
 [[package]]
+name = "marshmallow-polyfield"
+version = "5.11"
+description = "An unofficial extension to Marshmallow to allow for polymorphic fields"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.dependencies]
+marshmallow = ">=3.0.0b10"
+
+[[package]]
 name = "mypy-extensions"
 version = "0.4.3"
 description = "Experimental type system extensions for programs checked with the mypy typechecker."
@@ -621,7 +632,7 @@ dev = ["black (>=19.3b0)", "pytest (>=4.6.2)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "ff8755f92bfc41450a408f1980510fbbceb764fedcf5b71234a058bc3566892b"
+content-hash = "a5ce71b8023f1bf8ccc111e71a01a43a7ecc8f8fdf7004fc42224c0af5536645"
 
 [metadata.files]
 atomicwrites = [
@@ -705,6 +716,9 @@ marshmallow = [
 marshmallow-dataclass = [
     {file = "marshmallow_dataclass-8.5.8-py3-none-any.whl", hash = "sha256:9558cad84f65908df269d762deda903a8b42e25621c8a6be2a8d9b19cd55b9f5"},
     {file = "marshmallow_dataclass-8.5.8.tar.gz", hash = "sha256:b12dc2ca9492d0d8f98577e185dee3189d8bb02f4909e475f56ed4bf7b7d5a83"},
+]
+marshmallow-polyfield = [
+    {file = "marshmallow-polyfield-5.11.tar.gz", hash = "sha256:8075a9cc490da4af58b902b4a40a99882dd031adb7aaa96abd147a4fcd53415f"},
 ]
 mypy-extensions = [
     {file = "mypy_extensions-0.4.3-py2.py3-none-any.whl", hash = "sha256:090fedd75945a69ae91ce1303b5824f428daf5a028d2f6ab8a299250a846f15d"},

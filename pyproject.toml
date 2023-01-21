@@ -32,6 +32,7 @@ cogapp = "^3.3.0"
 
 #typing-inspect = "^0.7.1, !=0.8.0"
 # 0.8.0 was problematic
+marshmallow-polyfield = "^5.11"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^2.21.0"
@@ -70,6 +71,7 @@ exclude = [
 ]
 # marshmallow_dataclass.mypy -> Required so that mypy recognizes the custom marshmallow NewType's
 plugins = [
+    'marshmallow_dataclass.mypy',
 ]
 warn_unused_configs = true
 warn_unused_ignores = true
