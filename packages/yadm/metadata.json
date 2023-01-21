@@ -1,10 +1,10 @@
 {
   "name": "yadm",
   "urls": [
-    ""
+    "https://yadm.io/"
   ],
   "tags": [
-    ""
+    "VCS"
   ],
-  "description": ""
+  "description": "Yet Another Dotfiles Manager"
 }

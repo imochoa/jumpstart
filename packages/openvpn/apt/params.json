@@ -1,0 +1,14 @@
+{
+  "header": {
+    "template": "apt",
+    "priority": 0,
+    "depends": [],
+    "urls": []
+  },
+  "pkgs": [
+    "easy-rsa",
+    "network-manager-openvpn",
+    "openvpn"
+  ],
+  "ppas": []
+}
