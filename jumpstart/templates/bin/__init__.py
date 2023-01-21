@@ -10,33 +10,31 @@ from marshmallow_dataclass import add_schema
 
 # 1st party imports
 from jumpstart.schemas.params_header import ParamsHeader
+from jumpstart.schemas.pkg_download import PkgDownloadSources
+from jumpstart.schemas.schema_utils import dump_json
 
 
 @add_schema
 @dataclass(repr=False)
 class BinParams:
-    """Holds the information from each metadata JSON file"""
+    """
+    For one executable file
+    """
 
     header: ParamsHeader
     """
     Should be one of....
     """
-    cmdname: str = ""
+    cmdname: str
     """
     What to call the executable
+    If empty, the following final steps will be skipped:
+    - making executable
+    - copying to the installation directory
     """
-    orgrepo: str = ""
+    download_sources: PkgDownloadSources
     """
-    For installing from a github release
-    Should be in the shape of organization/repository
     """
-    filters: list[str] = field(default_factory=list)
-    """
-    How to grep the release JSON to get the version you want
-    """
-    # src:str = ""
-    # """
-    # """
     Schema: T.ClassVar[T.Type[ma.Schema]] = ma.Schema
 
     class Meta:
@@ -44,8 +42,19 @@ class BinParams:
 
     @property
     def cog_args(self) -> dict[str, str]:
-        return dict(
-            CMDNAME=self.cmdname,
-            ORGREPO=self.orgrepo,
-            FILTERS=",".join(self.filters) or '""',
-        )
+        # Update download sources cache?
+        past_hash = self.download_sources.cache.source_hash
+        download_sources_cog_args = self.download_sources.cog_args
+        if (
+            past_hash != self.download_sources.cache.source_hash
+            and self.header.json_path
+            and self.header.json_path.is_file()
+        ):
+            dump_json(self.header.json_path, obj=self.Schema().dump(self))
+
+        return {
+            **dict(
+                CMDNAME=self.cmdname,
+            ),
+            **download_sources_cog_args,
+        }

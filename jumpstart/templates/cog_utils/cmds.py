@@ -33,7 +33,7 @@ def printf(msg: str, fmt: str = PRINTF_FMT) -> str:
     """
     Wrapper for printf
     """
-    return f'printf "${fmt}" "{msg}"'
+    return f'printf "{fmt}" "{msg}"'
 
 
 def debug(msg: str) -> str:
@@ -54,7 +54,7 @@ def wget(
     sudo: bool = False,
 ) -> str:
     """
-    Wrapper for printf
+    Wrapper for wget calls
     """
     prefix = "sudo " if sudo else ""
     return prefix + f'wget "${url}" --continue --output-document="{dst}"'

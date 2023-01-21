@@ -42,8 +42,13 @@ class PackageMetadata:
         ordered = True
         exclude = ("json_path",)
 
-    @ma.pre_dump  # type: ignore[misc]
+    @ma.pre_dump
     def set_defaults(self, in_data: "PackageMetadata", **kwargs: T.Any) -> "PackageMetadata":
+        # Set name from filepath, if missing
         if not in_data.name and in_data.json_path.is_file():
             in_data.name = in_data.json_path.parent.name
+        # Set URL to google search, if missing
         return in_data
+
+    def __str__(self) -> str:
+        return f'<{self.__class__.__name__} name="{self.name}">'

@@ -10,7 +10,7 @@ import marshmallow as ma
 from marshmallow_dataclass import NewType, add_schema
 
 
-class PathField(ma.fields.Field):  # type: ignore[misc]
+class PathField(ma.fields.Field):
     """ """
 
     def __init__(self, *args: T.Any, **kwargs: T.Any) -> None:

@@ -107,6 +107,12 @@ COGMAIN_HEADER = "\n".join(
         r'cog.outl(f"")',
     )
 )
+COGPRE_HEADER = "\n".join(
+    (
+        r'cog.outl(f"# <<<PRE STAGE>>>")',
+        r'cog.outl(f"")',
+    )
+)
 COGPOST_HEADER = "\n".join(
     (
         r'cog.outl(f"# <<<POST STAGE>>>")',
@@ -160,7 +166,38 @@ def cog_param(
             raise OSError(f"Error running {dst}:\n{p.stderr.decode('utf-8')}")
         logger.debug(f"\t\tcog {dst}")
 
-    # Post templates
+    # Pre/Post templates
+    pre_dir = dst_dir / FILES.PRE_DIR
+    if pre_dir.is_dir():
+        pre_templates = [f for f in pre_dir.iterdir() if f.stem in SCRIPTS.as_set()]
+        pre_template_map = {t: dst_dir / t.name for t in pre_templates}
+        for src, dst in pre_template_map.items():
+            pre_cog_args = {
+                **param.cog_args,
+                **default_cog_kwargs,
+                **dict(FILE=src.name.upper()),
+            }
+            pre_p = cog_subprocess(
+                in_path=src,
+                out_path=None,  # Write to stdout!
+                include_paths=include_paths,
+                cog_args=pre_cog_args,
+                prologue=COGPRE_HEADER,
+            )
+            if pre_p.returncode != 0:
+                raise OSError(f"Error running {dst}:\n{pre_p.stderr.decode('utf-8')}")
+
+            # TODO write after all lines that start with comments & before content
+            with open(dst) as fp:
+                txt = fp.readlines()
+            pre_start_idx = next(
+                idx for idx, line in enumerate(txt) if line.strip() and not line.strip().startswith("#")
+            )
+            pre_txt = [line + "\n" for line in pre_p.stdout.decode("utf-8").split("\n")]
+            txt = txt[:pre_start_idx] + pre_txt + txt[pre_start_idx:]
+            with open(dst, "w") as fp:
+                fp.write("".join(txt))
+
     post_dir = dst_dir / FILES.POST_DIR
     if post_dir.is_dir():
         post_templates = [f for f in post_dir.iterdir() if f.stem in SCRIPTS.as_set()]

@@ -5,6 +5,7 @@ Only meant to be imported within cog
 """
 
 # stdlib imports
+from types import SimpleNamespace
 import typing as T
 
 SH_SHEBANG: T.Final[str] = "#!/usr/bin/env sh"
@@ -34,3 +35,35 @@ SCRIPT_DEFAULTS: T.Final[str] = "\n".join(
 # IMG_URL='https://unsplash.com/photos/VzRKG0piEp8/download?force=true'
 # sudo wget ${IMG_URL} --continue --output-document=${BGDIR}/wallpaper.jpg
 # sudo convert ${BGDIR}/wallpaper.jpg ${BGDIR}/wallpaper.png
+
+
+class VARNAMES(SimpleNamespace):
+    """
+    Variable names to use in the shell scripts
+    """
+
+    TMPDIR = "DLTMP"
+    """
+    current temporary directory
+    """
+    DLFILE = "DLFILE"
+    """
+    Downloaded file (.tar.gz, .zip, ...)
+    """
+    DLPATH = "DLPATH"
+    """
+    full path of downloaded file
+    """
+    URL = "URL"
+    """
+    URL to download
+    """
+    SRCFILE = "SRCFILE"
+    """
+    """
+    SRCPATH = "SRCPATH"
+    """
+    """
+    DSTPATH = "SRCPATH"
+    """
+    """

@@ -8,7 +8,9 @@ import typing as T
 
 
 class PATHS(SimpleNamespace):
-    """ """
+    """
+    All relevant pathlib.Path paths
+    """
 
     TMP: T.Final[Path] = Path(tempfile.gettempdir())
     """
@@ -31,11 +33,13 @@ class PATHS(SimpleNamespace):
     """
     PACKAGES_DIR: T.Final[Path] = REPO_DIR / "packages"
     """
+    Top-level directory where the packages are stored
     """
 
 
 class SCRIPTS(SimpleNamespace):
     """
+    Filename of the templates
     Templated scripts
     """
 
@@ -54,6 +58,7 @@ class SCRIPTS(SimpleNamespace):
     UPDATE: T.Final[str] = "update"
     """
     """
+
     # SETUP: T.Final[str] = "setup"
     # """
     # """
@@ -64,31 +69,78 @@ class SCRIPTS(SimpleNamespace):
 
 
 class FILES(SimpleNamespace):
-    """ """
+    """
+    Namespace to hold file & directory names
+    """
 
     METADATA_JSON: T.Final[str] = "metadata.json"
     """
+    General information about a package
     """
     PARAMS_JSON: T.Final[str] = "params.json"
     """
+    Parameters required for each template type
     """
     CONFIG_JSON: T.Final[str] = "config.json"
     """
+    TODO
+    configure the installation (install paths, local/global installations, prefer apt, etc.)
     """
     DATA_DIR: T.Final[str] = "data"
     """
+    Directory to store extra data
     """
     POST_DIR: T.Final[str] = ".post"
     """
+    Templates to run AFTER & append to the default ones' outputs
     """
+    PRE_DIR: T.Final[str] = ".pre"
+    """
+    TODO
+    Templates to run BEFORE & prepend to the default ones' outputs
+    """
+
+
+class ARCHIVE_EXTS(SimpleNamespace):
+    """ """
+
+    ZIP: T.Final[tuple[str, ...]] = (".zip",)
+    """
+    """
+    TAR: T.Final[tuple[str, ...]] = (".tar",)
+    """
+    """
+    TARGZ: T.Final[tuple[str, ...]] = (".tar.gz",)
+    """
+    """
+    GZ: T.Final[tuple[str, ...]] = (".gz",)
+    """
+    """
+    SEVENZ: T.Final[tuple[str, ...]] = (".7z",)
+    """
+    """
+
+    @classmethod
+    def match(cls, path: str) -> str:
+        """
+        *path* can be either a file path or a URL
+        returns the name of the key!
+        """
+        known_extmap = {v: k for k, v in cls.__dict__.items() if isinstance(v, tuple)}
+        known_exts = sorted(known_extmap, reverse=True)
+        for exts in known_exts:
+            if any(path.lower().endswith(ext.lower()) for ext in exts):
+                return known_extmap[exts]
+        raise KeyError(f"No known archive extension for {path}")
 
 
 class ENVVARS(SimpleNamespace):
     """
+    OS Environment variables that are used in the templates
     INSTALLDIR=/usr/local/bin
     """
 
-    INSTALL_P: T.Final[str] = "INSTALL_DST"
+    INSTALL_DST: T.Final[str] = "INSTALL_DST"
     """
     INSTALLDIR = / usr / local / bin
     # Single-user
@@ -112,7 +164,8 @@ class ENVVARS(SimpleNamespace):
 
 class System(T.NamedTuple):
     """
-    Relevant someday...
+    TODO Relevant someday...
+    System information required by the packages
     """
 
     plat: str

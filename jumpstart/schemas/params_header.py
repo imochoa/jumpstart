@@ -46,3 +46,6 @@ class ParamsHeader:
     class Meta:
         ordered = True
         exclude = ("json_path",)
+
+    def __str__(self) -> str:
+        return f'<{self.__class__.__name__} template="{self.template}">'
