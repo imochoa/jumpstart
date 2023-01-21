@@ -1,0 +1,29 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [
+      "graphviz",
+      "jre"
+    ],
+    "urls": [
+      "https://plantuml.com/faq-install"
+    ]
+  },
+  "cmdname": "",
+  "download_sources": {
+    "sources": [
+      {
+        "orgrepo": "plantuml/plantuml",
+        "filters": [
+          "uml\\.jar\""
+        ]
+      }
+    ],
+    "cache": {
+      "source_hash": "<GitHubRelease orgrepo=plantuml/plantuml, filters=['uml\\\\.jar\"']>",
+      "url": "https://github.com/plantuml/plantuml/releases/download/v1.2023.0/plantuml.jar",
+      "archive_ext": ""
+    }
+  }
+}
