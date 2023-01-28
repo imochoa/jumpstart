@@ -244,6 +244,7 @@ class PkgDownloadSources:
         source_hash = str(source)
         if not self.cache or self.cache.source_hash != source_hash:
             logger.debug(f"Updating cache for {source}")
+            self.cache.archive_ext = ""
             self.cache.source_hash = source_hash
             self.cache.url = run_shell_cmd(url_cmd)
             try:

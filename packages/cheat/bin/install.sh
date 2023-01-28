@@ -5,37 +5,28 @@
 #		 > bin
 
 # Variables
-INSTALLDIR="${INSTALLDIR:-${HOME}/.local/bin/}"
-BASHCOMP="${BASHCOMP:-${HOME}/.config/bash/bash_completion}"
+# TEST PRE!
+INSTALL_DST="${INSTALL_DST:-${HOME}/.local/bin/}"
+BASHCOMP_P="${BASHCOMP_P:-${HOME}/.config/bash/bash_completion}"
 ZSHCOMP="${ZSHCOMP:-${HOME}/.config/zsh/completions}"
 TEMPDIR="$(mktemp -d -t XXXXXXXXXX)"
 FMT='\e[0;34m%-6s\e[m\n'
 
 # Commands
-GHRELEASEURL="$(curl --silent 'https://api.github.com/repos/cheat/cheat/releases/latest' | jq '..|.browser_download_url?' | grep 'linux' | grep 'amd64')"
+DLTMP=$(mktemp -d -t jumpstart-XXXXXXXXXX) \
+    && cd "${DLTMP}" \
+    && printf "\e[0;34m%-6s\e[m\n" "Downloading to $(realpath .)" \
+    && URL=$(curl --silent 'https://api.github.com/repos/cheat/cheat/releases/latest' | jq '..|.browser_download_url?' | grep 'linux' | grep 'amd64' | tr -d '"') \
+    && curl -jLO "${URL}" \
+    && DLFILE=$(ls . | head -n1) \
+    && printf "\e[0;34m%-6s\e[m\n" "Extracting..." \
+    && gzip --decompress "${DLFILE}" \
+    && echo "$(ls .)" \
+    && SRCPATH=$( find . -type f | grep 'cheat' ) \
+    && sudo chmod +x "${SRCPATH}" \
+    && sudo mv "${SRCPATH}" "${INSTALL_DST}/cheat"
 
 
-
-INSTALLDIR="${HOME}/.local/bin/"
-
-echo "INSTALLING" \
-&& echo "${GHRELEASEURL}" \
-&& echo "${TEMPDIR}" \
-&& INSTALLDIR="${HOME}/.local/bin/" \
-&& echo "Downloading..." \
-&& cd "${TEMPDIR}" \
-&& curl -jL "${GHRELEASEURL}" -o cheat.gz \
-&& echo "extracting..." \
-&& gzip -d "cheat.gz" \
-&& sudo chmod +x "cheat" \
-&& sudo cp "cheat" "${INSTALLDIR}"
-
-# import cog
-# from cog_utils import str2list, require_cmds, chain_cmds, printf
-# from bin_cog_utils import install_bin
-#
-# # Variables
-#
 # # For binary
 # srcbin=r'"${TEMPDIR}/cheat"'
 # dstbin=r'"${INSTALLDIR}/cheat"'

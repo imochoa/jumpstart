@@ -15,7 +15,7 @@ from cog_utils.constants import VARNAMES
 from cog_utils.extractions import EXTRACTION_FCNS
 
 # 1st party imports
-from jumpstart.constants import ARCHIVE_EXTS, ENVVARS
+from jumpstart.constants import ARCHIVE_EXTS
 
 # URL_CMD=url_cmd,
 #             URL=self.cache.url,
@@ -78,14 +78,7 @@ def download_and_extract(
     ]
 
     if exts_tuple:
-        # TODO move extraction logs to the extraction fcns...
-        cmds += (
-            [
-                printf(f"Extracting ${{{VARNAMES.DLFILE}}}"),
-            ]
-            + EXTRACTION_FCNS[exts_tuple](f"${{{VARNAMES.DLFILE}}}")
-            + ['echo "$(ls .)"']
-        )
+        cmds += EXTRACTION_FCNS[exts_tuple](f"${{{VARNAMES.DLFILE}}}")
 
     return cmds
 

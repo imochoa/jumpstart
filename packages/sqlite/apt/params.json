@@ -1,0 +1,14 @@
+{
+  "header": {
+    "template": "apt",
+    "priority": 0,
+    "depends": [],
+    "urls": []
+  },
+  "pkgs": [
+    "sqlite3",
+    "sqlite3-tools",
+    "sqlitebrowser"
+  ],
+  "ppas": []
+}

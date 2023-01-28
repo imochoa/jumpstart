@@ -35,9 +35,6 @@ class AptParams:
 
     @property
     def cog_args(self) -> dict[str, str]:
-        # pkg_str = ",".join(self.pkgs) or '""'
-        # ppa_str = ",".join(self.ppas) or '""'
-        # return ["-D", f"PKGS={pkg_str}", "-D", f"PPAS={ppa_str}"]
         return dict(
             PKGS=",".join(self.pkgs) or '""',
             PPAS=",".join(self.ppas) or '""',

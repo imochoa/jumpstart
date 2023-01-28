@@ -3,15 +3,11 @@
 """
 Only meant to be imported within cog
 """
-
-# stdlib imports
-from shlex import quote
-
 # 1st party imports
-from jumpstart.constants import ENVVARS
 from jumpstart.templates.cog_utils import chain_cmds, printf, require_cmds, tempdir_cmd
-from jumpstart.templates.cog_utils.constants import VARNAMES
+from jumpstart.templates.cog_utils.constants import ENVVARS, VARNAMES
 from jumpstart.templates.cog_utils.downloads import download_and_extract
+from jumpstart.templates.cog_utils.utils import safedelete, sh_escape
 
 # Getting latest version!
 # curl -Ls -o /dev/null -w %{url_effective} https://github.com/cheat/cheat/releases/latest | rev | cut -d/ -f1 | rev
@@ -20,24 +16,80 @@ from jumpstart.templates.cog_utils.downloads import download_and_extract
 def install_bin(
     url_cmd: str,
     archive_ext: str,
-    cmdname: str,
+    cmdmap: dict[str, str],
 ) -> str:
     """ """
 
     # Download the file
     cmds = download_and_extract(url_cmd=url_cmd, archive_ext=archive_ext)
     # Find file
-    cmds += [f"{VARNAMES.SRCFILE}=$(ls . | head -n1)"]
-    # change permissions & install it to "cmdname"
-    if cmdname:
+    # cmds += [f"{VARNAMES.SRCFILE}=$(ls . | head -n1)"]
+    # # change permissions & install it to "cmdname"
+
+    # for k in sorted(cmdmap):
+    #     src_cmd = sh_escape(k)
+    #     # TODO add globbing?
+    #     # dst_cmd = f"${{{ENVVARS.INSTALL_DST}}}/" + v or src_cmd.split('/')[-1]
+    #     dst_cmd = f"${{{ENVVARS.INSTALL_DST}}}/" + cmdmap[k].strip()
+    #     cmds += [
+    #         f'sudo chmod +x "{src_cmd}"',
+    #         f'sudo mv "{src_cmd}" "{dst_cmd}"',
+    #     ]
+
+    for k in sorted(cmdmap):
+        dst = f"${{{ENVVARS.INSTALL_DST}}}/" + cmdmap[k].strip()
         cmds += [
-            f'sudo chmod +x "${{{VARNAMES.SRCFILE}}}"',
-            f'sudo mv "${{{VARNAMES.SRCFILE}}}" "${{{ENVVARS.INSTALL_DST}}}/{quote(cmdname)}"',
+            f"{VARNAMES.SRCPATH}=$( find . -type f | grep '{k}' )",
+            f'sudo chmod +x "${{{VARNAMES.SRCPATH}}}"',
+            f'sudo mv "${{{VARNAMES.SRCPATH}}}" "{dst}"',
         ]
 
     return chain_cmds(cmds)
 
 
+def remove_bin(
+    cmdmap: dict[str, str],
+) -> str:
+    return chain_cmds([safedelete(f"${{{ENVVARS.INSTALL_DST}}}/{v}") for v in cmdmap.values()])
+
+
+# def ver_cmd(pkg: str, grep: str) -> str:
+#     return rf'printf "{pkg} > %s\n" "$(apt-cache policy {pkg} | grep {grep} | cut -d: -f2 | tr -d /" /")"'
+
+
+def bin_local_ver_cmd() -> str:
+    return chain_cmds([])
+
+
+def bin_upstream_ver_cmd(
+    name: str,
+    ver_cmd: str,
+    cmdmap: dict[str, str],
+) -> str:
+    # for k in sorted(cmdmap):
+    #     src_cmd = sh_escape(k)
+    #     dst_cmd = f"${{{ENVVARS.INSTALL_DST}}}/" + cmdmap[k].strip()
+    #     cmds += [
+    #         f'sudo chmod +x "{src_cmd}"',
+    #         f'sudo mv "{src_cmd}" "{dst_cmd}"',
+    #     ]
+
+    cmds = [f"{VARNAMES.VERSION}=$({ver_cmd})", printf(f"{name} > ${{{VARNAMES.VERSION}}}\\n")]
+
+    return chain_cmds(cmds)
+
+
 if __name__ == "__main__":
-    # install_orgrepo(orgrepo="cheat/cheat", filters=["linux", "amd64"])
-    pass
+    # url_cmd = r"curl --silent 'https://api.github.com/repos/cheat/cheat/releases/latest' | jq '..|.browser_download_url?' | grep 'linux' | grep 'amd64' | tr -d '\"'"
+    # archive_ext = ".GZ",
+    # cmdmap={"cheat-*": "cheat"}
+    url_cmd = r"curl --silent 'https://api.github.com/repos/ogham/exa/releases/latest' | jq '..|.browser_download_url?' | grep 'linux' | grep 'x86_64' | grep 'musl' | tr -d '\"'"
+    archive_ext = ".ZIP"
+    cmdmap = {"bin/exa$": "exa"}
+    print(
+        install_bin(
+            url_cmd=url_cmd,
+            archive_ext=archive_ext,
+            cmdmap=cmdmap,
+        )
+    )

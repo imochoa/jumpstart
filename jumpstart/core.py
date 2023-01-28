@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
-
 # stdlib imports
+import json
 from pathlib import Path
 import typing as T
 
 # 3rd party imports
 from loguru import logger
+import rich
+from rich.table import Table
+from rich.tree import Tree
 
 # 1st party imports
 from jumpstart.constants import FILES, PATHS

@@ -9,7 +9,6 @@
       "https://pypa.github.io/pipx/installation/"
     ]
   },
-  "cmdname": "",
   "download_sources": {
     "sources": [],
     "cache": {
@@ -17,5 +16,6 @@
       "url": "",
       "archive_ext": ""
     }
-  }
+  },
+  "cmdmap": {}
 }

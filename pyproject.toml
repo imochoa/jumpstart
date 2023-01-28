@@ -4,14 +4,19 @@ version = "0.1.0"
 description = ""
 authors = []
 license = "MIT"
-#include = ["jumpstart/pkg-index/*","jumpstart/templates/*" ]
-#packages = [{ include = "schema_graph" }]
-
 packages = [
     { include = "jumpstart" },
 ]
-# include = ["",]
+include = [
+    "jumpstart/templates/*" ,
+    "packages/*",
+]
 # exclude = ["my_package/excluded.py"]
+[tool.poetry.scripts]
+jumpstart = 'jumpstart.commands:run_cli'
+
+#[tool.poetry.plugins."blogtool.parsers"]
+#".rst" = "some_module:SomeClass"
 
 [tool.poetry.urls]
 "Github Repository" = "https://github.com/imochoa/jumpstart"
@@ -29,10 +34,9 @@ typer = "^0.6.1"
 marshmallow = "^3.17.0"
 marshmallow-dataclass = "^8.5.8"
 cogapp = "^3.3.0"
-
+marshmallow-polyfield = "^5.11"
 #typing-inspect = "^0.7.1, !=0.8.0"
 # 0.8.0 was problematic
-marshmallow-polyfield = "^5.11"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^2.21.0"
@@ -41,12 +45,6 @@ pytest-icdiff = "^0.5"
 pytest-xdist = "^2.5.0"
 pytest-sugar = "^0.9.5"
 docker = "^5.0.3"
-
-[tool.poetry.scripts]
-jumpstart = 'jumpstart.console:run'
-
-#[tool.poetry.plugins."blogtool.parsers"]
-#".rst" = "some_module:SomeClass"
 
 [tool.isort]
 profile = "black"

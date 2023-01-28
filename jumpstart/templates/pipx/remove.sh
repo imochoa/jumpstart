@@ -2,9 +2,9 @@
 # [[[cog
 # import cog
 # from cog_utils import str2list
-# from pipx_cog_utils import remove_pipx_cmd
+# from pipx_cog_utils import remove_pipx
 #
-# cog.outl(remove_pipx_cmd(PACKAGE,APP,VER))
+# cog.outl(remove_pipx(package=PACKAGE,))
 #
 # ]]]
 # [[[end]]]

@@ -2,6 +2,7 @@
 
 # stdlib imports
 from dataclasses import dataclass, field
+import json
 import typing as T
 
 # 3rd party imports
@@ -25,20 +26,29 @@ class BinParams:
     """
     Should be one of....
     """
-    cmdname: str
-    """
-    What to call the executable
-    If empty, the following final steps will be skipped:
-    - making executable
-    - copying to the installation directory
-    """
     download_sources: PkgDownloadSources
     """
+    """
+    cmdmap: dict[str, str]
+    """
+    Left is used to GREP the extracted download to find the executable file
+    The right is used to give it a name when installing it locally
+
+    TODO no empty values!
+    Where the executable is
+    - (TODO support glob?)
+    - Can be a relative path like "bin/exa"
+
+    and what to call it (take original name if empty string)
+
+    location will be gotten from $INSTALL_DIR
+
     """
     Schema: T.ClassVar[T.Type[ma.Schema]] = ma.Schema
 
     class Meta:
         ordered = True
+        # exclude = ("cmdname",)
 
     @property
     def cog_args(self) -> dict[str, str]:
@@ -54,7 +64,7 @@ class BinParams:
 
         return {
             **dict(
-                CMDNAME=self.cmdname,
+                CMDMAP=json.dumps(self.cmdmap),
             ),
             **download_sources_cog_args,
         }

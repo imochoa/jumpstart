@@ -5,10 +5,23 @@ Only meant to be imported within cog
 """
 
 # stdlib imports
+import json
+import shlex
 import typing as T
 
 # local imports
 from .constants import PRINTF_FMT
+
+
+def sh_escape(s: str) -> str:
+    """
+    Escape s, but remove the outer single quotes, since often require double quotes
+
+    """
+    s = shlex.quote(s)
+    if s[0] == s[-1] == "'":
+        return s[1:-1]
+    return s
 
 
 def str2list(long_string: str) -> list[str]:
@@ -21,6 +34,13 @@ def str2list(long_string: str) -> list[str]:
     return [p.strip() for p in long_string.split(",")]
 
 
-def safedelete(varname: str = "") -> str:
-    # [ -f "${BINPATH}" ] && sudo rm "${BINPATH}" || echo "Not installed"
-    return r"{varname}=$(mktemp -d -t jumpstart-XXXXXXXXXX)"
+def str2dict(long_string: str) -> dict[str, str]:
+    """
+    ...since cog only accepts lists
+    """
+    return json.loads(long_string.replace("'", '"'))
+
+
+def safedelete(p: str) -> str:
+    """ """
+    return f'( [ -f "{p}" ] && sudo rm "{p}" || echo "{p} does not exist" )'

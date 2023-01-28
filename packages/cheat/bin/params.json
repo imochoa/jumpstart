@@ -5,7 +5,6 @@
     "depends": [],
     "urls": []
   },
-  "cmdname": "cheat",
   "download_sources": {
     "sources": [
       {
@@ -21,5 +20,8 @@
       "url": "https://github.com/cheat/cheat/releases/download/4.4.0/cheat-linux-amd64.gz",
       "archive_ext": "GZ"
     }
+  },
+  "cmdmap": {
+    "cheat": "cheat"
   }
 }

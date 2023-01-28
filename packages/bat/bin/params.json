@@ -1,0 +1,28 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [],
+    "urls": []
+  },
+  "download_sources": {
+    "sources": [
+      {
+        "orgrepo": "sharkdp/bat",
+        "filters": [
+          "x86_64",
+          "linux",
+          "gnu"
+        ]
+      }
+    ],
+    "cache": {
+      "source_hash": "<GitHubRelease orgrepo=sharkdp/bat, filters=['x86_64', 'linux', 'gnu']>",
+      "url": "https://github.com/sharkdp/bat/releases/download/v0.22.1/bat-v0.22.1-x86_64-unknown-linux-gnu.tar.gz",
+      "archive_ext": "TARGZ"
+    }
+  },
+  "cmdmap": {
+    "/bat$": "bat"
+  }
+}

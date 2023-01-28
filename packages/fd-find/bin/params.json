@@ -5,7 +5,6 @@
     "depends": [],
     "urls": []
   },
-  "cmdname": "fd",
   "download_sources": {
     "sources": [
       {
@@ -21,5 +20,8 @@
       "url": "https://github.com/junegunn/fzf/releases/download/0.36.0/fzf-0.36.0-linux_amd64.tar.gz",
       "archive_ext": "TARGZ"
     }
+  },
+  "cmdmap": {
+    "fzf": "fzf"
   }
 }

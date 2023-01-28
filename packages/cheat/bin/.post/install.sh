@@ -2,26 +2,6 @@
 # ]]]
 # [[[end]]]
 
-INSTALLDIR="${HOME}/.local/bin/"
-
-echo "INSTALLING" \
-&& echo "${GHRELEASEURL}" \
-&& echo "${TEMPDIR}" \
-&& INSTALLDIR="${HOME}/.local/bin/" \
-&& echo "Downloading..." \
-&& cd "${TEMPDIR}" \
-&& curl -jL "${GHRELEASEURL}" -o cheat.gz \
-&& echo "extracting..." \
-&& gzip -d "cheat.gz" \
-&& sudo chmod +x "cheat" \
-&& sudo cp "cheat" "${INSTALLDIR}"
-
-# import cog
-# from cog_utils import str2list, require_cmds, chain_cmds, printf
-# from bin_cog_utils import install_bin
-#
-# # Variables
-#
 # # For binary
 # srcbin=r'"${TEMPDIR}/cheat"'
 # dstbin=r'"${INSTALLDIR}/cheat"'

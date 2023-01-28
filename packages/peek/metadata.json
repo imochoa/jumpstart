@@ -1,11 +1,12 @@
 {
   "name": "peek",
   "urls": [
-    ""
+    "https://github.com/phw/peek"
   ],
   "tags": [
     "gifs",
-    "screen"
+    "screenrecording",
+    "deprecated"
   ],
   "description": ""
 }

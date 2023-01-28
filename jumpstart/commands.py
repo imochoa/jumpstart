@@ -5,6 +5,7 @@ from pathlib import Path
 import typing as T
 
 # 3rd party imports
+import click
 from loguru import logger
 import rich.color
 from rich.filesize import decimal
@@ -84,12 +85,21 @@ def lookup() -> None:
     pass
 
 
-def run() -> None:
+# TODO list tags
+# TODO tree of packages with options
+
+
+def run_cli() -> None:
     print("RUN!")
     app()
 
 
 if __name__ == "__main__":
+    param_types: tuple[type, ...]
+    # All types
+    param_types = tuple()
+    # Filter only bin
+    # param_types=(BinParams,)
     autogenerate(
-        param_types=(BinParams,),
+        param_types=param_types,
     )

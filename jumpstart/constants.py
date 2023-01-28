@@ -110,7 +110,10 @@ class ARCHIVE_EXTS(SimpleNamespace):
     TAR: T.Final[tuple[str, ...]] = (".tar",)
     """
     """
-    TARGZ: T.Final[tuple[str, ...]] = (".tar.gz",)
+    TARGZ: T.Final[tuple[str, ...]] = (
+        ".tar.gz",
+        ".tar.xz",
+    )
     """
     """
     GZ: T.Final[tuple[str, ...]] = (".gz",)
@@ -132,34 +135,6 @@ class ARCHIVE_EXTS(SimpleNamespace):
             if any(path.lower().endswith(ext.lower()) for ext in exts):
                 return known_extmap[exts]
         raise KeyError(f"No known archive extension for {path}")
-
-
-class ENVVARS(SimpleNamespace):
-    """
-    OS Environment variables that are used in the templates
-    INSTALLDIR=/usr/local/bin
-    """
-
-    INSTALL_DST: T.Final[str] = "INSTALL_DST"
-    """
-    INSTALLDIR = / usr / local / bin
-    # Single-user
-    INSTALLDIR = ~ /.local / bin /
-    """
-    FONT_P: T.Final[str] = "FONT_DST"
-    """
-    """
-    WALLPAPER_P: T.Final[str] = "FONT_DST"
-    """
-    """
-    BASHCOMP_P: T.Final[str] = "BASHCOMP_P"
-    """
-    =${BASHCOMP:-${HOME}/.config/bash/bash_completion}
-    """
-    ZSHCOMP_D: T.Final[str] = "ZSHCOMP_D"
-    """
-    =${ZSHCOMP:-${HOME}/.config/zsh/completions}
-    """
 
 
 class System(T.NamedTuple):

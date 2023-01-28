@@ -1,0 +1,17 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [],
+    "urls": []
+  },
+  "download_sources": {
+    "sources": [],
+    "cache": {
+      "source_hash": "",
+      "url": "",
+      "archive_ext": ""
+    }
+  },
+  "cmdmap": {}
+}

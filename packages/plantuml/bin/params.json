@@ -10,7 +10,6 @@
       "https://plantuml.com/faq-install"
     ]
   },
-  "cmdname": "",
   "download_sources": {
     "sources": [
       {
@@ -25,5 +24,6 @@
       "url": "https://github.com/plantuml/plantuml/releases/download/v1.2023.0/plantuml.jar",
       "archive_ext": ""
     }
-  }
+  },
+  "cmdmap": {}
 }

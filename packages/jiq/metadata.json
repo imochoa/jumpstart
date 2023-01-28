@@ -1,0 +1,10 @@
+{
+  "name": "jiq",
+  "urls": [
+    ""
+  ],
+  "tags": [
+    "json"
+  ],
+  "description": "Interactive jq"
+}
