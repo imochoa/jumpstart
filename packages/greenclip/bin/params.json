@@ -1,0 +1,26 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [],
+    "urls": []
+  },
+  "download_sources": {
+    "sources": [
+      {
+        "orgrepo": "erebe/greenclip",
+        "filters": [
+          "clip\""
+        ]
+      }
+    ],
+    "cache": {
+      "source_hash": "<GitHubRelease orgrepo=erebe/greenclip, filters=['clip\"']>",
+      "url": "https://github.com/erebe/greenclip/releases/download/v4.2/greenclip",
+      "archive_ext": ""
+    }
+  },
+  "cmdmap": {
+    "greenclip": "greenclip"
+  }
+}

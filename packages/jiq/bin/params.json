@@ -1,0 +1,28 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [],
+    "urls": []
+  },
+  "download_sources": {
+    "sources": [
+      {
+        "orgrepo": "fiatjaf/jiq",
+        "filters": [
+          "x86_64",
+          "linux",
+          "gnu"
+        ]
+      }
+    ],
+    "cache": {
+      "source_hash": "<GitHubRelease orgrepo=fiatjaf/jiq, filters=['x86_64', 'linux', 'gnu']>",
+      "url": "",
+      "archive_ext": "TARGZ"
+    }
+  },
+  "cmdmap": {
+    "fzf": "fzf"
+  }
+}

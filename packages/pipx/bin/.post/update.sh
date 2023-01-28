@@ -5,3 +5,7 @@
 #
 # ]]]
 # [[[end]]]
+#
+
+# https://pypa.github.io/pipx/installation/
+python3 -m pip install --user -U pipx

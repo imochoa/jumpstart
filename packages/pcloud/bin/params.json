@@ -1,0 +1,21 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [
+      "python"
+    ],
+    "urls": [
+      "https://www.pcloud.com/how-to-install-pcloud-drive-linux.html"
+    ]
+  },
+  "download_sources": {
+    "sources": [],
+    "cache": {
+      "source_hash": "",
+      "url": "",
+      "archive_ext": ""
+    }
+  },
+  "cmdmap": {}
+}
