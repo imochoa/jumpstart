@@ -1,0 +1,23 @@
+{
+  "header": {
+    "template": "deb",
+    "priority": 0,
+    "depends": [],
+    "urls": [
+      "https://release.gitkraken.com/linux/gitkraken-amd64.deb"
+    ]
+  },
+  "download_sources": {
+    "sources": [
+      {
+        "url_cmd": "echo \"https://release.gitkraken.com/linux/gitkraken-amd64.deb\"",
+        "ver_cmd": ""
+      }
+    ],
+    "cache": {
+      "source_hash": "<StaticEndpoint url_cmd=echo \"https://release.gitkraken.com/linux/gitkraken-amd64.deb\", ver_cmd=>",
+      "url": "https://release.gitkraken.com/linux/gitkraken-amd64.deb",
+      "archive_ext": ""
+    }
+  }
+}
