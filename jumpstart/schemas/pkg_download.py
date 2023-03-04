@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # stdlib imports
+import copy
 from dataclasses import dataclass, field
 import pathlib
 from shlex import quote as sh_quote
@@ -61,14 +62,21 @@ class StaticEndpoint:
         ordered = True
 
     @ma.pre_load
-    def set_defaults(self, in_data: "GitHubRelease", **kwargs: T.Any) -> "GitHubRelease":
-        # TODO set to a command if is just a hard-coded string
-        # TODO if url_cmd or ver_cmd are hard - coded URLS, substitute with a command: echo "url"
-        print("todo!")
+    def set_defaults(self, in_data: dict[str, str], **kwargs: T.Any) -> dict[str, str]:
+        URLCMD_KEY = "url_cmd"
+        VERCMD_KEY = "ver_cmd"
+        out_data: dict[str, str] = {
+            URLCMD_KEY: in_data.get(URLCMD_KEY, "").strip(),
+            VERCMD_KEY: in_data.get(VERCMD_KEY, "").strip(),
+        }
+        if out_data[URLCMD_KEY].lower().startswith("http"):
+            out_data[URLCMD_KEY] = f'echo "{out_data[URLCMD_KEY]}"'
+
         # if not in_data.name and in_data.json_path.is_file():
         #     in_data.name = in_data.json_path.parent.name
+        # TODO ver cmd?
 
-        return in_data
+        return out_data
 
 
 @add_cls_str_for_cache
@@ -225,9 +233,7 @@ class PkgDownloadSources:
 
     @property
     def cog_args(self) -> dict[str, str]:
-        """
-        TODO add caching in JSON? Has to be written to JSON file to persist!
-        """
+        """ """
         try:
             source = self.source
         except IndexError:

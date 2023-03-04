@@ -47,6 +47,7 @@ class PipxParams:
 
     @property
     def cog_args(self) -> dict[str, str]:
+        """ """
         return dict(
             PACKAGE=self.package,
             APP=self.app,

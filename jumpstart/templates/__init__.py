@@ -19,17 +19,21 @@ from jumpstart.schemas.metadata import PackageMetadata
 # local imports
 from .apt import AptParams
 from .bin import BinParams
+from .deb import DebParams
 from .flatpak import FlatpakParams
 from .manual import NoParams
+from .npx import NpxParams
 from .pipx import PipxParams
 
-PARAMS_TYPE = T.Union[AptParams | FlatpakParams | PipxParams | BinParams]
+PARAMS_TYPE = T.Union[AptParams | FlatpakParams | PipxParams | NpxParams | BinParams, DebParams]
 PARAM_SCHEMA_MAP: T.Final[dict[str, T.Any]] = {
     sch.__module__.split(".")[-1]: sch
     for sch in (
         AptParams,
+        DebParams,
         FlatpakParams,
         PipxParams,
+        NpxParams,
         BinParams,
         NoParams,
     )

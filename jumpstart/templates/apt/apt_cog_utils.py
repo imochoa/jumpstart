@@ -27,7 +27,7 @@ def remove_apt(pkgs: list[str], ppas: list[str]) -> str:
     ppas = [ppa for ppa in ppas or [] if ppa not in {"universe", "main"}]
     if ppas:
         cmd += "sudo add-apt-repository --remove " + " ".join(ppas) + "\n"
-    return cmd + "sudo apt-get --remove " + " ".join(pkgs)
+    return cmd + "sudo apt-get remove -y " + " ".join(pkgs)
 
 
 def ver_cmd(pkg: str, grep: str) -> str:
