@@ -4,4 +4,4 @@
 #		 > entr
 #		 > apt
 
-sudo apt-get --remove entr
+sudo apt-get remove -y entr

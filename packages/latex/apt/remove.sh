@@ -4,4 +4,4 @@
 #		 > latex
 #		 > apt
 
-sudo apt-get --remove texlive-latex-extra texlive-xetex
+sudo apt-get remove -y texlive-latex-extra texlive-xetex

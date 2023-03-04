@@ -4,4 +4,4 @@
 #		 > nmap
 #		 > apt
 
-sudo apt-get --remove nmap
+sudo apt-get remove -y nmap

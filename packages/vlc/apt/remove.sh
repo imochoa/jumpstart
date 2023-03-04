@@ -4,4 +4,4 @@
 #		 > vlc
 #		 > apt
 
-sudo apt-get --remove vlc
+sudo apt-get remove -y vlc

@@ -4,4 +4,4 @@
 #		 > curl
 #		 > apt
 
-sudo apt-get --remove curl
+sudo apt-get remove -y curl

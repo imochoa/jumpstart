@@ -4,4 +4,4 @@
 #		 > TeX Studio
 #		 > apt
 
-sudo apt-get --remove texlive-fonts-extra texlive-full texlive-latex-extra texlive-xetex texstudio
+sudo apt-get remove -y texlive-fonts-extra texlive-full texlive-latex-extra texlive-xetex texstudio

@@ -4,4 +4,4 @@
 #		 > meld
 #		 > apt
 
-sudo apt-get --remove meld
+sudo apt-get remove -y meld

@@ -4,4 +4,4 @@
 #		 > firewall-gui
 #		 > apt
 
-sudo apt-get --remove gufw
+sudo apt-get remove -y gufw

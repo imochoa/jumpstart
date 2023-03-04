@@ -4,4 +4,4 @@
 #		 > dunst
 #		 > apt
 
-sudo apt-get --remove dunst
+sudo apt-get remove -y dunst

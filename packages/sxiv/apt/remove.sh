@@ -4,4 +4,4 @@
 #		 > sxiv
 #		 > apt
 
-sudo apt-get --remove sxiv
+sudo apt-get remove -y sxiv

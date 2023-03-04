@@ -4,4 +4,4 @@
 #		 > httrack
 #		 > apt
 
-sudo apt-get --remove webhttrack
+sudo apt-get remove -y webhttrack

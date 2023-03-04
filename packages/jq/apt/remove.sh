@@ -4,4 +4,4 @@
 #		 > jq
 #		 > apt
 
-sudo apt-get --remove jq
+sudo apt-get remove -y jq

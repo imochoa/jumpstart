@@ -4,4 +4,4 @@
 #		 > gromit-mpx
 #		 > apt
 
-sudo apt-get --remove gromit-mpx
+sudo apt-get remove -y gromit-mpx

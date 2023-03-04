@@ -4,4 +4,4 @@
 #		 > Java
 #		 > apt
 
-sudo apt-get --remove default-jre
+sudo apt-get remove -y default-jre

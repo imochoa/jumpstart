@@ -4,4 +4,4 @@
 #		 > CMake
 #		 > apt
 
-sudo apt-get --remove cmake cmake-curses-gui cmake-qt-gui
+sudo apt-get remove -y cmake cmake-curses-gui cmake-qt-gui

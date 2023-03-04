@@ -4,4 +4,4 @@
 #		 > moreutils
 #		 > apt
 
-sudo apt-get --remove moreutils
+sudo apt-get remove -y moreutils

@@ -4,4 +4,4 @@
 #		 > xournalpp
 #		 > apt
 
-sudo apt-get --remove xournalpp
+sudo apt-get remove -y xournalpp

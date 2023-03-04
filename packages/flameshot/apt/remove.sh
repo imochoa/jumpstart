@@ -4,4 +4,4 @@
 #		 > flameshot
 #		 > apt
 
-sudo apt-get --remove flameshot
+sudo apt-get remove -y flameshot

@@ -4,4 +4,4 @@
 #		 > Shutter
 #		 > apt
 
-sudo apt-get --remove shutter
+sudo apt-get remove -y shutter

@@ -4,4 +4,4 @@
 #		 > gnome-tweaks
 #		 > apt
 
-sudo apt-get --remove gnome-tweak-tool gnome-tweaks
+sudo apt-get remove -y gnome-tweak-tool gnome-tweaks

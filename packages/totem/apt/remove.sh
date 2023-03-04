@@ -4,4 +4,4 @@
 #		 > totem
 #		 > apt
 
-sudo apt-get --remove gstreamer1.0-libav
+sudo apt-get remove -y gstreamer1.0-libav

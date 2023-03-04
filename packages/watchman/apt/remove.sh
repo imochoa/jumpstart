@@ -4,4 +4,4 @@
 #		 > watchman
 #		 > apt
 
-sudo apt-get --remove watchman
+sudo apt-get remove -y watchman

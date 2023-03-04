@@ -4,4 +4,4 @@
 #		 > mupdf
 #		 > apt
 
-sudo apt-get --remove mupdf
+sudo apt-get remove -y mupdf

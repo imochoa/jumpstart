@@ -4,4 +4,4 @@
 #		 > software-properties-common
 #		 > apt
 
-sudo apt-get --remove software-properties-common
+sudo apt-get remove -y software-properties-common

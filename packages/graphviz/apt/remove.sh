@@ -4,4 +4,4 @@
 #		 > graphviz
 #		 > apt
 
-sudo apt-get --remove graphviz
+sudo apt-get remove -y graphviz

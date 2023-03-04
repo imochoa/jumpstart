@@ -4,4 +4,4 @@
 #		 > grsync
 #		 > apt
 
-sudo apt-get --remove grsync
+sudo apt-get remove -y grsync

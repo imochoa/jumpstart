@@ -4,4 +4,4 @@
 #		 > pavucontrol
 #		 > apt
 
-sudo apt-get --remove pavucontrol
+sudo apt-get remove -y pavucontrol

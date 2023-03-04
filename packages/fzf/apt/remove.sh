@@ -4,4 +4,4 @@
 #		 > fzf
 #		 > apt
 
-sudo apt-get --remove fzf
+sudo apt-get remove -y fzf

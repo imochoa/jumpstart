@@ -4,4 +4,4 @@
 #		 > gparted
 #		 > apt
 
-sudo apt-get --remove gparted
+sudo apt-get remove -y gparted

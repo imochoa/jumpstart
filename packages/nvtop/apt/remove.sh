@@ -4,4 +4,4 @@
 #		 > nvtop
 #		 > apt
 
-sudo apt-get --remove nvtop
+sudo apt-get remove -y nvtop

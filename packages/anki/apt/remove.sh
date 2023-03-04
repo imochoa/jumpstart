@@ -4,4 +4,4 @@
 #		 > anki
 #		 > apt
 
-sudo apt-get --remove anki
+sudo apt-get remove -y anki

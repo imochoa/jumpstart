@@ -4,4 +4,4 @@
 #		 > sqlite
 #		 > apt
 
-sudo apt-get --remove sqlite3 sqlite3-tools sqlitebrowser
+sudo apt-get remove -y sqlite3 sqlite3-tools sqlitebrowser

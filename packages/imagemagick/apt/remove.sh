@@ -4,4 +4,4 @@
 #		 > imagemagick
 #		 > apt
 
-sudo apt-get --remove imagemagick
+sudo apt-get remove -y imagemagick

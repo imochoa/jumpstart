@@ -4,4 +4,4 @@
 #		 > checkinstall
 #		 > apt
 
-sudo apt-get --remove checkinstall
+sudo apt-get remove -y checkinstall

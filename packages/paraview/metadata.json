@@ -1,0 +1,11 @@
+{
+  "name": "paraview",
+  "urls": [
+    "https://www.paraview.org/"
+  ],
+  "tags": [
+    "3D",
+    "visualization"
+  ],
+  "description": ""
+}

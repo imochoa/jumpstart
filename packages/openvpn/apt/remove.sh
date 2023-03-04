@@ -4,4 +4,4 @@
 #		 > openVPN
 #		 > apt
 
-sudo apt-get --remove easy-rsa network-manager-openvpn openvpn
+sudo apt-get remove -y easy-rsa network-manager-openvpn openvpn

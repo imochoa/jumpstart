@@ -1,0 +1,14 @@
+{
+  "header": {
+    "template": "apt",
+    "priority": 0,
+    "depends": [],
+    "urls": [
+      "https://github.com/Duncaen/OpenDoas"
+    ]
+  },
+  "pkgs": [
+    "doas"
+  ],
+  "ppas": []
+}

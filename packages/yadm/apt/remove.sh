@@ -4,4 +4,4 @@
 #		 > yadm
 #		 > apt
 
-sudo apt-get --remove yadm
+sudo apt-get remove -y yadm

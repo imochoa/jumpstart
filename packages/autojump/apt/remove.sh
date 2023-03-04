@@ -4,4 +4,4 @@
 #		 > autojump
 #		 > apt
 
-sudo apt-get --remove autojump
+sudo apt-get remove -y autojump

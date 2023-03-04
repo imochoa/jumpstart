@@ -4,4 +4,4 @@
 #		 > peek
 #		 > apt
 
-sudo apt-get --remove peek
+sudo apt-get remove -y peek

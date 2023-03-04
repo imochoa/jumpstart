@@ -4,4 +4,4 @@
 #		 > source-highlight
 #		 > apt
 
-sudo apt-get --remove source-highlight
+sudo apt-get remove -y source-highlight

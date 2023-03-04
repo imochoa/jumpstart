@@ -4,4 +4,4 @@
 #		 > dos2unix
 #		 > apt
 
-sudo apt-get --remove dos2unix
+sudo apt-get remove -y dos2unix

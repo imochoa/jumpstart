@@ -4,4 +4,4 @@
 #		 > fd-find
 #		 > apt
 
-sudo apt-get --remove fd-find
+sudo apt-get remove -y fd-find

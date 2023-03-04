@@ -4,4 +4,4 @@
 #		 > virtualbox
 #		 > apt
 
-sudo apt-get --remove virtualbox virtualbox-dkms virtualbox-ext-pack virtualbox-guest-dkms
+sudo apt-get remove -y virtualbox virtualbox-dkms virtualbox-ext-pack virtualbox-guest-dkms

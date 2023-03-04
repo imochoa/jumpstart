@@ -4,4 +4,4 @@
 #		 > arandr
 #		 > apt
 
-sudo apt-get --remove arandr
+sudo apt-get remove -y arandr

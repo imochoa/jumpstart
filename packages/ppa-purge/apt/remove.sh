@@ -4,4 +4,4 @@
 #		 > ppa-purge
 #		 > apt
 
-sudo apt-get --remove ppa-purge
+sudo apt-get remove -y ppa-purge

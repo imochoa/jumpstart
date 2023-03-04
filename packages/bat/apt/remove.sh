@@ -4,4 +4,4 @@
 #		 > bat
 #		 > apt
 
-sudo apt-get --remove bat
+sudo apt-get remove -y bat

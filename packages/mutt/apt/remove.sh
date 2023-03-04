@@ -4,4 +4,4 @@
 #		 > mutt
 #		 > apt
 
-sudo apt-get --remove mutt
+sudo apt-get remove -y mutt

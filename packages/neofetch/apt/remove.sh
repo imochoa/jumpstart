@@ -4,4 +4,4 @@
 #		 > neofetch
 #		 > apt
 
-sudo apt-get --remove neofetch
+sudo apt-get remove -y neofetch

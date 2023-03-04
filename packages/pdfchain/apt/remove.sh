@@ -4,4 +4,4 @@
 #		 > pdfchain
 #		 > apt
 
-sudo apt-get --remove pdfchain
+sudo apt-get remove -y pdfchain

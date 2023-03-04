@@ -4,4 +4,4 @@
 #		 > exfat
 #		 > apt
 
-sudo apt-get --remove exfat-fuse exfat-utils
+sudo apt-get remove -y exfat-fuse exfat-utils

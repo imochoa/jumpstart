@@ -4,4 +4,4 @@
 #		 > neovim
 #		 > apt
 
-sudo apt-get --remove neovim python3-neovim
+sudo apt-get remove -y neovim python3-neovim

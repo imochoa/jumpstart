@@ -4,4 +4,4 @@
 #		 > clamav
 #		 > apt
 
-sudo apt-get --remove clamav clamav-daemon
+sudo apt-get remove -y clamav clamav-daemon

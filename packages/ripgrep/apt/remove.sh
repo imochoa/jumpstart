@@ -4,4 +4,4 @@
 #		 > ripgrep
 #		 > apt
 
-sudo apt-get --remove ripgrep
+sudo apt-get remove -y ripgrep

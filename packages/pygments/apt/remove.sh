@@ -4,4 +4,4 @@
 #		 > pygments
 #		 > apt
 
-sudo apt-get --remove imagemagick ghostscript
+sudo apt-get remove -y imagemagick ghostscript

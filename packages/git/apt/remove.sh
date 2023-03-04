@@ -4,4 +4,4 @@
 #		 > git
 #		 > apt
 
-sudo apt-get --remove git
+sudo apt-get remove -y git

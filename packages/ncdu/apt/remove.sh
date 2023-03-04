@@ -4,4 +4,4 @@
 #		 > ncdu
 #		 > apt
 
-sudo apt-get --remove ncdu
+sudo apt-get remove -y ncdu

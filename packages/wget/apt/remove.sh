@@ -4,4 +4,4 @@
 #		 > wget
 #		 > apt
 
-sudo apt-get --remove wget
+sudo apt-get remove -y wget

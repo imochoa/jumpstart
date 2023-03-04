@@ -1,0 +1,12 @@
+{
+  "header": {
+    "template": "flatpak",
+    "priority": 10,
+    "depends": [],
+    "urls": [
+      "https://flathub.org/apps/details/org.paraview.ParaView"
+    ]
+  },
+  "app_id": "org.paraview.ParaView",
+  "remote": "flathub"
+}

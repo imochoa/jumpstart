@@ -4,4 +4,4 @@
 #		 > vim
 #		 > apt
 
-sudo apt-get --remove vim vim-gtk vim-tiny
+sudo apt-get remove -y vim vim-gtk vim-tiny

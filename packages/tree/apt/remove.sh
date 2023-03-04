@@ -4,4 +4,4 @@
 #		 > tree
 #		 > apt
 
-sudo apt-get --remove tree
+sudo apt-get remove -y tree

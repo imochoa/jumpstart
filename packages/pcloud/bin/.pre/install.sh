@@ -1,0 +1,4 @@
+sudo add-apt-repository universe
+sudo apt install libfuse2
+
+# https://p-lux1.pcloud.com/cBZnrXB1wZijGdL3ZZZ19bGc7Z2ZZer4ZkZvP5pVZ9zZNFZ8RZTFZqzZpRZJHZIHZvFZaHZgLZlRZt7ZQ5ZCy4sVZS1sHkiKmgS4vHRw8IWl49zUg86Ky/pcloud" tabindex="0">https://p-lux1.pcloud.com/cBZnrXB1wZijGdL3ZZZ19bGc7Z2ZZer4ZkZvP5pVZ9zZNFZ8RZTFZqzZpRZJHZIHZvFZaHZgLZlRZt7ZQ5ZCy4sVZS1sHkiKmgS4vHRw8IWl49zUg86Ky/pcloud

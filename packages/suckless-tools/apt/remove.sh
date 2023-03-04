@@ -4,4 +4,4 @@
 #		 > suckless-tools
 #		 > apt
 
-sudo apt-get --remove suckless-tools
+sudo apt-get remove -y suckless-tools

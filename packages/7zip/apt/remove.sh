@@ -4,4 +4,4 @@
 #		 > 7zip
 #		 > apt
 
-sudo apt-get --remove p7zip-full p7zip-rar
+sudo apt-get remove -y p7zip-full p7zip-rar

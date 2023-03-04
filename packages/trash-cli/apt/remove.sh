@@ -4,4 +4,4 @@
 #		 > trash-cli
 #		 > apt
 
-sudo apt-get --remove trash-cli
+sudo apt-get remove -y trash-cli

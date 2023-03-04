@@ -4,4 +4,4 @@
 #		 > redshift
 #		 > apt
 
-sudo apt-get --remove redshift redshift-gtk
+sudo apt-get remove -y redshift redshift-gtk

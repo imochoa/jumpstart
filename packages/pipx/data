@@ -1,0 +1,32 @@
+https://pypa.github.io/pipx/
+
+# INSTALL
+On Linux, install via pip (requires pip 19.0 or later)
+python3 -m pip install --user pipx
+python3 -m pipx ensurepath
+
+# UPGRADE
+Upgrade pipx with python3 -m pip install --user -U pipx.
+
+# REMOVE
+
+
+# SETUP
+Shell completions
+Shell completions are available by following the instructions printed with this command:
+
+
+pipx completions
+
+
+# For users
+pipx run --spec PACKAGE APP
+You can also specify specific versions, version ranges, or extras:
+
+pipx run APP==1.0.0
+
+pipx uninstall [APPLICATION]
+
+pipx upgrade [APPLICATION]
+pipx upgrade-all
+

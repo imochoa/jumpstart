@@ -4,4 +4,4 @@
 #		 > baobab
 #		 > apt
 
-sudo apt-get --remove baobab
+sudo apt-get remove -y baobab

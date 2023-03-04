@@ -4,4 +4,4 @@
 #		 > nomacs
 #		 > apt
 
-sudo apt-get --remove nomacs
+sudo apt-get remove -y nomacs

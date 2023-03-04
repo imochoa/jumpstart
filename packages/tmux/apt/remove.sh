@@ -4,4 +4,4 @@
 #		 > tmux
 #		 > apt
 
-sudo apt-get --remove tmux
+sudo apt-get remove -y tmux

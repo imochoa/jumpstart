@@ -4,4 +4,4 @@
 #		 > xcwd
 #		 > apt
 
-sudo apt-get --remove xcwd
+sudo apt-get remove -y xcwd

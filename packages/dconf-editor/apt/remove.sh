@@ -4,4 +4,4 @@
 #		 > dconf-editor
 #		 > apt
 
-sudo apt-get --remove dconf-editor
+sudo apt-get remove -y dconf-editor

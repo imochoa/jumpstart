@@ -4,4 +4,4 @@
 #		 > zip
 #		 > apt
 
-sudo apt-get --remove zip unzip
+sudo apt-get remove -y zip unzip

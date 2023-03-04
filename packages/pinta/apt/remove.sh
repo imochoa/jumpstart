@@ -4,4 +4,4 @@
 #		 > pinta
 #		 > apt
 
-sudo apt-get --remove pinta
+sudo apt-get remove -y pinta

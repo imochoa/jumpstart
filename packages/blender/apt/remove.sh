@@ -4,4 +4,4 @@
 #		 > Blender
 #		 > apt
 
-sudo apt-get --remove blender
+sudo apt-get remove -y blender

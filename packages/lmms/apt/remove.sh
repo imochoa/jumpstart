@@ -4,4 +4,4 @@
 #		 > lmms
 #		 > apt
 
-sudo apt-get --remove lmms
+sudo apt-get remove -y lmms

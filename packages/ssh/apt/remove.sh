@@ -4,4 +4,4 @@
 #		 > ssh
 #		 > apt
 
-sudo apt-get --remove openssh-server xauth xclip xcl
+sudo apt-get remove -y openssh-server xauth xclip xcl

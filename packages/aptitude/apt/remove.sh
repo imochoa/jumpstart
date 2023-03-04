@@ -4,4 +4,4 @@
 #		 > aptitude
 #		 > apt
 
-sudo apt-get --remove aptitude
+sudo apt-get remove -y aptitude

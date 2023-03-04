@@ -4,4 +4,4 @@
 #		 > Flatpak
 #		 > apt
 
-sudo apt-get --remove flatpak gnome-software-plugin-flatpak
+sudo apt-get remove -y flatpak gnome-software-plugin-flatpak

@@ -4,4 +4,4 @@
 #		 > font-awesome
 #		 > apt
 
-sudo apt-get --remove fonts-font-awesome fonts-noto-color-emoji
+sudo apt-get remove -y fonts-font-awesome fonts-noto-color-emoji

@@ -1,0 +1,26 @@
+{
+  "header": {
+    "template": "deb",
+    "priority": 0,
+    "depends": [],
+    "urls": [
+      "https://github.com/VSCodium/vscodium"
+    ]
+  },
+  "download_sources": {
+    "sources": [
+      {
+        "orgrepo": "vscodium/vscodium",
+        "filters": [
+          "amd64",
+          "deb\""
+        ]
+      }
+    ],
+    "cache": {
+      "source_hash": "<GitHubRelease orgrepo=vscodium/vscodium, filters=['amd64', 'deb\"']>",
+      "url": "https://github.com/VSCodium/vscodium/releases/download/1.75.1.23040/codium_1.75.1.23040_amd64.deb",
+      "archive_ext": ""
+    }
+  }
+}

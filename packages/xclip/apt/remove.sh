@@ -4,4 +4,4 @@
 #		 > xclip
 #		 > apt
 
-sudo apt-get --remove xclip
+sudo apt-get remove -y xclip

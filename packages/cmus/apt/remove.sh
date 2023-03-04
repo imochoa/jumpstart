@@ -4,4 +4,4 @@
 #		 > cmus
 #		 > apt
 
-sudo apt-get --remove cmus
+sudo apt-get remove -y cmus

@@ -4,4 +4,4 @@
 #		 > Rsync
 #		 > apt
 
-sudo apt-get --remove rsync
+sudo apt-get remove -y rsync
