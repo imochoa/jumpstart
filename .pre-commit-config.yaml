@@ -25,7 +25,7 @@ repos:
   #    hooks:
   #      - id: poetry-check
   - repo: https://github.com/trailofbits/pip-audit
-    rev: 09eef2aacc202e3567e4b6b59947bd644ba9b823 # frozen: v2.4.11
+    rev: d94110af0c8a31edacd8d9e49cd02c18f9632a79 # frozen: v2.4.15
     hooks:
       - id: pip-audit
         args:
@@ -43,7 +43,7 @@ repos:
         additional_dependencies:
           - toml
   - repo: https://github.com/pycqa/isort
-    rev: 4e97b170469b7c8ef29afe944ebfb057791457aa # frozen: 5.11.4
+    rev: dbf82f2dd09ae41d9355bcd7ab69187a19e6bf2f # frozen: 5.12.0
     hooks:
       - id: isort
         name: isort (python)
@@ -55,11 +55,11 @@ repos:
         name: isort (pyi)
         types: [pyi]
   - repo: https://github.com/psf/black
-    rev: 2ddea293a88919650266472186620a98a4a8bb37 # frozen: 22.12.0
+    rev: b0d1fba7ac3be53c71fb0d3211d911e629f8aecb # frozen: 23.1.0
     hooks:
       - id: black
   - repo: https://github.com/asottile/blacken-docs
-    rev: 7ae9389351f4090e3993de28015a05a18ca6b8a7 # frozen: v1.12.1
+    rev: 1238e1d8f03e96a7ed9ad44937ea4348eb6b11b8 # frozen: 1.13.0
     hooks:
       - id: blacken-docs
         additional_dependencies: [black>=20.8b1]
@@ -84,7 +84,7 @@ repos:
           - prettier@2.1.2
           - "@prettier/plugin-xml@0.12.0"
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: "0b037c2b59aa62dc3be3287d175295f1a5547eb9" # frozen: v0.991
+    rev: "dc6912646c561f16af711006e7615d52e9bf0968" # frozen: v1.0.0
     hooks:
       - id: mypy
         additional_dependencies: [marshmallow_dataclass]

@@ -1,3 +1,4 @@
+SHELL := /bin/bash
 IMGNAME := ubuntu:22.04
 
 # Auto variables
@@ -42,7 +43,6 @@ build-ubuntu-22.04:
 
 .PHONY: precommit
 precommit: build-ubuntu-22.04
-
 	printf "done!\n"
 
 .PHONY: build
