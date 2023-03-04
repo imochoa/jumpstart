@@ -1,5 +1,48 @@
 # jumpstart
 
+top 100 security tools
+https://sectools.org/
+
+how to add a package
+
+- dirname does not matter, metadata.json name does
+- param name does not matter, params.json template does
+- filenames must match. Same in .post & .pre
+
+# TODO
+
+- for apt, add "install-suggests"
+   `sudo apt install clang --install-suggests`
+   `sudo apt-get install libc++-dev `
+- add .deb, bin, better define manual, snap
+- docker tests?
+- appimage belongs in bin
+-
+- for bin
+  - how to find start/end filename?
+  - chmod +x
+  - move to install dir mv "name" "\${INSTALLDIR}/name?"
+
+# Use a trap in case script exited
+
+```
+# Report on exit
+# ----------------------------------------------------------------------------------------- #
+trap 'notify-send --expire-time=10000 --app-name="wacom" "${PAD}" "${DESC_CONCAT}"' EXIT
+```
+
+# Packages to add
+
+- poetry
+
+```
+# Installing poetry
+curl -sSL https://install.python-poetry.org | python3 -
+
+# Upgrade poetry
+poetry self update
+```
+
 ## Slow nautilus start
 
 debug with:
