@@ -8,7 +8,7 @@ Only meant to be imported within cog
 import typing as T
 
 # local imports
-from .constants import PRINTF_FMT
+from .constants import ENVVARS, PRINTF_FMT
 
 
 def chain_cmds(cmds: T.Sequence[str]) -> str:
@@ -62,3 +62,18 @@ def wget(
 
 def tempdir_cmd(varname: str = "", prefix: str = "jumpstart") -> str:
     return f"{varname}=$(mktemp -d -t {prefix}-XXXXXXXXXX)"
+
+
+def env_defaults(
+    install_dst: str,
+) -> str:
+    """ """
+    return "\n".join(
+        (
+            f'{ENVVARS.INSTALL_DST}="${{{ENVVARS.INSTALL_DST}:-{install_dst}}}"',
+            f'{ENVVARS.BASHCOMP_P}="${{{ENVVARS.BASHCOMP_P}:-${{HOME}}/.config/bash/bash_completion}}"',
+            r'ZSHCOMP="${ZSHCOMP:-${HOME}/.config/zsh/completions}"',
+            r'TEMPDIR="$(mktemp -d -t XXXXXXXXXX)"',
+            r"FMT='\e[0;34m%-6s\e[m\n'",
+        )
+    )

@@ -3,7 +3,10 @@
     "template": "bin",
     "priority": 0,
     "depends": [],
-    "urls": []
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
   },
   "download_sources": {
     "sources": [

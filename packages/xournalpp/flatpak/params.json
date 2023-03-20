@@ -3,7 +3,10 @@
     "template": "flatpak",
     "priority": 0,
     "depends": [],
-    "urls": []
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
   },
   "app_id": "com.github.xournalpp.xournalpp",
   "remote": "flathub"

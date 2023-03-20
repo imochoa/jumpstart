@@ -6,12 +6,11 @@
 
 # Variables
 # TEST PRE!
-INSTALL_DST="${INSTALL_DST:-${HOME}/.local/bin/}"
+INSTALL_DST="${INSTALL_DST:-${{HOME}}/.local/bin/}"
 BASHCOMP_P="${BASHCOMP_P:-${HOME}/.config/bash/bash_completion}"
 ZSHCOMP="${ZSHCOMP:-${HOME}/.config/zsh/completions}"
 TEMPDIR="$(mktemp -d -t XXXXXXXXXX)"
 FMT='\e[0;34m%-6s\e[m\n'
-
 # Commands
 DLTMP=$(mktemp -d -t jumpstart-XXXXXXXXXX) \
     && cd "${DLTMP}" \

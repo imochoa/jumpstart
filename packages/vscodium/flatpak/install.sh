@@ -4,4 +4,4 @@
 #		 > VSCodium
 #		 > flatpak
 
-flatpak install flathub com.vscodium.codium
+flatpak install -y flathub com.vscodium.codium

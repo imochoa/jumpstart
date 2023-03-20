@@ -30,7 +30,6 @@ def remove_deb(
     return chain_cmds([safedelete(f"${{{ENVVARS.INSTALL_DST}}}/{v}") for v in cmdmap.values()])
 
 
-
 # def ver_cmd(pkg: str, grep: str) -> str:
 #     return rf'printf "{pkg} > %s\n" "$(apt-cache policy {pkg} | grep {grep} | cut -d: -f2 | tr -d /" /")"'
 

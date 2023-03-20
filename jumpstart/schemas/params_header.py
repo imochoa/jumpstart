@@ -5,6 +5,7 @@ from dataclasses import dataclass, field
 import typing as T
 
 # 3rd party imports
+from loguru import logger
 import marshmallow as ma
 from marshmallow_dataclass import add_schema
 
@@ -13,6 +14,28 @@ from jumpstart.constants import PATHS
 
 # local imports
 from .fields import Path
+
+
+@add_schema
+@dataclass(repr=False)
+class DefaultEnv:
+    """
+    There are system-specific defaults for each environment variable.
+
+    You can override them here
+    """
+
+    install_dst: str = ""
+    """
+    DIRECTORY where
+    """
+
+    @property
+    def cog_args(self) -> dict[str, str]:
+        """ """
+        return dict(
+            INSTALL_DST=self.install_dst or "${{HOME}}/.local/bin/",
+        )
 
 
 @add_schema
@@ -33,6 +56,10 @@ class ParamsHeader:
     """
     urls: list[str] = field(default_factory=list)
     """
+    """
+    default_env: DefaultEnv = field(default_factory=DefaultEnv)
+    """
+    Overwrite defaults?
     """
     json_path: Path = PATHS.DEVNULL
     """

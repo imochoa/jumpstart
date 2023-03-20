@@ -5,7 +5,10 @@
     "depends": [],
     "urls": [
       "https://flathub.org/apps/details/io.github.seadve.Kooha"
-    ]
+    ],
+    "default_env": {
+      "install_dst": ""
+    }
   },
   "app_id": "io.github.seadve.Kooha",
   "remote": "flathub"

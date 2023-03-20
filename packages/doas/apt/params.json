@@ -5,7 +5,10 @@
     "depends": [],
     "urls": [
       "https://github.com/Duncaen/OpenDoas"
-    ]
+    ],
+    "default_env": {
+      "install_dst": ""
+    }
   },
   "pkgs": [
     "doas"

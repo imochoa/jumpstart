@@ -5,7 +5,10 @@
     "depends": [],
     "urls": [
       "https://flathub.org/apps/details/com.vscodium.codium"
-    ]
+    ],
+    "default_env": {
+      "install_dst": ""
+    }
   },
   "app_id": "com.vscodium.codium",
   "remote": "flathub"

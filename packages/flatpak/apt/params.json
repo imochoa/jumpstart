@@ -3,7 +3,10 @@
     "template": "apt",
     "priority": 10,
     "depends": [],
-    "urls": []
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
   },
   "pkgs": [
     "flatpak",

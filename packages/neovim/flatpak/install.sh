@@ -4,7 +4,7 @@
 #		 > neovim
 #		 > flatpak
 
-flatpak install flathub io.neovim.nvim
+flatpak install -y flathub io.neovim.nvim
 
 # <<<POST STAGE>>>
 

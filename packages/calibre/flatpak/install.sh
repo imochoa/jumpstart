@@ -4,4 +4,4 @@
 #		 > Calibre
 #		 > flatpak
 
-flatpak install flathub com.calibre_ebook.calibre
+flatpak install -y flathub com.calibre_ebook.calibre

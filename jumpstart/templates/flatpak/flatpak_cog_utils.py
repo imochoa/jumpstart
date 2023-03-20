@@ -16,7 +16,7 @@ Only meant to be imported within cog
 def install_flatpak(appid: str, remote: str) -> str:
     # flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     # cmd=f"flatpak remote-add --if-not-exists remote "
-    return f"flatpak install {remote} {appid}"
+    return f"flatpak install -y {remote} {appid}"
 
 
 def remove_flatpak(appid: str, remote: str, delete_data: bool = True) -> str:

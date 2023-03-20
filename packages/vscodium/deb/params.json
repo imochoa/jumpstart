@@ -5,7 +5,10 @@
     "depends": [],
     "urls": [
       "https://github.com/VSCodium/vscodium"
-    ]
+    ],
+    "default_env": {
+      "install_dst": ""
+    }
   },
   "download_sources": {
     "sources": [

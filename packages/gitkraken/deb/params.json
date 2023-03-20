@@ -5,7 +5,10 @@
     "depends": [],
     "urls": [
       "https://release.gitkraken.com/linux/gitkraken-amd64.deb"
-    ]
+    ],
+    "default_env": {
+      "install_dst": ""
+    }
   },
   "download_sources": {
     "sources": [

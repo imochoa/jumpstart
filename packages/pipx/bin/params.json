@@ -7,7 +7,10 @@
     ],
     "urls": [
       "https://pypa.github.io/pipx/installation/"
-    ]
+    ],
+    "default_env": {
+      "install_dst": ""
+    }
   },
   "download_sources": {
     "sources": [],

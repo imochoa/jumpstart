@@ -4,4 +4,4 @@
 #		 > kooha
 #		 > flatpak
 
-flatpak install flathub io.github.seadve.Kooha
+flatpak install -y flathub io.github.seadve.Kooha

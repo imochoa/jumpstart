@@ -1,5 +1,7 @@
 # jumpstart
 
+https://innovativeinnovation.github.io/ubuntu-setup/
+
 top 100 security tools
 https://sectools.org/
 

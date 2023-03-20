@@ -4,4 +4,4 @@
 #		 > Blender
 #		 > flatpak
 
-flatpak install flathub org.blender.Blender
+flatpak install -y flathub org.blender.Blender

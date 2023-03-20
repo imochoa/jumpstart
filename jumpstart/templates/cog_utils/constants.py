@@ -92,6 +92,7 @@ SCRIPT_DEFAULTS: T.Final[str] = "\n".join(
     )
 )
 
+
 # echo "Global wallpapers at /usr/share/backgrounds"
 # echo "Local wallpapers at ~/.local/share/backgrounds"
 #
@@ -101,3 +102,63 @@ SCRIPT_DEFAULTS: T.Final[str] = "\n".join(
 # IMG_URL='https://unsplash.com/photos/VzRKG0piEp8/download?force=true'
 # sudo wget ${IMG_URL} --continue --output-document=${BGDIR}/wallpaper.jpg
 # sudo convert ${BGDIR}/wallpaper.jpg ${BGDIR}/wallpaper.png
+
+
+class UserGlobalPath(T.NamedTuple):
+    u: str
+    """
+    'USER' install
+    """
+    g: str
+    """
+    'GLOBAL' install
+    """
+
+
+class OSConfigPaths(T.NamedTuple):
+    binaries: UserGlobalPath | None = None
+    """
+    """
+    desktopfiles: UserGlobalPath | None = None
+    """
+    """
+    icons: UserGlobalPath | None = None
+    """
+    """
+    fonts: UserGlobalPath | None = None
+    """
+    """
+    wallpapers: UserGlobalPath | None = None
+    """
+    """
+
+
+class OSPaths(SimpleNamespace):
+    """
+    Variable names to use in the shell scripts
+    """
+
+    debian = OSConfigPaths(
+        binaries=UserGlobalPath(
+            u="${{HOME}}/.local/bin",
+            g="/usr/local/bin",
+        ),
+        desktopfiles=UserGlobalPath(
+            u="${{HOME}}/.local/share/applications",
+            g="/usr/share/applications",
+        ),
+        icons=UserGlobalPath(
+            u="${{HOME}}/.local/share/icons",
+            g="/usr/share/icons",
+            # /usr/share/pixmaps
+            # /usr/share/icons
+        ),
+        fonts=UserGlobalPath(
+            u="",
+            g="/usr/local/share/fonts",
+        ),
+        wallpapers=UserGlobalPath(
+            u="",
+            g="/usr/share/backgrounds",
+        ),
+    )

@@ -8,7 +8,10 @@
     ],
     "urls": [
       "https://plantuml.com/faq-install"
-    ]
+    ],
+    "default_env": {
+      "install_dst": ""
+    }
   },
   "download_sources": {
     "sources": [

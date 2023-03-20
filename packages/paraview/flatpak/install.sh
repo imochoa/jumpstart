@@ -4,4 +4,4 @@
 #		 > paraview
 #		 > flatpak
 
-flatpak install flathub org.paraview.ParaView
+flatpak install -y flathub org.paraview.ParaView

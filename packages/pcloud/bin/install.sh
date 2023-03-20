@@ -11,12 +11,11 @@ sudo apt install libfuse2
 # https://p-lux1.pcloud.com/cBZnrXB1wZijGdL3ZZZ19bGc7Z2ZZer4ZkZvP5pVZ9zZNFZ8RZTFZqzZpRZJHZIHZvFZaHZgLZlRZt7ZQ5ZCy4sVZS1sHkiKmgS4vHRw8IWl49zUg86Ky/pcloud" tabindex="0">https://p-lux1.pcloud.com/cBZnrXB1wZijGdL3ZZZ19bGc7Z2ZZer4ZkZvP5pVZ9zZNFZ8RZTFZqzZpRZJHZIHZvFZaHZgLZlRZt7ZQ5ZCy4sVZS1sHkiKmgS4vHRw8IWl49zUg86Ky/pcloud
 Warning: no cog code found in /home/imochoa/Code/jumpstart/packages/pcloud/bin/.pre/install.sh
 
-INSTALL_DST="${INSTALL_DST:-${HOME}/.local/bin/}"
+INSTALL_DST="${INSTALL_DST:-${{HOME}}/.local/bin/}"
 BASHCOMP_P="${BASHCOMP_P:-${HOME}/.config/bash/bash_completion}"
 ZSHCOMP="${ZSHCOMP:-${HOME}/.config/zsh/completions}"
 TEMPDIR="$(mktemp -d -t XXXXXXXXXX)"
 FMT='\e[0;34m%-6s\e[m\n'
-
 # Commands
 DLTMP=$(mktemp -d -t jumpstart-XXXXXXXXXX) \
     && cd "${DLTMP}" \

@@ -5,7 +5,10 @@
     "depends": [],
     "urls": [
       "https://flathub.org/apps/details/org.paraview.ParaView"
-    ]
+    ],
+    "default_env": {
+      "install_dst": ""
+    }
   },
   "app_id": "org.paraview.ParaView",
   "remote": "flathub"

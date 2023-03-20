@@ -154,6 +154,7 @@ def cog_param(
             **param.cog_args,
             **default_cog_kwargs,
             **dict(FILE=src.name.upper()),
+            **param.header.default_env.cog_args,
         }
         p = cog_subprocess(
             in_path=src,

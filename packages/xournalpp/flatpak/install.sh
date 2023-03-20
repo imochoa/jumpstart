@@ -4,4 +4,4 @@
 #		 > xournalpp
 #		 > flatpak
 
-flatpak install flathub com.github.xournalpp.xournalpp
+flatpak install -y flathub com.github.xournalpp.xournalpp

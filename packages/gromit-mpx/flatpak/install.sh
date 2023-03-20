@@ -4,4 +4,4 @@
 #		 > gromit-mpx
 #		 > flatpak
 
-flatpak install flathub net.christianbeier.Gromit-MPX
+flatpak install -y flathub net.christianbeier.Gromit-MPX

@@ -5,7 +5,10 @@
     "depends": [],
     "urls": [
       "https://pypi.org/project/trash-cli/"
-    ]
+    ],
+    "default_env": {
+      "install_dst": ""
+    }
   },
   "package": "trash-cli",
   "app": "",
