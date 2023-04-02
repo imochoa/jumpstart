@@ -1,8 +1,7 @@
 #!/usr/bin/env sh
 # [[[cog
 # import cog
-# from jumpstart.cogging.helpers import str2list, str2dict, require_cmds, tempdir_cmd, env_defaults
-# from jumpstart.templates.bin.bin_cog_utils import install_bin
+# from cog_utils import str2dict, require_cmds, tempdir_cmd, env_defaults
 #
 # cog.outl(f"# Variables\n{env_defaults(install_dst=INSTALL_DST)}")
 #

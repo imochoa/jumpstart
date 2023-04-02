@@ -7,8 +7,8 @@ Only meant to be imported within cog
 # stdlib imports
 import typing as T
 
-# local imports
-from .constants import ENVVARS, PRINTF_FMT
+# 1st party imports
+from jumpstart.cogging.constants import ENVVARS, PRINTF_FMT
 
 
 def chain_cmds(cmds: T.Sequence[str]) -> str:

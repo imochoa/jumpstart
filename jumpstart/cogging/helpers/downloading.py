@@ -4,18 +4,13 @@
 Only meant to be imported within cog
 """
 
-# stdlib imports
-from shlex import quote as sh_quote
-import subprocess
-import typing as T
-
-# 3rd party imports
-from cog_utils.cmds import chain_cmds, printf, require_cmds, tempdir_cmd
-from cog_utils.constants import VARNAMES
-from cog_utils.extractions import EXTRACTION_FCNS
-
 # 1st party imports
+from jumpstart.cogging.constants import VARNAMES
 from jumpstart.constants import ARCHIVE_EXTS
+
+# local imports
+from .extracting import EXTRACTION_FCNS
+from .shell_code import chain_cmds, printf, require_cmds, tempdir_cmd
 
 # URL_CMD=url_cmd,
 #             URL=self.cache.url,

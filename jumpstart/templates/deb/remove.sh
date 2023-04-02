@@ -1,8 +1,9 @@
 #!/usr/bin/env sh
 # [[[cog
 # import cog
-# from cog_utils import str2dict, require_cmds, tempdir_cmd, SCRIPT_DEFAULTS
-# from deb_cog_utils import remove_deb
+# from jumpstart.cogging.helpers import str2dict, require_cmds, tempdir_cmd
+# from jumpstart.cogging.constants import SCRIPT_DEFAULTS
+# from jumpstart.templates.deb.deb_cog_utils import remove_deb
 #
 # cog.outl(f"# Variables\n{SCRIPT_DEFAULTS}\n")
 #

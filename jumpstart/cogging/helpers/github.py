@@ -4,12 +4,6 @@
 Only meant to be imported within cog
 """
 
-# stdlib imports
-import typing as T
-
-# local imports
-from .cmds import require_cmds
-
 
 def find_github_version(orgrepo: str) -> str:
     """

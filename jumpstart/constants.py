@@ -12,26 +12,30 @@ class PATHS(SimpleNamespace):
     All relevant pathlib.Path paths
     """
 
-    TMP: T.Final[Path] = Path(tempfile.gettempdir())
+    TMP = Path(tempfile.gettempdir())
     """
     OS Temporary directory
     """
-    DEVNULL: T.Final[Path] = Path(os.devnull)
+    DEVNULL = Path(os.devnull)
     """
     """
-    PYPKG_DIR: T.Final[Path] = Path(__file__).parent.resolve()
+    PYPKG_DIR = Path(__file__).parent.resolve()
     """
     Top-level python package
     """
-    TEMPLATES_DIR: T.Final[Path] = PYPKG_DIR / "templates"
+    TEMPLATES_DIR = PYPKG_DIR / "templates"
     """
     Python package containing the templates
     """
-    REPO_DIR: T.Final[Path] = PYPKG_DIR.parent
+    COGGING_DIR = PYPKG_DIR / "cogging"
+    """
+    Python package for helping with cog
+    """
+    REPO_DIR = PYPKG_DIR.parent
     """
     GitHub repository
     """
-    PACKAGES_DIR: T.Final[Path] = REPO_DIR / "packages"
+    PACKAGES_DIR = REPO_DIR / "packages"
     """
     Top-level directory where the packages are stored
     """

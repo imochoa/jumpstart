@@ -18,11 +18,8 @@ import typer
 from jumpstart.constants import FILES, PATHS
 from jumpstart.core import loop_over_pkg_jsons, loop_over_pkgs, validate_schemas
 from jumpstart.schemas import PackageMetadata, dump_json, load_json
-from jumpstart.templates import (
+from jumpstart.templates import (  # BinParams,; NoParams,; PipxParams,
     PARAMS_TYPE,
-    BinParams,
-    NoParams,
-    PipxParams,
     cog_param,
     get_param_schema,
 )
@@ -33,19 +30,19 @@ app = typer.Typer()
 # https://pybash.medium.com/interactive-cli-1-40bc1df37df9
 
 
-@app.command()
-def create(item: str):
-    print(f"Creating item: {item}")
+# @app.command()
+# def create(item: str):
+#     print(f"Creating item: {item}")
 
 
-@app.command()
-def delete(item: str):
-    print(f"Deleting item: {item}")
+# @app.command()
+# def delete(item: str):
+#     print(f"Deleting item: {item}")
 
 
-@app.command()
-def sell(item: str):
-    print(f"Selling item: {item}")
+# @app.command()
+# def sell(item: str):
+#     print(f"Selling item: {item}")
 
 
 # if __name__ == "__main__":

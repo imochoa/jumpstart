@@ -9,9 +9,6 @@ import json
 import shlex
 import typing as T
 
-# local imports
-from .constants import PRINTF_FMT
-
 
 def sh_escape(s: str) -> str:
     """

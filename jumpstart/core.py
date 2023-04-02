@@ -13,11 +13,8 @@ from rich.tree import Tree
 # 1st party imports
 from jumpstart.constants import FILES, PATHS
 from jumpstart.schemas import PackageMetadata, dump_json, load_json
-from jumpstart.templates import (
+from jumpstart.templates import (  # BinParams,; NoParams,; PipxParams,
     PARAMS_TYPE,
-    BinParams,
-    NoParams,
-    PipxParams,
     cog_param,
     get_param_schema,
 )

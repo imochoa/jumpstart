@@ -6,16 +6,13 @@ Only meant to be imported within cog
 # stdlib imports
 from collections.abc import Callable
 from functools import wraps
-import shlex
-from shlex import quote as sh_quote
-import typing as T
 from typing import Any, TypeVar
 
 # 1st party imports
 from jumpstart.constants import ARCHIVE_EXTS
 
 # local imports
-from .cmds import printf, require_cmds
+from .shell_code import printf
 
 
 def log_extractions(func: Callable[[str], list[str]]) -> Callable[[str], list[str]]:
