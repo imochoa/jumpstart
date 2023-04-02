@@ -34,7 +34,7 @@ class DefaultEnv:
     def cog_args(self) -> dict[str, str]:
         """ """
         return dict(
-            INSTALL_DST=self.install_dst or "${{HOME}}/.local/bin/",
+            INSTALL_DST=self.install_dst or "${HOME}/.local/bin/",  # TODO local vs global default path!
         )
 
 
