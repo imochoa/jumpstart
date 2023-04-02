@@ -10,7 +10,7 @@
       "https://plantuml.com/faq-install"
     ],
     "default_env": {
-      "install_dst": ""
+      "install_dst": "${HOME}/.local/share/plantuml"
     }
   },
   "download_sources": {

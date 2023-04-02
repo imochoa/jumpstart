@@ -5,7 +5,7 @@
 #		 > bin
 
 # Variables
-INSTALL_DST="${INSTALL_DST:-${{HOME}}/.local/bin/}"
+INSTALL_DST="${INSTALL_DST:-${HOME}/.local/share/plantuml}"
 BASHCOMP_P="${BASHCOMP_P:-${HOME}/.config/bash/bash_completion}"
 ZSHCOMP="${ZSHCOMP:-${HOME}/.config/zsh/completions}"
 TEMPDIR="$(mktemp -d -t XXXXXXXXXX)"
@@ -21,28 +21,26 @@ DLTMP=$(mktemp -d -t jumpstart-XXXXXXXXXX) \
 # <<<POST STAGE>>>
 
 
-VER=$(git ls-remote --refs --tags https://github.com/plantuml/plantuml |
-      cut --delimiter='/' --fields=3 |
-      grep -Eo 'v[0-9]+\.[0-9]+\.[0-9]+' |
-      sort --version-sort |
-      tr -d 'v' |
-      tail --lines=1)
-url="http://sourceforge.net/projects/plantuml/files/plantuml.${VER}.jar/download"
-
-# Update .jar file?
-# ----------------------------------------------------------------------------------
+# TODO use INSTALL_DST?
 installdir="${HOME}/.local/share/plantuml"
 # installdir="/usr/share/plantuml"
-jarpath="${installdir}/plantuml.${VER}.jar"
-
+jarpath="${installdir}/plantuml.jar"
 mkdir -p ${installdir}
-[ ! -f "${jarpath}" ] && curl -JLO --output "${jarpath}" "${url}"
-ln -s -f "${installdir}/plantuml.${VER}.jar" "${installdir}/plantuml.jar"
+mv *.jar "${jarpath}"
+# ln -s -f "${installdir}/plantuml.${VER}.jar" "${installdir}/plantuml.jar"
 
 # Update executable?
 # ----------------------------------------------------------------------------------
+# CONSTANTS
+DATA_DIR="/home/imochoa/Code/jumpstart/packages/plantuml/bin/data/"
+RUN_WRAPPER="${DATA_DIR}/plantuml"
+
 wrapperpath="${HOME}/.local/bin/plantuml"
 # wrapperpath="/usr/local/bin/plantuml"
-DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+DIR="$(
+	cd -- "$(dirname "$0")" >/dev/null 2>&1
+	pwd -P
+)"
 echo $DIR
-cp -f "${DIR}/run.sh" "${wrapperpath}"
+# cp -f "${DIR}/run.sh" "${wrapperpath}"
+cp -f "${RUN_WRAPPER}" "${wrapperpath}"

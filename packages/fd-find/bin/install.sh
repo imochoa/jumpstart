@@ -5,7 +5,7 @@
 #		 > bin
 
 # Variables
-INSTALL_DST="${INSTALL_DST:-${{HOME}}/.local/bin/}"
+INSTALL_DST="${INSTALL_DST:-${HOME}/.local/bin/}"
 BASHCOMP_P="${BASHCOMP_P:-${HOME}/.config/bash/bash_completion}"
 ZSHCOMP="${ZSHCOMP:-${HOME}/.config/zsh/completions}"
 TEMPDIR="$(mktemp -d -t XXXXXXXXXX)"
