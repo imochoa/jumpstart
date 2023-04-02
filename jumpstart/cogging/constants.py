@@ -140,15 +140,15 @@ class OSPaths(SimpleNamespace):
 
     debian = OSConfigPaths(
         binaries=UserGlobalPath(
-            u="${{HOME}}/.local/bin",
+            u="${HOME}/.local/bin",
             g="/usr/local/bin",
         ),
         desktopfiles=UserGlobalPath(
-            u="${{HOME}}/.local/share/applications",
+            u="${HOME}/.local/share/applications",
             g="/usr/share/applications",
         ),
         icons=UserGlobalPath(
-            u="${{HOME}}/.local/share/icons",
+            u="${HOME}/.local/share/icons",
             g="/usr/share/icons",
             # /usr/share/pixmaps
             # /usr/share/icons
