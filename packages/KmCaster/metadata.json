@@ -1,0 +1,11 @@
+{
+  "name": "KmCaster",
+  "urls": [
+    ""
+  ],
+  "tags": [
+    "keyboard",
+    "streaming"
+  ],
+  "description": "Show keypresses"
+}

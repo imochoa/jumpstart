@@ -1,0 +1,11 @@
+{
+  "name": "imgcat",
+  "urls": [
+    "https://github.com/danielgatis/imgcat"
+  ],
+  "tags": [
+    "cli",
+    "images"
+  ],
+  "description": "Preview images in your terminal"
+}

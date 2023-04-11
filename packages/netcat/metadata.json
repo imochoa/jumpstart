@@ -1,0 +1,11 @@
+{
+  "name": "netcat",
+  "urls": [
+    "https://catonmat.net/unix-utilities-netcat"
+  ],
+  "tags": [
+    "networking",
+    "dev"
+  ],
+  "description": "NetCat"
+}

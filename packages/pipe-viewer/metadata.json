@@ -1,0 +1,10 @@
+{
+  "name": "pipe-viewer",
+  "urls": [
+    "https://catonmat.net/unix-utilities-pipe-viewer"
+  ],
+  "tags": [
+    "dev"
+  ],
+  "description": "Pipe viewer for terminals"
+}

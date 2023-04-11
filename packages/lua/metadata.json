@@ -1,0 +1,11 @@
+{
+  "name": "lua",
+  "urls": [
+    "https://www.lua.org/"
+  ],
+  "tags": [
+    "scripting",
+    "dev"
+  ],
+  "description": "Lua programming language"
+}
