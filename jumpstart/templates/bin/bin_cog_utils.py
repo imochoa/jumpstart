@@ -45,7 +45,7 @@ def install_bin(
     for k in sorted(cmdmap):
         dst = f"${{{ENVVARS.INSTALL_DST}}}/" + cmdmap[k].strip()
         cmds += [
-            f"{VARNAMES.SRCPATH}=$( find . -type f | grep '{k}' )",
+            f"{VARNAMES.SRCPATH}=$( find . -type f | grep --ignore-case '{k}' )",
             f'sudo chmod +x "${{{VARNAMES.SRCPATH}}}"',
             f'sudo mv "${{{VARNAMES.SRCPATH}}}" "{dst}"',
         ]
