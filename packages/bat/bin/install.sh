@@ -14,13 +14,13 @@ FMT='\e[0;34m%-6s\e[m\n'
 DLTMP=$(mktemp -d -t jumpstart-XXXXXXXXXX) \
     && cd "${DLTMP}" \
     && printf "\e[0;34m%-6s\e[m\n" "Downloading to $(realpath .)" \
-    && URL=$(curl --silent 'https://api.github.com/repos/sharkdp/bat/releases/latest' | jq '..|.browser_download_url?' | grep 'x86_64' | grep 'linux' | grep 'gnu' | tr -d '"') \
+    && URL=$(curl --silent 'https://api.github.com/repos/sharkdp/bat/releases/latest' | jq '..|.browser_download_url? | select( . != null )' | tr -d '"' | grep --ignore-case 'x86_64' | grep --ignore-case 'linux' | grep --ignore-case 'gnu') \
     && curl -jLO "${URL}" \
     && DLFILE=$(ls . | head -n1) \
     && printf "\e[0;34m%-6s\e[m\n" "Extracting..." \
     && tar -xzvf "${DLFILE}" \
     && rm "${DLFILE}" \
     && echo "$(ls .)" \
-    && SRCPATH=$( find . -type f | grep '/bat$' ) \
+    && SRCPATH=$( find . -type f | grep --ignore-case '/bat$' ) \
     && sudo chmod +x "${SRCPATH}" \
     && sudo mv "${SRCPATH}" "${INSTALL_DST}/bat"

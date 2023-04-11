@@ -13,12 +13,17 @@
       {
         "orgrepo": "neovim/neovim",
         "filters": [
-          "\\.appimage\""
-        ]
+          "\\.appimage"
+        ],
+        "inverted_filters": [
+          "zsync",
+          "sha256sum"
+        ],
+        "cls": "GitHubRelease"
       }
     ],
     "cache": {
-      "source_hash": "<GitHubRelease orgrepo=neovim/neovim, filters=['\\\\.appimage\"']>",
+      "source_hash": "<GitHubRelease orgrepo=neovim/neovim, filters=['\\\\.appimage'], inverted_filters=['zsync', 'sha256sum'], cls=GitHubRelease>",
       "url": "https://github.com/neovim/neovim/releases/download/stable/nvim.appimage",
       "archive_ext": ""
     }

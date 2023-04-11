@@ -16,13 +16,15 @@
           "x86_64",
           "linux",
           "gnu"
-        ]
+        ],
+        "inverted_filters": [],
+        "cls": "GitHubRelease"
       }
     ],
     "cache": {
-      "source_hash": "<GitHubRelease orgrepo=fiatjaf/jiq, filters=['x86_64', 'linux', 'gnu']>",
+      "source_hash": "<GitHubRelease orgrepo=fiatjaf/jiq, filters=['x86_64', 'linux', 'gnu'], inverted_filters=[], cls=GitHubRelease>",
       "url": "",
-      "archive_ext": "TARGZ"
+      "archive_ext": ""
     }
   },
   "cmdmap": {

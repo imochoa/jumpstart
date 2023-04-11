@@ -14,10 +14,10 @@ FMT='\e[0;34m%-6s\e[m\n'
 DLTMP=$(mktemp -d -t jumpstart-XXXXXXXXXX) \
     && cd "${DLTMP}" \
     && printf "\e[0;34m%-6s\e[m\n" "Downloading to $(realpath .)" \
-    && URL=$(curl --silent 'https://api.github.com/repos/neovim/neovim/releases/latest' | jq '..|.browser_download_url?' | grep '\.appimage"' | tr -d '"') \
+    && URL=$(curl --silent 'https://api.github.com/repos/neovim/neovim/releases/latest' | jq '..|.browser_download_url? | select( . != null )' | tr -d '"' | grep --ignore-case '\.appimage"') \
     && curl -jLO "${URL}" \
     && DLFILE=$(ls . | head -n1) \
-    && SRCPATH=$( find . -type f | grep 'nvim' ) \
+    && SRCPATH=$( find . -type f | grep --ignore-case 'nvim' ) \
     && sudo chmod +x "${SRCPATH}" \
     && sudo mv "${SRCPATH}" "${INSTALL_DST}/nvim"
 

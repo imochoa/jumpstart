@@ -14,12 +14,14 @@
         "orgrepo": "erebe/greenclip",
         "filters": [
           "clip\""
-        ]
+        ],
+        "inverted_filters": [],
+        "cls": "GitHubRelease"
       }
     ],
     "cache": {
-      "source_hash": "<GitHubRelease orgrepo=erebe/greenclip, filters=['clip\"']>",
-      "url": "https://github.com/erebe/greenclip/releases/download/v4.2/greenclip",
+      "source_hash": "<GitHubRelease orgrepo=erebe/greenclip, filters=['clip\"'], inverted_filters=[], cls=GitHubRelease>",
+      "url": "",
       "archive_ext": ""
     }
   },

@@ -19,12 +19,14 @@
         "orgrepo": "plantuml/plantuml",
         "filters": [
           "uml\\.jar\""
-        ]
+        ],
+        "inverted_filters": [],
+        "cls": "GitHubRelease"
       }
     ],
     "cache": {
-      "source_hash": "<GitHubRelease orgrepo=plantuml/plantuml, filters=['uml\\\\.jar\"']>",
-      "url": "https://github.com/plantuml/plantuml/releases/download/v1.2023.0/plantuml.jar",
+      "source_hash": "<GitHubRelease orgrepo=plantuml/plantuml, filters=['uml\\\\.jar\"'], inverted_filters=[], cls=GitHubRelease>",
+      "url": "",
       "archive_ext": ""
     }
   },

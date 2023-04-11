@@ -16,12 +16,14 @@
           "linux",
           "x86_64",
           "gnu"
-        ]
+        ],
+        "inverted_filters": [],
+        "cls": "GitHubRelease"
       }
     ],
     "cache": {
-      "source_hash": "<GitHubRelease orgrepo=bootandy/dust, filters=['linux', 'x86_64', 'gnu']>",
-      "url": "https://github.com/bootandy/dust/releases/download/v0.8.3/dust-v0.8.3-x86_64-unknown-linux-gnu.tar.gz",
+      "source_hash": "<GitHubRelease orgrepo=bootandy/dust, filters=['linux', 'x86_64', 'gnu'], inverted_filters=[], cls=GitHubRelease>",
+      "url": "https://github.com/bootandy/dust/releases/download/v0.8.5/dust-v0.8.5-x86_64-unknown-linux-gnu.tar.gz",
       "archive_ext": "TARGZ"
     }
   },

@@ -15,11 +15,13 @@
         "filters": [
           "linux",
           "amd64"
-        ]
+        ],
+        "inverted_filters": [],
+        "cls": "GitHubRelease"
       }
     ],
     "cache": {
-      "source_hash": "<GitHubRelease orgrepo=cheat/cheat, filters=['linux', 'amd64']>",
+      "source_hash": "<GitHubRelease orgrepo=cheat/cheat, filters=['linux', 'amd64'], inverted_filters=[], cls=GitHubRelease>",
       "url": "https://github.com/cheat/cheat/releases/download/4.4.0/cheat-linux-amd64.gz",
       "archive_ext": "GZ"
     }

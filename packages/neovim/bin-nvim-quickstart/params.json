@@ -14,12 +14,14 @@
         "orgrepo": "neovim/neovim",
         "filters": [
           "\\.appimage\""
-        ]
+        ],
+        "inverted_filters": [],
+        "cls": "GitHubRelease"
       }
     ],
     "cache": {
-      "source_hash": "<GitHubRelease orgrepo=neovim/neovim, filters=['\\\\.appimage\"']>",
-      "url": "https://github.com/neovim/neovim/releases/download/stable/nvim.appimage",
+      "source_hash": "<GitHubRelease orgrepo=neovim/neovim, filters=['\\\\.appimage\"'], inverted_filters=[], cls=GitHubRelease>",
+      "url": "",
       "archive_ext": ""
     }
   },

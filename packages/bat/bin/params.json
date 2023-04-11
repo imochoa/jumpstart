@@ -16,12 +16,14 @@
           "x86_64",
           "linux",
           "gnu"
-        ]
+        ],
+        "inverted_filters": [],
+        "cls": "GitHubRelease"
       }
     ],
     "cache": {
-      "source_hash": "<GitHubRelease orgrepo=sharkdp/bat, filters=['x86_64', 'linux', 'gnu']>",
-      "url": "https://github.com/sharkdp/bat/releases/download/v0.22.1/bat-v0.22.1-x86_64-unknown-linux-gnu.tar.gz",
+      "source_hash": "<GitHubRelease orgrepo=sharkdp/bat, filters=['x86_64', 'linux', 'gnu'], inverted_filters=[], cls=GitHubRelease>",
+      "url": "https://github.com/sharkdp/bat/releases/download/v0.23.0/bat-v0.23.0-x86_64-unknown-linux-gnu.tar.gz",
       "archive_ext": "TARGZ"
     }
   },

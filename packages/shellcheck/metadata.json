@@ -1,0 +1,11 @@
+{
+  "name": "shellcheck",
+  "urls": [
+    "https://github.com/koalaman/shellcheck"
+  ],
+  "tags": [
+    "linter",
+    "shell"
+  ],
+  "description": "Check your shell scripts"
+}

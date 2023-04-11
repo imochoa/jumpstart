@@ -14,11 +14,12 @@
     "sources": [
       {
         "url_cmd": "echo \"https://release.gitkraken.com/linux/gitkraken-amd64.deb\"",
-        "ver_cmd": ""
+        "ver_cmd": "",
+        "cls": "StaticEndpoint"
       }
     ],
     "cache": {
-      "source_hash": "<StaticEndpoint url_cmd=echo \"https://release.gitkraken.com/linux/gitkraken-amd64.deb\", ver_cmd=>",
+      "source_hash": "<StaticEndpoint url_cmd=echo \"https://release.gitkraken.com/linux/gitkraken-amd64.deb\", ver_cmd=, cls=StaticEndpoint>",
       "url": "https://release.gitkraken.com/linux/gitkraken-amd64.deb",
       "archive_ext": ""
     }

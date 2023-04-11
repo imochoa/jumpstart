@@ -15,13 +15,13 @@ FMT='\e[0;34m%-6s\e[m\n'
 DLTMP=$(mktemp -d -t jumpstart-XXXXXXXXXX) \
     && cd "${DLTMP}" \
     && printf "\e[0;34m%-6s\e[m\n" "Downloading to $(realpath .)" \
-    && URL=$(curl --silent 'https://api.github.com/repos/cheat/cheat/releases/latest' | jq '..|.browser_download_url?' | grep 'linux' | grep 'amd64' | tr -d '"') \
+    && URL=$(curl --silent 'https://api.github.com/repos/cheat/cheat/releases/latest' | jq '..|.browser_download_url? | select( . != null )' | tr -d '"' | grep --ignore-case 'linux' | grep --ignore-case 'amd64') \
     && curl -jLO "${URL}" \
     && DLFILE=$(ls . | head -n1) \
     && printf "\e[0;34m%-6s\e[m\n" "Extracting..." \
     && gzip --decompress "${DLFILE}" \
     && echo "$(ls .)" \
-    && SRCPATH=$( find . -type f | grep 'cheat' ) \
+    && SRCPATH=$( find . -type f | grep --ignore-case 'cheat' ) \
     && sudo chmod +x "${SRCPATH}" \
     && sudo mv "${SRCPATH}" "${INSTALL_DST}/cheat"
 

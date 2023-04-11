@@ -16,11 +16,13 @@
           "linux",
           "x86_64",
           "musl"
-        ]
+        ],
+        "inverted_filters": [],
+        "cls": "GitHubRelease"
       }
     ],
     "cache": {
-      "source_hash": "<GitHubRelease orgrepo=ogham/exa, filters=['linux', 'x86_64', 'musl']>",
+      "source_hash": "<GitHubRelease orgrepo=ogham/exa, filters=['linux', 'x86_64', 'musl'], inverted_filters=[], cls=GitHubRelease>",
       "url": "https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-musl-v0.10.1.zip",
       "archive_ext": "ZIP"
     }
