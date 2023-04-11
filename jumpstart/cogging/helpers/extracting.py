@@ -85,6 +85,14 @@ def extract_targz(p: str) -> list[str]:
     return [f'tar -xzvf "{p}"', f'rm "{p}"']
 
 
+@log_extractions
+def extract_tarxz(p: str) -> list[str]:
+    """
+    Extract and delete *p*
+    """
+    return [f'tar -xf "{p}"', f'rm "{p}"']
+
+
 # BTOP++ => TBZ
 # tar -xvjf ${BPTOP_TBZ}
 
@@ -110,6 +118,7 @@ EXTRACTION_FCNS = {
     ARCHIVE_EXTS.ZIP: extract_zip,
     ARCHIVE_EXTS.TAR: extract_tar,
     ARCHIVE_EXTS.TARGZ: extract_targz,
+    ARCHIVE_EXTS.TARXZ: extract_tarxz,
     ARCHIVE_EXTS.GZ: extract_gz,
     ARCHIVE_EXTS.SEVENZ: extract_7z,
 }

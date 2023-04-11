@@ -60,7 +60,10 @@ def download_and_extract(
     url_cmd: str,
     archive_ext: str,
 ) -> list[str]:
-    """ """
+    """
+    Downloads file using *url_cmd* and applies the extraction operation specified by *archive_ext*
+    Saves the result in the variable named *VARNAMES.DLFILE*
+    """
     exts_tuple: tuple[str, ...] = getattr(ARCHIVE_EXTS, archive_ext, tuple())
 
     cmds = [
