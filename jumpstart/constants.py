@@ -114,12 +114,13 @@ class ARCHIVE_EXTS(SimpleNamespace):
     TAR: T.Final[tuple[str, ...]] = (".tar",)
     """
     """
-    TARGZ: T.Final[tuple[str, ...]] = (
-        ".tar.gz",
-        ".tar.xz",
-    )
+    TARGZ: T.Final[tuple[str, ...]] = (".tar.gz",)
     """
     """
+    TARXZ: T.Final[tuple[str, ...]] = (".tar.xz",)
+    """
+    """
+
     GZ: T.Final[tuple[str, ...]] = (".gz",)
     """
     """
