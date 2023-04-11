@@ -7,7 +7,7 @@ from pathlib import Path
 import typing as T
 
 # 3rd party imports
-import marshmallow
+import marshmallow as ma
 
 
 def load_json(
@@ -40,3 +40,22 @@ def dump_json(
         )
 
     return None
+
+
+def add_cls_name_to_json(cls: T.Any) -> T.Any:
+    """
+    Automatically extend the Schema with the current class:
+    {
+        ...
+        "cls": NameOfThisClass
+        ...
+    }
+    """
+
+    @ma.post_dump
+    def _cls_name_to_json(self: T.Any, data: dict[str, T.Any], **kwargs: T.Any) -> dict[str, T.Any]:
+        """ """
+        return {**data, **{"cls": type(self).__name__}}
+
+    cls.cls_name_to_json = _cls_name_to_json
+    return cls

@@ -16,6 +16,7 @@ from marshmallow_polyfield import PolyFieldBase
 
 # 1st party imports
 from jumpstart.constants import ARCHIVE_EXTS
+from jumpstart.schemas.schema_utils import add_cls_name_to_json
 
 
 def is_shell_cmd(cmd: str) -> bool:
@@ -23,11 +24,6 @@ def is_shell_cmd(cmd: str) -> bool:
     Return *True* if the string in *cmd* can be run by a shell or *False* if it's just a string
     """
     return any(c.isspace() for c in cmd)
-
-
-def run_shell_cmd(cmd: str) -> str:
-    """"""
-    return subprocess.getoutput(cmd)
 
 
 def add_cls_str_for_cache(cls: T.Any) -> T.Any:
@@ -41,6 +37,7 @@ def add_cls_str_for_cache(cls: T.Any) -> T.Any:
     return cls
 
 
+@add_cls_name_to_json
 @add_cls_str_for_cache
 @add_schema
 @dataclass(frozen=True, eq=True, repr=False)
@@ -60,6 +57,7 @@ class StaticEndpoint:
 
     class Meta:
         ordered = True
+        unknown = ma.EXCLUDE
 
     @ma.pre_load
     def set_defaults(self, in_data: dict[str, str], **kwargs: T.Any) -> dict[str, str]:
@@ -79,6 +77,7 @@ class StaticEndpoint:
         return out_data
 
 
+@add_cls_name_to_json
 @add_cls_str_for_cache
 @add_schema
 @dataclass(frozen=True, eq=True, repr=False)
@@ -91,13 +90,18 @@ class GitHubRelease:
     """
     filters: T.Sequence[str] = field(default_factory=tuple)
     """
-    How to grep the release JSON to get the version you want
+    Forwarded to grep
+    """
+    inverted_filters: T.Sequence[str] = field(default_factory=tuple)
+    """
+    Forwarded to grep with the --invert-match flag
     """
 
     Schema: T.ClassVar[T.Type[ma.Schema]] = ma.Schema
 
     class Meta:
         ordered = True
+        unknown = ma.EXCLUDE
 
     @ma.pre_load
     def set_defaults(self, in_data: dict[T.Any, T.Any], **kwargs: T.Any) -> dict[T.Any, T.Any]:
@@ -124,9 +128,9 @@ class GitHubRelease:
         - curl
         - jq
         """
-        cmd = f"curl --silent 'https://api.github.com/repos/{self.orgrepo}/releases/latest' | jq '..|.browser_download_url?'"
-        cmd += "".join(f" | grep '{f}'" for f in self.filters)
-        cmd += " | tr -d '\"'"
+        cmd = f"curl --silent 'https://api.github.com/repos/{self.orgrepo}/releases/latest' | jq '..|.browser_download_url? | select( . != null )' | tr -d '\"'"
+        cmd += "".join(f" | grep --ignore-case '{f}'" for f in self.filters)
+        cmd += "".join(f" | grep --ignore-case --invert-match '{f}'" for f in self.inverted_filters)
         return cmd
 
 
@@ -155,6 +159,19 @@ class PkgDownloadField(PolyFieldBase):  # type: ignore[misc]
     def deserialization_schema_selector(self, value: dict[T.Any, T.Any], obj: T.Any) -> ma.Schema:
         """Get the correct schema based on the *cls* field"""
 
+        clsname: str = value.get("cls", "")
+        if clsname:
+            return {
+                c.__name__: c
+                for c in (
+                    StaticEndpoint,
+                    GitHubRelease,
+                )
+            }[
+                clsname
+            ].Schema()  # type: ignore[attr-defined]
+
+        logger.warning("Attempting to auto-determine the pkg download source")
         input_keys = set(value.keys())
         for cls in self.cls_by_length:
             keys = set(ENDPOINT_KEYMAP[cls]).difference(
@@ -194,6 +211,7 @@ class PkgDownloadSourcesCache:
 
     class Meta:
         ordered = True
+        unknown = ma.INCLUDE
 
 
 @add_schema
@@ -252,7 +270,7 @@ class PkgDownloadSources:
             logger.debug(f"Updating cache for {source}")
             self.cache.archive_ext = ""
             self.cache.source_hash = source_hash
-            self.cache.url = run_shell_cmd(url_cmd)
+            self.cache.url = subprocess.getoutput(url_cmd)
             try:
                 self.cache.archive_ext = ARCHIVE_EXTS.match(self.cache.url)
             except KeyError:
