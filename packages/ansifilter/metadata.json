@@ -1,0 +1,11 @@
+{
+  "name": "ansifilter",
+  "urls": [
+    "http://www.andre-simon.de/doku/ansifilter/ansifilter.php"
+  ],
+  "tags": [
+    "ANSI",
+    "HTML"
+  ],
+  "description": "Handle terminal escape codes"
+}

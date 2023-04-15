@@ -1,0 +1,33 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [],
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "download_sources": {
+    "sources": [
+      {
+        "orgrepo": "dandavison/delta",
+        "filters": [
+          "linux",
+          "x86_64",
+          "gnu"
+        ],
+        "inverted_filters": [],
+        "cls": "GitHubRelease"
+      }
+    ],
+    "cache": {
+      "source_hash": "<GitHubRelease orgrepo=dandavison/delta, filters=['linux', 'x86_64', 'gnu'], inverted_filters=[], cls=GitHubRelease>",
+      "url": "https://github.com/dandavison/delta/releases/download/0.15.1/delta-0.15.1-x86_64-unknown-linux-gnu.tar.gz",
+      "archive_ext": "TARGZ"
+    }
+  },
+  "cmdmap": {
+    "delta": "delta"
+  }
+}
