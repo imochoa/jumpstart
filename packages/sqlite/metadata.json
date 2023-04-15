@@ -1,0 +1,11 @@
+{
+  "name": "sqlite",
+  "urls": [
+    "https://www.sqlite.org/index.html"
+  ],
+  "tags": [
+    "sql",
+    "db"
+  ],
+  "description": "SQLite3"
+}

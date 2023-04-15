@@ -1,0 +1,40 @@
+#!/usr/bin/env xdg-open
+
+# /home/imochoa/.local/share/applications/neovim.desktop
+
+# Global installation
+# /usr/share/applications/name.desktop
+# Local installation
+# ~/.local/share/applications/name.desktop
+
+# Specs should follow:
+# https://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html
+
+# Icons in /usr/share/icons
+
+# https://gist.github.com/fmoralesc/bd46e97b39ee284af641
+
+# Icon=/home/felipe/images/misc/neovim-mark.png
+
+# Improve from github: https://github.com/fmoralesc/neovim-gnome-terminal-wrapper
+
+# Exec=/usr/local/bin/nvim_desktop_wrapper.py %F
+# Exec=${HOME}/.local/bin/nvim_desktop_wrapper.py %F
+
+# For env variables such as $HOME: https://stackoverflow.com/questions/8980464/how-do-i-access-an-environment-variable-in-a-desktop-files-exec-line/8980518#8980518
+# Exec=sh -c "myprogram --folder\=\$HOME/.special"
+
+# TODO desktop wrapper not required anymore!
+# Exec=nvim_desktop_wrapper.py %F
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Neovim
+Exec=nvim %F
+NoDisplay=false
+Categories=X-GNOME-Other;
+Icon=neovim
+StartupNotify=false
+Terminal=false
+MimeType=text/english;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/x-java;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;application/x-shellscript;text/x-c;text/x-c++;

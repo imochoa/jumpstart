@@ -1,0 +1,15 @@
+{
+  "header": {
+    "template": "flatpak",
+    "priority": 0,
+    "depends": [],
+    "urls": [
+      "https://flathub.org/apps/details/com.github.alainm23.planner"
+    ],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "app_id": "com.github.alainm23.planner",
+  "remote": "flathub"
+}

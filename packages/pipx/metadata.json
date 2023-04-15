@@ -1,0 +1,10 @@
+{
+  "name": "pipx",
+  "urls": [
+    "https://github.com/pypa/pipx"
+  ],
+  "tags": [
+    "python"
+  ],
+  "description": "Manage executable Python packages"
+}

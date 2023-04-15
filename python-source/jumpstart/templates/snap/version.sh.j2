@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-
-{% import 'macros.j2' as macros %}
-{{ macros.autotoken() }}
-
-printf "[%s]\t%s\n" $(snap find "{{pkg}}" | tail -1 | tr -s ' ' | cut -d' ' -f2 | xargs) "{{pkg}}"

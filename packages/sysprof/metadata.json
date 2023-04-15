@@ -1,0 +1,11 @@
+{
+  "name": "Sys",
+  "urls": [
+    "http://www.sysprof.com/"
+  ],
+  "tags": [
+    "profiling",
+    "development"
+  ],
+  "description": "Linux profiling"
+}

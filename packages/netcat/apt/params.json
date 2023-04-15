@@ -1,0 +1,17 @@
+{
+  "header": {
+    "template": "apt",
+    "priority": 0,
+    "depends": [],
+    "urls": [
+      "https://catonmat.net/unix-utilities-netcat"
+    ],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "pkgs": [
+    "nc"
+  ],
+  "ppas": []
+}

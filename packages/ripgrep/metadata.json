@@ -1,0 +1,10 @@
+{
+  "name": "ripgrep",
+  "urls": [
+    "https://github.com/BurntSushi/ripgrep"
+  ],
+  "tags": [
+    "searching"
+  ],
+  "description": "A better grep"
+}

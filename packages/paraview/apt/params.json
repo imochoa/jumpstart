@@ -1,0 +1,15 @@
+{
+  "header": {
+    "template": "apt",
+    "priority": 20,
+    "depends": [],
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "pkgs": [
+    "paraview"
+  ],
+  "ppas": []
+}

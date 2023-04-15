@@ -1,0 +1,11 @@
+{
+  "name": "doas",
+  "urls": [
+    "https://www.makeuseof.com/how-to-install-and-use-doas/"
+  ],
+  "tags": [
+    "dev",
+    "linux"
+  ],
+  "description": "Safer sudo. It's actually OpenDoAs, ported from OpenBSD"
+}

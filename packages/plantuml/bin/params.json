@@ -1,0 +1,34 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [
+      "graphviz",
+      "jre"
+    ],
+    "urls": [
+      "https://plantuml.com/faq-install"
+    ],
+    "default_env": {
+      "install_dst": "${HOME}/.local/share/plantuml"
+    }
+  },
+  "download_sources": {
+    "sources": [
+      {
+        "orgrepo": "plantuml/plantuml",
+        "filters": [
+          "uml\\.jar\""
+        ],
+        "inverted_filters": [],
+        "cls": "GitHubRelease"
+      }
+    ],
+    "cache": {
+      "source_hash": "<GitHubRelease orgrepo=plantuml/plantuml, filters=['uml\\\\.jar\"'], inverted_filters=[], cls=GitHubRelease>",
+      "url": "",
+      "archive_ext": ""
+    }
+  },
+  "cmdmap": {}
+}

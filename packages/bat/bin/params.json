@@ -1,0 +1,33 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [],
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "download_sources": {
+    "sources": [
+      {
+        "orgrepo": "sharkdp/bat",
+        "filters": [
+          "x86_64",
+          "linux",
+          "gnu"
+        ],
+        "inverted_filters": [],
+        "cls": "GitHubRelease"
+      }
+    ],
+    "cache": {
+      "source_hash": "<GitHubRelease orgrepo=sharkdp/bat, filters=['x86_64', 'linux', 'gnu'], inverted_filters=[], cls=GitHubRelease>",
+      "url": "https://github.com/sharkdp/bat/releases/download/v0.23.0/bat-v0.23.0-x86_64-unknown-linux-gnu.tar.gz",
+      "archive_ext": "TARGZ"
+    }
+  },
+  "cmdmap": {
+    "/bat$": "bat"
+  }
+}

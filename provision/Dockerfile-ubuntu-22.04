@@ -1,0 +1,51 @@
+FROM ubuntu:22.04
+
+# Basic OS setup
+ENV DEBIAN_FRONTEND=noninteractive
+ARG VENV=/venv
+RUN apt-get update \
+    && apt-get upgrade \
+        --no-install-recommends -y \
+    && apt-get install -y \
+        --no-install-recommends \
+        git \
+        python3 \
+        python3.10-venv \
+        curl \
+        tini \
+        tzdata \
+        keyboard-configuration \
+        sudo \
+    && mkdir -p "${VENV}" \
+    && python3 -m venv "${VENV}" \
+    && "${VENV}/bin/pip" install --upgrade pip setuptools wheel
+
+# For Snaps
+# https://stackoverflow.com/questions/46247032/how-to-solve-invoke-rc-d-policy-rc-d-denied-execution-of-start-when-building
+RUN printf '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d
+# For (invoke-rc.d: could not determine current runlevel)
+ENV RUNLEVEL=1
+
+
+## https://stackoverflow.com/questions/46247032/how-to-solve-invoke-rc-d-policy-rc-d-denied-execution-of-start-when-building
+#printf '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d
+#
+## For (invoke-rc.d: could not determine current runlevel)
+#export RUNLEVEL=1
+
+# Python setup
+ARG CODE_DIR=/src
+COPY . "${CODE_DIR}"
+
+# Set up
+RUN cd "${CODE_DIR}/" \
+    && git clean -fdx \
+    && "${VENV}/bin/pip" install -e "${CODE_DIR}/" \
+    && "${VENV}/bin/pip" install pre-commit pytest \
+    && cd "${CODE_DIR}" && "${VENV}/bin/pre-commit" install
+
+# Run
+ENTRYPOINT ["tini", "--"]
+CMD ["/bin/bash"]
+
+# vim:set ft=dockerfile:

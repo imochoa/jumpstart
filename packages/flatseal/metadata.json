@@ -1,0 +1,10 @@
+{
+  "name": "Flatseal",
+  "urls": [
+    ""
+  ],
+  "tags": [
+    "flatpak"
+  ],
+  "description": "Manage flatpak permissions"
+}

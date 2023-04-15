@@ -1,0 +1,13 @@
+{
+  "header": {
+    "template": "flatpak",
+    "priority": 0,
+    "depends": [],
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "app_id": "com.calibre_ebook.calibre",
+  "remote": "flathub"
+}

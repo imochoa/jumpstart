@@ -1,0 +1,12 @@
+{
+  "name": "tidal-hifi",
+  "urls": [
+    "https://github.com/Mastermindzh/tidal-hifi/"
+  ],
+  "tags": [
+    "music",
+    "audio",
+    "streaming"
+  ],
+  "description": "Streaming Tidal audio"
+}

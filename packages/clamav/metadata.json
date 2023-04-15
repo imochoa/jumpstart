@@ -1,0 +1,11 @@
+{
+  "name": "clamav",
+  "urls": [
+    ""
+  ],
+  "tags": [
+    "antivirus",
+    "cybersecurity"
+  ],
+  "description": ""
+}

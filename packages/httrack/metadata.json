@@ -1,0 +1,11 @@
+{
+  "name": "httrack",
+  "urls": [
+    "https://www.httrack.com/page/1/en/index.html"
+  ],
+  "tags": [
+    "http",
+    "scraping"
+  ],
+  "description": ""
+}

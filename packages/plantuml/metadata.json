@@ -1,0 +1,11 @@
+{
+  "name": "plantuml",
+  "urls": [
+    "https://plantuml.com/"
+  ],
+  "tags": [
+    "uml",
+    "development"
+  ],
+  "description": "UML diagram generation"
+}

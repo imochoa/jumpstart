@@ -1,0 +1,16 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [
+      "graphviz",
+      "jre"
+    ],
+    "urls": [
+      "https://plantuml.com/faq-install"
+    ]
+  },
+  "cmdname": "",
+  "orgrepo": "",
+  "filters": []
+}

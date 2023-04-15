@@ -1,0 +1,19 @@
+{
+  "header": {
+    "template": "apt",
+    "priority": 0,
+    "depends": [],
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "pkgs": [
+    "texlive-fonts-extra",
+    "texlive-full",
+    "texlive-latex-extra",
+    "texlive-xetex",
+    "texstudio"
+  ],
+  "ppas": []
+}

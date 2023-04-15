@@ -1,0 +1,11 @@
+{
+  "name": "Calibre",
+  "urls": [
+    "https://calibre-ebook.com/"
+  ],
+  "tags": [
+    "ebooks",
+    "library"
+  ],
+  "description": "Ebook Library"
+}

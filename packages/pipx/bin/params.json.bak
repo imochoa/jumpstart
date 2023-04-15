@@ -1,0 +1,15 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [
+      "python"
+    ],
+    "urls": [
+      "https://pypa.github.io/pipx/installation/"
+    ]
+  },
+  "cmdname": "",
+  "orgrepo": "",
+  "filters": []
+}

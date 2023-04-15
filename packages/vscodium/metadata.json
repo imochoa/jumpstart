@@ -1,0 +1,10 @@
+{
+  "name": "VSCodium",
+  "urls": [
+    "https://vscodium.com/"
+  ],
+  "tags": [
+    "dev"
+  ],
+  "description": "VSCode without telemetry"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Planner",
+  "urls": [
+    "https://useplanner.com/"
+  ],
+  "tags": [
+    "CalDAV",
+    "tasks"
+  ],
+  "description": "Planning app"
+}

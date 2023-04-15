@@ -1,0 +1,15 @@
+{
+  "header": {
+    "template": "flatpak",
+    "priority": 0,
+    "depends": [],
+    "urls": [
+      "https://flathub.org/apps/details/com.mastermindzh.tidal-hifi"
+    ],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "app_id": "com.mastermindzh.tidal-hifi",
+  "remote": "flathub"
+}
