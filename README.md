@@ -14,8 +14,8 @@ how to add a package
 # TODO
 
 - for apt, add "install-suggests"
-   `sudo apt install clang --install-suggests`
-   `sudo apt-get install libc++-dev `
+  `sudo apt install clang --install-suggests`
+  `sudo apt-get install libc++-dev `
 - add .deb, bin, better define manual, snap
 - docker tests?
 - appimage belongs in bin
