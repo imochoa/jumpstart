@@ -1,7 +1,0 @@
-pre-commit
-pytest
-pytest-icdiff
-pytest-print
-pytest-sugar
-pytest-xdist
-docker

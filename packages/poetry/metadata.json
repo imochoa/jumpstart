@@ -1,0 +1,11 @@
+{
+  "name": "poetry",
+  "urls": [
+    "https://python-poetry.org/"
+  ],
+  "tags": [
+    "python",
+    "development"
+  ],
+  "description": ""
+}

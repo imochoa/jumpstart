@@ -1,0 +1,16 @@
+{
+  "header": {
+    "template": "pipx",
+    "priority": 0,
+    "depends": [],
+    "urls": [
+      "https://pypi.org/project/rich-cli/"
+    ],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "package": "rich-cli",
+  "app": "",
+  "ver": ""
+}

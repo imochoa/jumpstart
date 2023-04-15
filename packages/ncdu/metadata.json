@@ -1,0 +1,10 @@
+{
+  "name": "ncdu",
+  "urls": [
+    ""
+  ],
+  "tags": [
+    "disk"
+  ],
+  "description": "Disk usage analyzer"
+}

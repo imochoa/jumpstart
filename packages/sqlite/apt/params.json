@@ -1,0 +1,17 @@
+{
+  "header": {
+    "template": "apt",
+    "priority": 0,
+    "depends": [],
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "pkgs": [
+    "sqlite3",
+    "sqlite3-tools",
+    "sqlitebrowser"
+  ],
+  "ppas": []
+}

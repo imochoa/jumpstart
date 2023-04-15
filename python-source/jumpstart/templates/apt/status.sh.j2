@@ -1,9 +1,0 @@
-#!/usr/bin/env sh
-
-{% import 'macros.j2' as macros %}
-{{ macros.autotoken() }}
-
-
-{% for p in pkgs -%}
-printf "[%s]\t%s\n" `[ $(apt-cache pkgnames | grep "{{p}}" ) ] && echo "1" || echo "0"` "{{p}}"
-{% endfor -%}

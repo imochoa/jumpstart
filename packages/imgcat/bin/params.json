@@ -1,0 +1,32 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [],
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "download_sources": {
+    "sources": [
+      {
+        "orgrepo": "danielgatis/imgcat",
+        "filters": [
+          "Linux",
+          "x86_64"
+        ],
+        "inverted_filters": [],
+        "cls": "GitHubRelease"
+      }
+    ],
+    "cache": {
+      "source_hash": "<GitHubRelease orgrepo=danielgatis/imgcat, filters=['Linux', 'x86_64'], inverted_filters=[], cls=GitHubRelease>",
+      "url": "https://github.com/danielgatis/imgcat/releases/download/v1.0.17/imgcat_1.0.17_Linux_x86_64.tar.gz",
+      "archive_ext": "TARGZ"
+    }
+  },
+  "cmdmap": {
+    "imgcat": "imgcat"
+  }
+}

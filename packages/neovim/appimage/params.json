@@ -1,0 +1,34 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [],
+    "urls": [],
+    "default_env": {
+      "install_dst": "/usr/local/bin"
+    }
+  },
+  "download_sources": {
+    "sources": [
+      {
+        "orgrepo": "neovim/neovim",
+        "filters": [
+          "\\.appimage"
+        ],
+        "inverted_filters": [
+          "zsync",
+          "sha256sum"
+        ],
+        "cls": "GitHubRelease"
+      }
+    ],
+    "cache": {
+      "source_hash": "<GitHubRelease orgrepo=neovim/neovim, filters=['\\\\.appimage'], inverted_filters=['zsync', 'sha256sum'], cls=GitHubRelease>",
+      "url": "https://github.com/neovim/neovim/releases/download/stable/nvim.appimage",
+      "archive_ext": ""
+    }
+  },
+  "cmdmap": {
+    "nvim": "nvim"
+  }
+}

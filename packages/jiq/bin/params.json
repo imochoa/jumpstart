@@ -1,0 +1,33 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [],
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "download_sources": {
+    "sources": [
+      {
+        "orgrepo": "fiatjaf/jiq",
+        "filters": [
+          "x86_64",
+          "linux",
+          "gnu"
+        ],
+        "inverted_filters": [],
+        "cls": "GitHubRelease"
+      }
+    ],
+    "cache": {
+      "source_hash": "<GitHubRelease orgrepo=fiatjaf/jiq, filters=['x86_64', 'linux', 'gnu'], inverted_filters=[], cls=GitHubRelease>",
+      "url": "",
+      "archive_ext": ""
+    }
+  },
+  "cmdmap": {
+    "fzf": "fzf"
+  }
+}

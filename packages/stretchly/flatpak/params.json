@@ -1,0 +1,13 @@
+{
+  "header": {
+    "template": "flatpak",
+    "priority": 20,
+    "depends": [],
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "app_id": "net.hovancik.Stretchly",
+  "remote": "flathub"
+}

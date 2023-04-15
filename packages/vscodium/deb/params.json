@@ -1,0 +1,31 @@
+{
+  "header": {
+    "template": "deb",
+    "priority": 0,
+    "depends": [],
+    "urls": [
+      "https://github.com/VSCodium/vscodium"
+    ],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "download_sources": {
+    "sources": [
+      {
+        "orgrepo": "vscodium/vscodium",
+        "filters": [
+          "amd64",
+          "deb\""
+        ],
+        "inverted_filters": [],
+        "cls": "GitHubRelease"
+      }
+    ],
+    "cache": {
+      "source_hash": "<GitHubRelease orgrepo=vscodium/vscodium, filters=['amd64', 'deb\"'], inverted_filters=[], cls=GitHubRelease>",
+      "url": "",
+      "archive_ext": ""
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "header": {
+    "template": "apt",
+    "priority": 0,
+    "depends": [],
+    "urls": [
+      "https://gitlab.com/screenkey/screenkey#installation-and-basic-usage"
+    ],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "pkgs": [
+    "screenkey"
+  ],
+  "ppas": []
+}

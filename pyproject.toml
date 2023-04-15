@@ -1,23 +1,51 @@
-# vim: ft=dosini
+[tool.poetry]
+name = "jumpstart"
+version = "0.1.0"
+description = ""
+authors = []
+license = "MIT"
+packages = [
+    { include = "jumpstart" },
+]
+include = [
+    "jumpstart/templates/*" ,
+    "packages/*",
+]
+# exclude = ["my_package/excluded.py"]
+[tool.poetry.scripts]
+jumpstart = 'jumpstart.commands:run_cli'
 
+#[tool.poetry.plugins."blogtool.parsers"]
+#".rst" = "some_module:SomeClass"
+
+[tool.poetry.urls]
+"Github Repository" = "https://github.com/imochoa/jumpstart"
 
 [build-system]
-requires = ["setuptools >= 35.0.2", "wheel >= 0.29.0"]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
 
-[tool.tox]
-legacy_tox_ini = """
-[tox]
-envlist = py38
 
-[testenv]
-autoupgrade_pip = true
-platform = linux|darwin
-deps =
-    -rrequirements.txt
-    -rrequirements-dev.txt
-commands = pytest
-"""
+[tool.poetry.dependencies]
+python = "^3.10"
+loguru = "^0.6.0"
+rich-cli = "^1.8.0"
+typer = "^0.7.0"
+marshmallow = "^3.19.0"
+marshmallow-dataclass = "^8.5.11"
+cogapp = "^3.3.0"
+marshmallow-polyfield = "^5.11"
+#typing-inspect = "^0.7.1, !=0.8.0"
+# 0.8.0 was problematic
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.0.4"
+pytest = "^7.2.1"
+pytest-icdiff = "^0.6"
+pytest-xdist = "^3.1.0"
+pytest-sugar = "^0.9.6"
+docker = "^6.0.1"
+loguru = "^0.6.0"
 
 [tool.isort]
 profile = "black"
@@ -31,32 +59,42 @@ force_sort_within_sections = true
 [tool.black]
 line-length = 121
 
-# https://mypy.readthedocs.io/en/latest/config_file.html#config-precedence
-# https://blog.wolt.com/engineering/2021/09/30/professional-grade-mypy-configuration/
 [tool.mypy]
+python_version = "3.10"
 exclude = [
     'venv',
+    '.venv',
     'tests',
     'bin',
+    'back',
 ]
+# marshmallow_dataclass.mypy -> Required so that mypy recognizes the custom marshmallow NewType's
 plugins = [
     'marshmallow_dataclass.mypy',
 ]
-python_version = "3.10"
 warn_unused_configs = true
 warn_unused_ignores = true
 show_error_codes = true
 strict = true
 implicit_reexport = true
-#warn_return_any = false
-allow_untyped_defs = false
+warn_return_any = false
+allow_untyped_defs = true
 
-
-[tool.bandit]
-exclude_dirs = ["venv","tests"]
-
+[[tool.mypy.overrides]]
+module = [
+    "back.*",
+]
+ignore_errors = true
+follow_imports = "skip"
+ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 python_files = ["test_*.py", "*_test.py"]
 addopts = "--failed-first --showlocals -ra"
 # Run in parallel ->  --numprocesses auto
+
+[tool.bandit]
+exclude_dirs = ["venv", ".venv", "tests"]
+skips = ["B101", "B603", "B404", "B108", "B110", "B311"]
+
+# vim: ft=dosini

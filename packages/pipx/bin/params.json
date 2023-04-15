@@ -1,0 +1,24 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [
+      "python"
+    ],
+    "urls": [
+      "https://pypa.github.io/pipx/installation/"
+    ],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "download_sources": {
+    "sources": [],
+    "cache": {
+      "source_hash": "",
+      "url": "",
+      "archive_ext": ""
+    }
+  },
+  "cmdmap": {}
+}

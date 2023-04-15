@@ -1,0 +1,11 @@
+{
+  "name": "latex",
+  "urls": [
+    ""
+  ],
+  "tags": [
+    "science",
+    "documents"
+  ],
+  "description": "There are some extras like:\ntexlive-publishers\ntexlive-science\ntexlive-pstricks\ntexlive-pictures\ntexlive-metapost\ntexlive-music\ntexlive-xetex\ntexlive-luatex\ntexlive-games\ntexlive-humanities"
+}

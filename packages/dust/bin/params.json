@@ -1,0 +1,33 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [],
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "download_sources": {
+    "sources": [
+      {
+        "orgrepo": "bootandy/dust",
+        "filters": [
+          "linux",
+          "x86_64",
+          "gnu"
+        ],
+        "inverted_filters": [],
+        "cls": "GitHubRelease"
+      }
+    ],
+    "cache": {
+      "source_hash": "<GitHubRelease orgrepo=bootandy/dust, filters=['linux', 'x86_64', 'gnu'], inverted_filters=[], cls=GitHubRelease>",
+      "url": "https://github.com/bootandy/dust/releases/download/v0.8.5/dust-v0.8.5-x86_64-unknown-linux-gnu.tar.gz",
+      "archive_ext": "TARGZ"
+    }
+  },
+  "cmdmap": {
+    "dust$": "dust"
+  }
+}

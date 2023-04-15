@@ -1,0 +1,11 @@
+{
+  "name": "delta",
+  "urls": [
+    "https://dandavison.github.io/delta/"
+  ],
+  "tags": [
+    "diff",
+    "git"
+  ],
+  "description": "Nicer diff views for git, lazygit, grep etc."
+}

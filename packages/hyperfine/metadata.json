@@ -1,0 +1,10 @@
+{
+  "name": "hyperfine",
+  "urls": [
+    "https://github.com/sharkdp/hyperfine"
+  ],
+  "tags": [
+    "profiling"
+  ],
+  "description": "Nice CLI profiler"
+}
