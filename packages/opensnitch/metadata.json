@@ -1,0 +1,11 @@
+{
+  "name": "opensnitch",
+  "urls": [
+    "https://github.com/evilsocket/opensnitch"
+  ],
+  "tags": [
+    "security",
+    "networking"
+  ],
+  "description": "Monitor outgoing calls from your device"
+}

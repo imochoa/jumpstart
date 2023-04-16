@@ -18,12 +18,13 @@ from jumpstart.cogging.helpers import (
 
 def install_deb(
     url_cmd: str,
+    archive_ext: str,
 ) -> str:
     """ """
 
     # Download the file
-    cmds = download_and_extract(url_cmd=url_cmd, archive_ext="")
-    cmds += [f'sudo apt install "{{{VARNAMES.DLFILE}}}"']
+    cmds = download_and_extract(url_cmd=url_cmd, archive_ext=archive_ext)
+    cmds += [f'sudo apt install -y "$(realpath ${{{VARNAMES.DLFILE}}})"']
 
     return chain_cmds(cmds)
 
@@ -84,14 +85,14 @@ def deb_upstream_ver_cmd(
 # fi
 
 if __name__ == "__main__":
-    # url_cmd = r"curl --silent 'https://api.github.com/repos/cheat/cheat/releases/latest' | jq '..|.browser_download_url?' | grep 'linux' | grep 'amd64' | tr -d '\"'"
-    # archive_ext = ".GZ",
     # cmdmap={"cheat-*": "cheat"}
-    url_cmd = r"curl --silent 'https://api.github.com/repos/ogham/exa/releases/latest' | jq '..|.browser_download_url?' | grep 'linux' | grep 'x86_64' | grep 'musl' | tr -d '\"'"
-    archive_ext = ".ZIP"
-    cmdmap = {"bin/exa$": "exa"}
-    print(
-        install_deb(
-            url_cmd=url_cmd,
-        )
-    )
+    # url_cmd = r"curl --silent 'https://api.github.com/repos/ogham/exa/releases/latest' | jq '..|.browser_download_url?' | grep 'linux' | grep 'x86_64' | grep 'musl' | tr -d '\"'"
+    # archive_ext = ".ZIP"
+    # cmdmap = {"bin/exa$": "exa"}
+    # print(
+    #     install_deb(
+    #         url_cmd=url_cmd,
+    #
+    #     )
+    # )
+    pass

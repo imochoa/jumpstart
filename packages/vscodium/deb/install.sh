@@ -10,7 +10,6 @@ BASHCOMP_P="${BASHCOMP_P:-${HOME}/.config/bash/bash_completion}"
 ZSHCOMP="${ZSHCOMP:-${HOME}/.config/zsh/completions}"
 TEMPDIR="$(mktemp -d -t XXXXXXXXXX)"
 FMT='\e[0;34m%-6s\e[m\n'
-
 # Commands
 DLTMP=$(mktemp -d -t jumpstart-XXXXXXXXXX) \
     && cd "${DLTMP}" \
@@ -18,4 +17,4 @@ DLTMP=$(mktemp -d -t jumpstart-XXXXXXXXXX) \
     && URL=$(curl --silent 'https://api.github.com/repos/vscodium/vscodium/releases/latest' | jq '..|.browser_download_url? | select( . != null )' | tr -d '"' | grep --ignore-case 'amd64' | grep --ignore-case 'deb"') \
     && curl -jLO "${URL}" \
     && DLFILE=$(ls . | head -n1) \
-    && sudo apt install "{DLFILE}"
+    && sudo apt install -y "$(realpath ${DLFILE})"
