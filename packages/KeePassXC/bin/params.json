@@ -1,0 +1,32 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [],
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "download_sources": {
+    "sources": [
+      {
+        "orgrepo": "keepassxreboot/keepassxc",
+        "filters": [
+          "x86_64",
+          "AppImage$"
+        ],
+        "inverted_filters": [],
+        "cls": "GitHubRelease"
+      }
+    ],
+    "cache": {
+      "source_hash": "<GitHubRelease orgrepo=keepassxreboot/keepassxc, filters=['x86_64', 'AppImage$'], inverted_filters=[], cls=GitHubRelease>",
+      "url": "https://github.com/keepassxreboot/keepassxc/releases/download/2.7.4/KeePassXC-2.7.4-x86_64.AppImage",
+      "archive_ext": ""
+    }
+  },
+  "cmdmap": {
+    "KeePassXC": "KeePassXC"
+  }
+}

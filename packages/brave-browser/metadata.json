@@ -1,0 +1,10 @@
+{
+  "name": "BraveBrowser",
+  "urls": [
+    "https://brave.com/linux/"
+  ],
+  "tags": [
+    "web"
+  ],
+  "description": "Brave Web Browser"
+}

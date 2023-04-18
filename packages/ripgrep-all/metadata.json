@@ -1,0 +1,10 @@
+{
+  "name": "ripgrep-all",
+  "urls": [
+    "https://github.com/BurntSushi/ripgrep"
+  ],
+  "tags": [
+    "searching"
+  ],
+  "description": "Ripgrep for PDFs, Ebooks, Office docs, zip, etc."
+}

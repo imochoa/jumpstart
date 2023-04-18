@@ -1,0 +1,11 @@
+{
+  "name": "KeePassXC",
+  "urls": [
+    ""
+  ],
+  "tags": [
+    "security",
+    "passwords"
+  ],
+  "description": "Nice password manager"
+}
