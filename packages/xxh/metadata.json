@@ -1,0 +1,11 @@
+{
+  "name": "xxh",
+  "urls": [
+    ""
+  ],
+  "tags": [
+    "ssh",
+    "shell"
+  ],
+  "description": "Bring your favorite shell wherever you go through SSH"
+}
