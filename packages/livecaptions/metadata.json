@@ -1,0 +1,11 @@
+{
+  "name": "Live Captions",
+  "urls": [
+    "https://github.com/abb128/LiveCaptions"
+  ],
+  "tags": [
+    "audio",
+    "captions"
+  ],
+  "description": "Provide live captioning for the linux desktop"
+}

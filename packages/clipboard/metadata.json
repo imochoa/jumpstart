@@ -1,0 +1,11 @@
+{
+  "name": "Clipboard",
+  "urls": [
+    "https://github.com/Slackadays/Clipboard",
+    "https://getclipboard.app/"
+  ],
+  "tags": [
+    "clipboard"
+  ],
+  "description": "Better clipboard manager, might replace xclip"
+}

@@ -1,0 +1,33 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [],
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "download_sources": {
+    "sources": [
+      {
+        "orgrepo": "xxh/xxh",
+        "filters": [
+          "linux",
+          "portable",
+          "x86_64"
+        ],
+        "inverted_filters": [],
+        "cls": "GitHubRelease"
+      }
+    ],
+    "cache": {
+      "source_hash": "<GitHubRelease orgrepo=xxh/xxh, filters=['linux', 'portable', 'x86_64'], inverted_filters=[], cls=GitHubRelease>",
+      "url": "https://github.com/xxh/xxh/releases/download/0.8.12/xxh-portable-musl-alpine-Linux-x86_64.tar.gz",
+      "archive_ext": "TARGZ"
+    }
+  },
+  "cmdmap": {
+    "xxh": "xxh"
+  }
+}

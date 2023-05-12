@@ -1,0 +1,32 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [],
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "download_sources": {
+    "sources": [
+      {
+        "orgrepo": "docker/docker-credential-helpers",
+        "filters": [
+          "linux",
+          "amd64"
+        ],
+        "inverted_filters": [
+          "secretservice"
+        ],
+        "cls": "GitHubRelease"
+      }
+    ],
+    "cache": {
+      "source_hash": "<GitHubRelease orgrepo=docker/docker-credential-helpers, filters=['linux', 'amd64'], inverted_filters=['secretservice'], cls=GitHubRelease>",
+      "url": "https://github.com/docker/docker-credential-helpers/releases/download/v0.7.0/docker-credential-pass-v0.7.0.linux-amd64",
+      "archive_ext": ""
+    }
+  },
+  "cmdmap": {}
+}

@@ -1,0 +1,12 @@
+{
+  "name": "actionlint",
+  "urls": [
+    "https://rhysd.github.io/actionlint/",
+    "https://github.com/rhysd/actionlint"
+  ],
+  "tags": [
+    "github",
+    "ci/cd"
+  ],
+  "description": "Static checker for github actions"
+}

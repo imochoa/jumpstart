@@ -1,0 +1,15 @@
+{
+  "header": {
+    "template": "apt",
+    "priority": 10,
+    "depends": [],
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "pkgs": [
+    "git-cola"
+  ],
+  "ppas": []
+}

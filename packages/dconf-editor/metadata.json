@@ -1,10 +1,11 @@
 {
   "name": "dconf-editor",
   "urls": [
-    ""
+    "https://askubuntu.com/questions/17249/how-do-i-use-the-gconf-editor"
   ],
   "tags": [
-    ""
+    "gnome",
+    "gui"
   ],
   "description": ""
 }

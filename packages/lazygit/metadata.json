@@ -1,0 +1,11 @@
+{
+  "name": "LazyGit",
+  "urls": [
+    "https://github.com/jesseduffield/lazygit/"
+  ],
+  "tags": [
+    "vcs",
+    "git"
+  ],
+  "description": "Terminal UI for git commands"
+}

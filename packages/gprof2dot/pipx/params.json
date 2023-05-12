@@ -1,0 +1,16 @@
+{
+  "header": {
+    "template": "pipx",
+    "priority": 0,
+    "depends": [],
+    "urls": [
+      ""
+    ],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "package": "gprof2dot",
+  "app": "",
+  "ver": ""
+}

@@ -1,0 +1,11 @@
+{
+  "name": "docker-credential-helpers",
+  "urls": [
+    "https://github.com/docker/docker-credential-helpers/"
+  ],
+  "tags": [
+    "docker",
+    "security"
+  ],
+  "description": ""
+}

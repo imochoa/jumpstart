@@ -1,0 +1,12 @@
+{
+  "name": "Git Cola",
+  "urls": [
+    ""
+  ],
+  "tags": [
+    "git",
+    "vcs",
+    "gui"
+  ],
+  "description": "Git GUI client"
+}

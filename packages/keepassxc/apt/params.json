@@ -1,0 +1,19 @@
+{
+  "header": {
+    "template": "apt",
+    "priority": 10,
+    "depends": [],
+    "urls": [
+      "https://keepassxc.org/download/#linux"
+    ],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "pkgs": [
+    "keepassxc"
+  ],
+  "ppas": [
+    "ppa:phoerious/keepassxc"
+  ]
+}

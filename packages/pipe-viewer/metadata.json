@@ -1,7 +1,8 @@
 {
   "name": "pipe-viewer",
   "urls": [
-    "https://catonmat.net/unix-utilities-pipe-viewer"
+    "https://catonmat.net/unix-utilities-pipe-viewer",
+    "http://www.ivarch.com/programs/pv.shtml"
   ],
   "tags": [
     "dev"

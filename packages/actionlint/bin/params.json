@@ -1,0 +1,32 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [],
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "download_sources": {
+    "sources": [
+      {
+        "orgrepo": "rhysd/actionlint",
+        "filters": [
+          "linux",
+          "amd64"
+        ],
+        "inverted_filters": [],
+        "cls": "GitHubRelease"
+      }
+    ],
+    "cache": {
+      "source_hash": "<GitHubRelease orgrepo=rhysd/actionlint, filters=['linux', 'amd64'], inverted_filters=[], cls=GitHubRelease>",
+      "url": "https://github.com/rhysd/actionlint/releases/download/v1.6.24/actionlint_1.6.24_linux_amd64.tar.gz",
+      "archive_ext": "TARGZ"
+    }
+  },
+  "cmdmap": {
+    "actionlint$": ""
+  }
+}

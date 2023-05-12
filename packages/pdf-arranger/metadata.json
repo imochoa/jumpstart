@@ -1,0 +1,11 @@
+{
+  "name": "PDF Arranger",
+  "urls": [
+    "https://github.com/pdfarranger/pdfarranger",
+    "https://flathub.org/apps/com.github.jeromerobert.pdfarranger"
+  ],
+  "tags": [
+    "pdf"
+  ],
+  "description": "Arrange PDF pages"
+}

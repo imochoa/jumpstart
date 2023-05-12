@@ -1,0 +1,11 @@
+{
+  "header": {
+    "template": "manual",
+    "priority": 10,
+    "depends": [],
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
+  }
+}

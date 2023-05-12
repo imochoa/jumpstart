@@ -1,0 +1,36 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [],
+    "urls": [
+      "https://github.com/nelsonenzo/tmux-appimage/releases"
+    ],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "download_sources": {
+    "sources": [
+      {
+        "orgrepo": "nelsonenzo/tmux-appimage",
+        "filters": [
+          "appimage"
+        ],
+        "inverted_filters": [
+          "gz",
+          "zsync"
+        ],
+        "cls": "GitHubRelease"
+      }
+    ],
+    "cache": {
+      "source_hash": "<GitHubRelease orgrepo=nelsonenzo/tmux-appimage, filters=['appimage'], inverted_filters=['gz', 'zsync'], cls=GitHubRelease>",
+      "url": "https://github.com/nelsonenzo/tmux-appimage/releases/download/3.2a/tmux.appimage",
+      "archive_ext": ""
+    }
+  },
+  "cmdmap": {
+    "tmux": "tmux"
+  }
+}

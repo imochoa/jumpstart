@@ -1,0 +1,32 @@
+{
+  "header": {
+    "template": "bin",
+    "priority": 0,
+    "depends": [],
+    "urls": [],
+    "default_env": {
+      "install_dst": ""
+    }
+  },
+  "download_sources": {
+    "sources": [
+      {
+        "orgrepo": "jesseduffield/lazygit",
+        "filters": [
+          "linux",
+          "x86_64"
+        ],
+        "inverted_filters": [],
+        "cls": "GitHubRelease"
+      }
+    ],
+    "cache": {
+      "source_hash": "<GitHubRelease orgrepo=jesseduffield/lazygit, filters=['linux', 'x86_64'], inverted_filters=[], cls=GitHubRelease>",
+      "url": "https://github.com/jesseduffield/lazygit/releases/download/v0.37.0/lazygit_0.37.0_Linux_x86_64.tar.gz",
+      "archive_ext": "TARGZ"
+    }
+  },
+  "cmdmap": {
+    "lazygit": "lazygit"
+  }
+}

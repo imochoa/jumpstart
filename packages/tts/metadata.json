@@ -1,0 +1,10 @@
+{
+  "name": "TTS",
+  "urls": [
+    "https://github.com/coqui-ai/TTS"
+  ],
+  "tags": [
+    "textToSpeech"
+  ],
+  "description": "Generate audios from text"
+}
