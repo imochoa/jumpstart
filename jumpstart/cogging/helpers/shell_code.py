@@ -12,7 +12,7 @@ from jumpstart.cogging.constants import ENVVARS, PRINTF_FMT
 
 
 def chain_cmds(cmds: T.Sequence[str]) -> str:
-    return " \\\n    && ".join(cmds)
+    return " \\\n&& ".join(cmds)
 
 
 def require_cmds(cmds: list[str]) -> str:
@@ -46,18 +46,6 @@ def info(msg: str) -> str:
 
 def warn(msg: str) -> str:
     return printf(msg=msg, fmt=r"\e[0;34m%-6s\e[m\n")
-
-
-def wget(
-    url: str,
-    dst: str,
-    sudo: bool = False,
-) -> str:
-    """
-    Wrapper for wget calls
-    """
-    prefix = "sudo " if sudo else ""
-    return prefix + f'wget "${url}" --continue --output-document="{dst}"'
 
 
 def tempdir_cmd(varname: str = "", prefix: str = "jumpstart") -> str:
