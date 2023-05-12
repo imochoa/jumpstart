@@ -41,8 +41,12 @@ def pipx_upstream_ver_cmd(package: str, app: str = "", ver: str = "") -> str:
     If it's a PYPI package -> get with pip
     """
     # IF it's a URL, get from
-    # return rf'printf "{appid} > %s\n" "$(flatpak search {appid} | head -n1 | cut -f4 | tr -d /" /")"'
-    return chain_cmds(["# TODO!"])
+    # TODO check if URL exists??
+    url = f"https://pypi.org/project/{package}/".replace("'", "").replace('"', "")
+    ver_cmd = f'curl --silent -JL "{url}" | grep --ignore-case --after-context=2 "release__version\\"" | grep -v --ignore-case "class" | head -n1 | tr -s " "'
+    ver_assignment = f"{VARNAMES.VERSION}=$({ver_cmd})"
+    ver_print = printf(f"[{package}] version was: ${{{VARNAMES.VERSION}}}")
+    return chain_cmds([ver_assignment, ver_print])
 
 
 def pipx_local_ver_cmd(

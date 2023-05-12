@@ -38,7 +38,7 @@ class PipxParams:
     """
     ver: str = ""
     """
-    1.0.0
+    Force installing a specific version (eg. 1.0.0)
     """
     Schema: T.ClassVar[T.Type[ma.Schema]] = ma.Schema
 
