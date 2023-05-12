@@ -58,10 +58,10 @@ def env_defaults(
     """ """
     return "\n".join(
         (
-            f'{ENVVARS.INSTALL_DST}="${{{ENVVARS.INSTALL_DST}:-{install_dst}}}"',
-            f'{ENVVARS.BASHCOMP_P}="${{{ENVVARS.BASHCOMP_P}:-${{HOME}}/.config/bash/bash_completion}}"',
-            r'ZSHCOMP="${ZSHCOMP:-${HOME}/.config/zsh/completions}"',
-            r'TEMPDIR="$(mktemp -d -t XXXXXXXXXX)"',
-            r"FMT='\e[0;34m%-6s\e[m\n'",
+            # f'{ENVVARS.INSTALL_DST}="${{{ENVVARS.INSTALL_DST}:-{install_dst}}}"',
+            # f'{ENVVARS.BASHCOMP_P}="${{{ENVVARS.BASHCOMP_P}:-${{HOME}}/.config/bash/bash_completion}}"',
+            # r'ZSHCOMP="${ZSHCOMP:-${HOME}/.config/zsh/completions}"',
+            # r'TEMPDIR="$(mktemp -d -t XXXXXXXXXX)"',
+            # r"FMT='\e[0;34m%-6s\e[m\n'",
         )
     )

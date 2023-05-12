@@ -25,7 +25,7 @@ repos:
   #    hooks:
   #      - id: poetry-check
   - repo: https://github.com/trailofbits/pip-audit
-    rev: d94110af0c8a31edacd8d9e49cd02c18f9632a79 # frozen: v2.4.15
+    rev: 0fc0329cefbeeaa7aaafdb564ee460043ddd0ff0 # frozen: v2.5.5
     hooks:
       - id: pip-audit
         args:
@@ -36,12 +36,12 @@ repos:
             "GHSA-m6vm-8g8v-xfjh",
           ]
   - repo: https://github.com/PyCQA/bandit
-    rev: "1ed79063e3672a1c6d91ee27cb648e07a7465344" # frozen: 1.7.4
+    rev: "ca4faf2f82a7c68a088100f8ba2b8e56f9bdcfe3" # frozen: 1.7.5
     hooks:
       - id: bandit
         args: ["-c", "pyproject.toml"]
         additional_dependencies:
-          - toml
+          - bandit[toml]
   - repo: https://github.com/pycqa/isort
     rev: dbf82f2dd09ae41d9355bcd7ab69187a19e6bf2f # frozen: 5.12.0
     hooks:
@@ -55,7 +55,7 @@ repos:
         name: isort (pyi)
         types: [pyi]
   - repo: https://github.com/psf/black
-    rev: b0d1fba7ac3be53c71fb0d3211d911e629f8aecb # frozen: 23.1.0
+    rev: bf7a16254ec96b084a6caf3d435ec18f0f245cc7 # frozen: 23.3.0
     hooks:
       - id: black
   - repo: https://github.com/asottile/blacken-docs
@@ -72,19 +72,31 @@ repos:
           - flake8-typing-imports==1.14.0
         language_version: python3
   - repo: https://github.com/asottile/pyupgrade
-    rev: 01cee377ba3a5264c7fbe7b6beae7b575f764dc3 # frozen: v3.3.1
+    rev: 1395c21a149988e686aef88be48d52ba0d5752f3 # frozen: v3.4.0
     hooks:
       - id: pyupgrade
         args: [--py310-plus]
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: "cafd5506f18eea191804850dacc0a4264772d59d" # frozen: v3.0.0-alpha.4
+    rev: "6fd1ced85fc139abd7f5ab4f3d78dab37592cd5e" # frozen: v3.0.0-alpha.9-for-vscode
     hooks:
       - id: prettier
         additional_dependencies:
           - prettier@2.1.2
           - "@prettier/plugin-xml@0.12.0"
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: "dc6912646c561f16af711006e7615d52e9bf0968" # frozen: v1.0.0
+    rev: "bd424e49d4f0181d4c8b8909a8cd5ce9eb058044" # frozen: v1.3.0
     hooks:
       - id: mypy
         additional_dependencies: [marshmallow_dataclass]
+  - repo: https://github.com/koalaman/shellcheck-precommit
+    rev: 3f77b826548d8dc2d26675f077361c92773b50a7 # frozen: v0.9.0
+    hooks:
+      - id: shellcheck
+        exclude: |
+          (?x)^(
+            jumpstart/.*|
+            packages/.*\.pre/.*|
+            packages/.*\.post/.*
+          )$
+
+# https://pre-commit.com/#regular-expressions

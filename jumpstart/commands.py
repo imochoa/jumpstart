@@ -18,11 +18,11 @@ import typer
 from jumpstart.constants import FILES, PATHS
 from jumpstart.core import loop_over_pkg_jsons, loop_over_pkgs, validate_schemas
 from jumpstart.schemas import PackageMetadata, dump_json, load_json
-from jumpstart.templates import (  # BinParams,; NoParams,; PipxParams,
-    PARAMS_TYPE,
-    cog_param,
-    get_param_schema,
-)
+from jumpstart.templates import PARAMS_TYPE, cog_param, get_param_schema
+from jumpstart.templates.bin import BinParams
+from jumpstart.templates.deb import DebParams
+from jumpstart.templates.manual import NoParams
+from jumpstart.templates.pipx import PipxParams
 
 app = typer.Typer()
 

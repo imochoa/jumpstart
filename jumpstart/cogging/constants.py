@@ -84,11 +84,11 @@ PRINTF_FMT: T.Final[str] = r"\e[0;34m%-6s\e[m\n"
 # TODO make a function for it?
 SCRIPT_DEFAULTS: T.Final[str] = "\n".join(
     (
-        f'{ENVVARS.INSTALL_DST}="${{{ENVVARS.INSTALL_DST}:-${{HOME}}/.local/bin/}}"',
-        f'{ENVVARS.BASHCOMP_P}="${{{ENVVARS.BASHCOMP_P}:-${{HOME}}/.config/bash/bash_completion}}"',
-        r'ZSHCOMP="${ZSHCOMP:-${HOME}/.config/zsh/completions}"',
-        r'TEMPDIR="$(mktemp -d -t XXXXXXXXXX)"',
-        r"FMT='\e[0;34m%-6s\e[m\n'",
+        # f'{ENVVARS.INSTALL_DST}="${{{ENVVARS.INSTALL_DST}:-${{HOME}}/.local/bin/}}"',
+        # f'{ENVVARS.BASHCOMP_P}="${{{ENVVARS.BASHCOMP_P}:-${{HOME}}/.config/bash/bash_completion}}"',
+        # r'ZSHCOMP="${ZSHCOMP:-${HOME}/.config/zsh/completions}"',
+        # r'TEMPDIR="$(mktemp -d -t XXXXXXXXXX)"',
+        # r"FMT='\e[0;34m%-6s\e[m\n'",
     )
 )
 
