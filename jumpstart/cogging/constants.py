@@ -150,9 +150,11 @@ class OSPaths(SimpleNamespace):
         icons=UserGlobalPath(
             u="${HOME}/.local/share/icons",
             g="/usr/share/icons",
-            # /usr/share/pixmaps
-            # /usr/share/icons
         ),
+        # pixmaps=UserGlobalPath(
+        #     u="${HOME}/.local/share/icons",
+        #     g="/usr/share/pixmaps",
+        # ),
         fonts=UserGlobalPath(
             u="",
             g="/usr/local/share/fonts",
