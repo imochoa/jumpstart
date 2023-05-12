@@ -13,3 +13,4 @@ from .constants import (
     SH_SHEBANG,
     OSPaths,
 )
+from .core import cog_subprocess
