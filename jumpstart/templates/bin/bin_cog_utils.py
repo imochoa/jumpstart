@@ -3,6 +3,7 @@
 """
 Only meant to be imported within cog
 """
+
 # 1st party imports
 from jumpstart.cogging.constants import ENVVARS, VARNAMES
 from jumpstart.cogging.helpers import (
@@ -49,6 +50,8 @@ def install_bin(
             f'sudo chmod +x "${{{VARNAMES.SRCPATH}}}"',
             f'sudo mv "${{{VARNAMES.SRCPATH}}}" "{dst}"',
         ]
+    # TODO chmod based on install path!
+    # TODO cmdmap, set value automatically based on input
 
     return chain_cmds(cmds)
 

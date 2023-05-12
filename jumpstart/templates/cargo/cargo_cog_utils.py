@@ -63,4 +63,4 @@ def cargo_upstream_ver_cmd(
 
 
 if __name__ == "__main__":
-    print( install_cargo("just") )
+    print(install_cargo("just"))
