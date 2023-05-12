@@ -1,4 +1,3 @@
-#!/usr/bin/env sh
 # [[[cog
 # import cog
 # from jumpstart.cogging.helpers import str2list, str2dict, require_cmds, tempdir_cmd, env_defaults

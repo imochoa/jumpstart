@@ -1,4 +1,3 @@
-#!/usr/bin/env sh
 # [[[cog
 # import cog
 # from cog_utils import str2dict, require_cmds, tempdir_cmd, SCRIPT_DEFAULTS

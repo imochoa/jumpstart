@@ -1,4 +1,3 @@
-#!/usr/bin/env sh
 # [[[cog
 # import cog
 # from jumpstart.cogging.helpers.input_parsing import str2list
