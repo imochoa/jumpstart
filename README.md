@@ -1,5 +1,23 @@
 # jumpstart
 
+# TODO use: https://nikoheikkila.fi/blog/don-t-use-bash-for-scripting-all-the-time/
+
+# TODO add docs!
+
+# TODO check URLs
+
+# TODO add support for not relying on jq
+
+# TODO save cache to avoid having to rerun everything all the time
+
+# TODO for cmdmap, separate between what needs chomd+x (binmap) and the rest (manuals, docs, libs, .desktop files) into groups:
+
+# locmap: {bin, fonts, icons, images, .desktop, lib}
+
+# TODO for apt, check universe repository (happened in yadm)
+
+# TODO Look into https://asdf-vm.com/guide/getting-started.html#global
+
 https://innovativeinnovation.github.io/ubuntu-setup/
 
 top 100 security tools
