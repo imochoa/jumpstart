@@ -1,7 +1,7 @@
 {
   "header": {
-    "template": "flatpak",
-    "priority": 10,
+    "template": "src",
+    "priority": 0,
     "depends": [],
     "urls": [
       "https://flathub.org/apps/net.cozic.joplin_desktop"
@@ -9,7 +9,5 @@
     "default_env": {
       "install_dst": ""
     }
-  },
-  "app_id": "net.cozic.joplin_desktop",
-  "remote": "flathub"
+  }
 }
